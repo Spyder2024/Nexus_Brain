@@ -11,6 +11,21 @@
 
 Instead of isolated tools where context is lost, NexusBrain models organizational relationships as a high-fidelity directed graph—enabling multi-agent systems to perform deep causal tracing, blast-radius analysis, and semantic incident memory retrieval.
 
+```
+       ┌────────────────────────────────────────────────────────┐
+       │             NexusBrain Multi-Agent Engine              │
+       │   RouterAgent  ───►  GraphNavigator  ───►  MemoryScribe│
+       └──────────────┬─────────────────────────────┬───────────┘
+                      │                             │
+                      ▼                             ▼
+       ┌──────────────────────────────┐ ┌────────────────────────┐
+       │  company_brain (FalkorDB)    │ │ memory_tenant_{user_id}│
+       │  - 1,077 Org & Code Nodes    │ │ - Episodic Turn History│
+       │  - 4,103 Multi-Hop Edges     │ │ - Reusable Playbooks   │
+       │  - Bi-Temporal ADR Chains    │ │ - Multi-Tenant Private │
+       └──────────────────────────────┘ └────────────────────────┘
+```
+
 ---
 
 ## 🏗️ Architecture & Schema
@@ -55,7 +70,7 @@ Hardcoded into the simulation engine to showcase multi-hop graph reasoning:
 
 ### 1. Prerequisites
 * Python 3.12+
-* Docker & Docker Compose
+* Docker & Docker Compose (optional for in-memory fallback, recommended for live FalkorDB)
 
 ### 2. Setup Environment
 ```bash
@@ -67,20 +82,43 @@ cd Nexus_Brain
 pip install -r requirements.txt
 ```
 
-### 3. Start FalkorDB
+### 3. Start FalkorDB (Optional for live graph protocol)
 ```bash
 docker compose up -d
 ```
 * **FalkorDB Cypher Protocol:** `localhost:6379`
 * **FalkorDB Web Browser:** `http://localhost:3000`
 
-### 4. Generate Synthetic Dataset
+### 4. Start the FastAPI Backend
 ```bash
-python -m src.data_gen.company_generator
+python -m src.api.server
 ```
+API Documentation will be live at `http://localhost:8000/docs`.
 
-### 5. Inspect Dataset
-Open `notebooks/01_explore_dataset.ipynb` in VS Code or Jupyter to inspect network metrics, node distributions, and graph scenarios.
+### 5. Launch the Command Center UI
+In a separate terminal:
+```bash
+streamlit run src/ui/app.py
+```
+Open your browser at `http://localhost:8501`.
+
+---
+
+## 🎮 The 4 Demo Acts (Judge Walkthrough)
+
+1. **Act A: Shadow Ownership Discovery**
+   - Click Preset Button 1: *"Who actually knows the most about auth-service outages?"*
+   - See how the graph identifies `person-19` over the official lead and lists downstream blast radius.
+2. **Act B: Stale Documentation Catch**
+   - Click Preset Button 2: *"Can I use Kafka for synchronous RPC as written in DOC-082?"*
+   - Watch the agent warn against the outdated doc, citing `ADR-051` and war-room `SLACK-088`.
+3. **Act C: Live Real-Time Knowledge Mutation**
+   - Switch to **Tab 2 (Live Knowledge Mutator)**.
+   - Inject the breaking Slack decision moving RPC to HTTP/3 QUIC (`ADR-061`).
+   - Switch back to **Tab 1** and re-run Preset 2 — the agent immediately adapts, showing `ADR-051` as superseded and `ADR-061` glowing active green on the graph canvas!
+4. **Act D: Cross-Session Tenant Memory Handoff**
+   - Switch top persona between **Meera (SRE)** and **Riya (New Hire)**.
+   - Inspect **Tab 3** to see how verified procedural playbooks (`playbook-003`) survive across tenants while preserving private episodic chat turns.
 
 ---
 
@@ -92,12 +130,17 @@ nexus_brain/
 │   └── processed/            # Tabular node/edge inspection CSVs
 ├── src/
 │   ├── config.py             # OS-agnostic configuration & settings
-│   ├── schema/               # Pydantic v2 graph schemas
+│   ├── schema/               # Pydantic v2 graph schemas & API contracts
 │   ├── data_gen/             # Deterministic enterprise dataset generator
-│   ├── graph/                # FalkorDB loader & Cypher query engine (Phase 2)
-│   └── agents/               # Multi-agent coordination engine (Phase 3)
-├── notebooks/                # Exploratory Jupyter notebooks
+│   ├── graph/                # FalkorDB loader & Cypher query engine
+│   ├── agents/               # Multi-agent coordination engine
+│   ├── api/                  # FastAPI REST endpoints & mock bridge
+│   │   ├── server.py
+│   │   └── mock_bridge.py
+│   └── ui/                   # Streamlit visual command center
+│       ├── app.py
+│       └── graph_viz.py
 ├── docker-compose.yml        # FalkorDB local deployment
 ├── requirements.txt
-└── .env.example
+└── README.md
 ```
