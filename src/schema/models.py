@@ -316,17 +316,18 @@ class Citation(BaseModel):
 
 class SubgraphNode(BaseModel):
     """Node visualization datum for force-directed visualizer."""
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="ignore")
 
     id: str
     label: str
     type: str
     status: Optional[str] = None
+    properties: Optional[Dict[str, Any]] = None
 
 
 class SubgraphEdge(BaseModel):
     """Edge visualization datum for force-directed visualizer."""
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="ignore")
 
     source: str
     target: str
@@ -335,7 +336,7 @@ class SubgraphEdge(BaseModel):
 
 class Subgraph(BaseModel):
     """Exploration subgraph containing traversed nodes and edges."""
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="ignore")
 
     nodes: List[SubgraphNode] = Field(default_factory=list)
     edges: List[SubgraphEdge] = Field(default_factory=list)
@@ -343,10 +344,16 @@ class Subgraph(BaseModel):
 
 class AgentQueryResponse(BaseModel):
     """Strict API response model matching TRD.md Section 6."""
-    model_config = ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="ignore")
 
     answer: str = Field(..., description="Markdown-formatted answer with inline [ID] citations")
     tenant_graph: str = Field(..., description="FalkorDB tenant graph identifier")
     agent_trace: List[AgentTrace] = Field(default_factory=list, description="Execution traces")
     citations: List[Citation] = Field(default_factory=list, description="Inline citations")
     subgraph: Subgraph = Field(default_factory=Subgraph, description="Visual subgraph")
+
+
+# Backward & Forward compatibility aliases
+AgentTraceStep = AgentTrace
+CitationItem = Citation
+SubgraphPayload = Subgraph
