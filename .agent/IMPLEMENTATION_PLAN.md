@@ -18,8 +18,8 @@
 - [x] **2.3:** Build `GraphTools` (`src/graph/tools.py`) implementing the 5 deterministic Cypher methods (`find_shadow_expert`, `trace_decision_lineage`, `calculate_blast_radius`, `mutate_knowledge_state`, `sync_agent_memory`).
 
 ## Phase 3: Multi-Agent Coordinator & Tenant Memory (Dev A)
-- [ ] **3.1:** Implement `AgentCoordinator` (`src/agents/coordinator.py`) orchestrating `RouterAgent`, `GraphNavigator`, and `MemoryScribe`.
-- [ ] **3.2:** Ensure `AgentCoordinator.handle_query(user_id, query)` returns the exact JSON contract defined in `TRD.md` Section 6 (with deterministic fallback if LLM API key is rate-limited).
+- [x] **3.1:** Implement `AgentCoordinator` (`src/agents/coordinator.py`) orchestrating `RouterAgent`, `GraphNavigator`, and `MemoryScribe`.
+- [x] **3.2:** Ensure `AgentCoordinator.handle_query(user_id, query)` returns the exact JSON contract defined in `TRD.md` Section 6 (with deterministic fallback if LLM API key is rate-limited).
 
 ## Phase 4: FastAPI Backend & Mock Contract Bridge (Dev B)
 - [ ] **4.1:** Build `src/api/server.py` with endpoints:

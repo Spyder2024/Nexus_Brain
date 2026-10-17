@@ -23,6 +23,9 @@ from src.schema.models import (
     SubgraphEdge,
     Subgraph,
     AgentQueryResponse,
+    AgentTraceStep,
+    CitationItem,
+    SubgraphPayload,
 )
 
 __all__ = [
@@ -48,4 +51,7 @@ __all__ = [
     "SubgraphEdge",
     "Subgraph",
     "AgentQueryResponse",
+    "AgentTraceStep",
+    "CitationItem",
+    "SubgraphPayload",
 ]

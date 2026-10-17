@@ -176,8 +176,12 @@ class GraphTools:
         t0 = time.perf_counter()
 
         cypher = """
-        MATCH (d:Decision)
-        WHERE (d.system_id = $val OR d.topic = $val OR d.id = $val) AND d.status = 'active'
+        OPTIONAL MATCH (d1:Decision)
+        WHERE (d1.system_id = $val OR d1.topic = $val OR d1.id = $val) AND d1.status = 'active'
+        OPTIONAL MATCH (target_doc:Document {id: $val})-[:CONTRADICTS]->(d2:Decision)
+        WHERE d2.status = 'active'
+        WITH coalesce(d1, d2) AS d
+        WHERE d IS NOT NULL
         WITH d ORDER BY d.decided_at DESC LIMIT 1
         OPTIONAL MATCH path = (d)-[:SUPERSEDES*0..5]->(prev:Decision)
         OPTIONAL MATCH (d)<-[:TRIGGERED_DECISION]-(tk:Ticket)
@@ -411,7 +415,7 @@ class GraphTools:
         t0 = time.perf_counter()
         now_iso = datetime.now(timezone.utc).isoformat()
 
-        supersedes_id = event_payload.get("supersedes_id")
+        supersedes_id = event_payload.get("supersedes_id") or event_payload.get("supersedes_decision_id")
         target_system = event_payload.get("system_id") or "auth-service"
 
         # If supersedes_id not specified, find currently active decision for target system
@@ -425,8 +429,12 @@ class GraphTools:
             else:
                 supersedes_id = "ADR-051"
 
-        new_id = event_payload.get("decision_id") or f"ADR-{int(time.time()) % 10000:04d}"
-        title = event_payload.get("title") or "New Architecture Evolution Decision"
+        new_id = (
+            event_payload.get("decision_id")
+            or event_payload.get("new_decision_id")
+            or f"ADR-{int(time.time()) % 10000:04d}"
+        )
+        title = event_payload.get("title") or event_payload.get("new_decision_title") or "New Architecture Evolution Decision"
         rationale = event_payload.get("rationale") or "Superseding previous architecture standard via live agent mutation."
         author_id = event_payload.get("author_id") or "person-19"
 
@@ -481,6 +489,7 @@ class GraphTools:
 
         return {
             "status": "success",
+            "success": True,
             "new_decision_id": new_id,
             "superseded_decision_id": supersedes_id,
             "mutated_at": now_iso,
