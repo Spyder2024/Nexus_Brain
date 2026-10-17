@@ -20,3 +20,9 @@ matplotlib>=3.8.0
 # Interactive Exploration
 ipykernel>=6.29.0
 jupyterlab>=4.1.0
+
+# API & Web UI (Phases 4 & 5)
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+streamlit>=1.35.0
+pytest>=8.0.0

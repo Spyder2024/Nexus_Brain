@@ -1,6 +1,6 @@
-"""FalkorDB Graph Loader & Deterministic Cypher Engine."""
+"""FalkorDB Graph Loader, Deterministic Cypher Engine & Auto-Seeder."""
 
-__all__ = ["FalkorDBLoader", "GraphTools"]
+__all__ = ["FalkorDBLoader", "GraphTools", "CloudBootstrapSeeder"]
 
 
 def __getattr__(name: str):
@@ -10,4 +10,7 @@ def __getattr__(name: str):
     elif name == "GraphTools":
         from src.graph.tools import GraphTools
         return GraphTools
+    elif name == "CloudBootstrapSeeder":
+        from src.graph.auto_seed import CloudBootstrapSeeder
+        return CloudBootstrapSeeder
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
