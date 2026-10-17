@@ -167,8 +167,23 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#080c16] text-slate-100 font-sans">
-      {/* Top Header */}
+    <div
+      className="flex min-h-screen flex-col"
+      style={{ background: "var(--bg-base)", color: "var(--text-primary)", fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
+    >
+      {/* Ambient background layer */}
+      <div
+        className="pointer-events-none fixed inset-0"
+        style={{
+          background: `
+            radial-gradient(ellipse 80% 50% at 50% -10%, hsl(220, 80%, 18%) 0%, transparent 70%),
+            radial-gradient(ellipse 50% 40% at 85% 85%, hsl(262, 60%, 16%) 0%, transparent 60%)
+          `,
+          zIndex: 0,
+        }}
+      />
+
+      {/* Header */}
       <Header
         selectedPersona={selectedPersona}
         onSelectPersona={handleSelectPersona}
@@ -177,7 +192,7 @@ export default function Home() {
         isResetting={isResetting}
       />
 
-      {/* Api Status Banners */}
+      {/* Status Banners */}
       <ApiStatusBanner
         isWakingUp={isWakingUp}
         isMockMode={stats?.mode === "mock"}
@@ -185,55 +200,62 @@ export default function Home() {
         onDismissError={() => setErrorMessage(null)}
       />
 
-      {/* Main Split-Pane Layout */}
-      <main className="flex-1 p-3 md:p-4">
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-12 h-full">
-          {/* LEFT COLUMN: Tabs (45% width) */}
-          <div className="flex flex-col rounded-xl border border-slate-800 bg-slate-950/60 p-3 lg:col-span-5 h-[calc(100vh-100px)] overflow-hidden">
-            {/* Tabs Navigation */}
-            <div className="flex items-center gap-1 border-b border-slate-800 pb-2 mb-3">
-              <button
-                type="button"
-                onClick={() => setActiveTab("ask")}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  activeTab === "ask"
-                    ? "bg-sky-600/20 text-sky-400 border border-sky-500/40"
-                    : "text-slate-400 hover:text-white hover:bg-slate-900"
-                }`}
-              >
-                <MessageSquare className="h-3.5 w-3.5" />
-                <span>Ask Company Brain</span>
-              </button>
+      {/* Main Split-Pane */}
+      <main className="relative z-10 flex-1 p-3 md:p-4" style={{ minHeight: 0 }}>
+        <div className="grid h-full grid-cols-1 gap-3 lg:grid-cols-12" style={{ height: "calc(100vh - 72px)" }}>
 
-              <button
-                type="button"
-                onClick={() => setActiveTab("mutate")}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  activeTab === "mutate"
-                    ? "bg-amber-600/20 text-amber-400 border border-amber-500/40"
-                    : "text-slate-400 hover:text-white hover:bg-slate-900"
-                }`}
-              >
-                <Zap className="h-3.5 w-3.5" />
-                <span>Live Mutator</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setActiveTab("memory")}
-                className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  activeTab === "memory"
-                    ? "bg-purple-600/20 text-purple-400 border border-purple-500/40"
-                    : "text-slate-400 hover:text-white hover:bg-slate-900"
-                }`}
-              >
-                <Brain className="h-3.5 w-3.5" />
-                <span>Tenant Memory</span>
-              </button>
+          {/* ── LEFT COLUMN (45%) ──────────────────────────────────── */}
+          <div
+            className="flex flex-col lg:col-span-5"
+            style={{
+              background: "rgba(255,255,255,0.025)",
+              backdropFilter: "blur(32px) saturate(180%)",
+              WebkitBackdropFilter: "blur(32px) saturate(180%)",
+              border: "1px solid rgba(255,255,255,0.07)",
+              borderRadius: "18px",
+              overflow: "hidden",
+            }}
+          >
+            {/* Tab Bar */}
+            <div
+              className="flex items-center gap-1 px-3 pt-3 pb-2.5 shrink-0"
+              style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+            >
+              {(
+                [
+                  { key: "ask" as const,    label: "Ask Brain",     icon: <MessageSquare className="h-3.5 w-3.5" />, accent: "hsl(211,95%,60%)"   },
+                  { key: "mutate" as const, label: "Live Mutator",  icon: <Zap className="h-3.5 w-3.5" />,           accent: "hsl(40,90%,60%)"    },
+                  { key: "memory" as const, label: "Tenant Memory", icon: <Brain className="h-3.5 w-3.5" />,         accent: "hsl(262,80%,72%)"   },
+                ] as const
+              ).map((tab) => {
+                const isActive = activeTab === tab.key;
+                return (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    onClick={() => setActiveTab(tab.key)}
+                    className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-medium transition-all duration-150"
+                    style={{
+                      background: isActive ? `${tab.accent}18` : "transparent",
+                      color: isActive ? tab.accent : "rgba(255,255,255,0.4)",
+                      border: isActive ? `1px solid ${tab.accent}30` : "1px solid transparent",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.75)";
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.4)";
+                    }}
+                  >
+                    {tab.icon}
+                    <span>{tab.label}</span>
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Tab Contents */}
-            <div className="flex-1 overflow-hidden">
+            {/* Tab Content */}
+            <div className="flex-1 overflow-hidden p-3">
               {activeTab === "ask" && (
                 <AskBrainTab
                   persona={selectedPersona}
@@ -258,28 +280,54 @@ export default function Home() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Live Graph & Trace Drawer (55% width) */}
-          <div className="flex flex-col gap-3 lg:col-span-7 h-[calc(100vh-100px)] overflow-hidden">
-            {/* Top: Force Graph Canvas */}
-            <div className="flex-1 min-h-[380px] rounded-xl border border-slate-800 bg-slate-950/60 p-2 overflow-hidden flex flex-col">
-              <div className="flex items-center justify-between px-2 pb-1 text-xs">
-                <span className="font-semibold text-slate-300">
-                  🌐 Live FalkorDB Traversal Canvas
+          {/* ── RIGHT COLUMN (55%) ─────────────────────────────────── */}
+          <div className="flex flex-col gap-3 lg:col-span-7" style={{ minHeight: 0 }}>
+
+            {/* Graph Canvas */}
+            <div
+              className="flex flex-1 flex-col overflow-hidden"
+              style={{
+                background: "rgba(255,255,255,0.025)",
+                backdropFilter: "blur(32px) saturate(180%)",
+                WebkitBackdropFilter: "blur(32px) saturate(180%)",
+                border: "1px solid rgba(255,255,255,0.07)",
+                borderRadius: "18px",
+                minHeight: "380px",
+              }}
+            >
+              <div
+                className="flex items-center justify-between px-4 py-3 shrink-0"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
+              >
+                <span
+                  className="text-[12px] font-semibold"
+                  style={{ color: "rgba(255,255,255,0.75)", letterSpacing: "-0.01em" }}
+                >
+                  Live FalkorDB Traversal Canvas
                 </span>
-                <span className="text-[11px] text-slate-500 font-mono">
-                  Active: Green Glow 🟢 | Superseded: Crimson 🔴
-                </span>
+                <div className="flex items-center gap-2 font-mono text-[11px]" style={{ color: "rgba(255,255,255,0.3)" }}>
+                  <span className="flex items-center gap-1">
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(158,75%,55%)" }} />
+                    Active
+                  </span>
+                  <span>·</span>
+                  <span className="flex items-center gap-1">
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(349,80%,65%)" }} />
+                    Superseded
+                  </span>
+                </div>
               </div>
-              <div className="flex-1 w-full h-full">
+              <div className="flex-1 w-full" style={{ minHeight: 0 }}>
                 <ForceGraph subgraph={subgraph} />
               </div>
             </div>
 
-            {/* Bottom: Agent Telemetry & Exact Cypher Drawer */}
+            {/* Trace Drawer */}
             <div className="shrink-0">
               <TraceDrawer traces={traces} />
             </div>
           </div>
+
         </div>
       </main>
     </div>
