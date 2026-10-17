@@ -1,0 +1,58 @@
+[
+  {
+    "id": "team-core-platform",
+    "name": "Core Platform",
+    "department": "Platform Engineering",
+    "lead_id": "person-01",
+    "slack_channel": "#core-platform"
+  },
+  {
+    "id": "team-auth-identity",
+    "name": "Auth & Identity",
+    "department": "Security & Identity",
+    "lead_id": "person-04",
+    "slack_channel": "#auth-identity"
+  },
+  {
+    "id": "team-payment-billing",
+    "name": "Payment & Billing",
+    "department": "Commerce & Revenue",
+    "lead_id": "person-12",
+    "slack_channel": "#payment-billing"
+  },
+  {
+    "id": "team-ml-inference",
+    "name": "ML Inference Engine",
+    "department": "AI & Machine Learning",
+    "lead_id": "person-20",
+    "slack_channel": "#ml-inference"
+  },
+  {
+    "id": "team-data-pipeline",
+    "name": "Data Pipeline",
+    "department": "Data Engineering",
+    "lead_id": "person-28",
+    "slack_channel": "#data-pipeline"
+  },
+  {
+    "id": "team-sre-infra",
+    "name": "SRE & Cloud Infra",
+    "department": "Platform & Reliability",
+    "lead_id": "person-36",
+    "slack_channel": "#sre-infra"
+  },
+  {
+    "id": "team-frontend-exp",
+    "name": "Frontend Experience",
+    "department": "Product Engineering",
+    "lead_id": "person-44",
+    "slack_channel": "#frontend-exp"
+  },
+  {
+    "id": "team-security-compliance",
+    "name": "Security & Compliance",
+    "department": "InfoSec & Governance",
+    "lead_id": "person-52",
+    "slack_channel": "#security-ops"
+  }
+]

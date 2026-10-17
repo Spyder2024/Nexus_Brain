@@ -1,0 +1,218 @@
+[
+  {
+    "id": "auth-service",
+    "name": "Authentication & Authorization Service",
+    "tier": "Tier-0",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/auth-service",
+    "owner_team_id": "team-auth-identity",
+    "primary_maintainer_id": "person-04"
+  },
+  {
+    "id": "redis-session-store",
+    "name": "Redis Session & Token Cache Cluster",
+    "tier": "Tier-0",
+    "language": "Rust",
+    "repo_url": "https://github.com/7bitcloud/redis-session-store",
+    "owner_team_id": "team-core-platform",
+    "primary_maintainer_id": "person-01"
+  },
+  {
+    "id": "auth-token-validator",
+    "name": "Edge JWT & Session Token Validator",
+    "tier": "Tier-0",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/auth-token-validator",
+    "owner_team_id": "team-auth-identity",
+    "primary_maintainer_id": "person-04"
+  },
+  {
+    "id": "kafka-event-bus",
+    "name": "Enterprise Kafka Distributed Bus",
+    "tier": "Tier-0",
+    "language": "Java",
+    "repo_url": "https://github.com/7bitcloud/kafka-event-bus",
+    "owner_team_id": "team-core-platform",
+    "primary_maintainer_id": "person-01"
+  },
+  {
+    "id": "redis-state-cluster",
+    "name": "Distributed Distributed State Cache",
+    "tier": "Tier-0",
+    "language": "C",
+    "repo_url": "https://github.com/7bitcloud/redis-state-cluster",
+    "owner_team_id": "team-core-platform",
+    "primary_maintainer_id": "person-02"
+  },
+  {
+    "id": "vector-gateway",
+    "name": "Vector Search & FalkorDB Graph Gateway",
+    "tier": "Tier-1",
+    "language": "Python",
+    "repo_url": "https://github.com/7bitcloud/vector-gateway",
+    "owner_team_id": "team-core-platform",
+    "primary_maintainer_id": "person-03"
+  },
+  {
+    "id": "billing-ledger",
+    "name": "Double-Entry Ledger & Invoicing Engine",
+    "tier": "Tier-0",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/billing-ledger",
+    "owner_team_id": "team-payment-billing",
+    "primary_maintainer_id": "person-12"
+  },
+  {
+    "id": "checkout-orchestrator",
+    "name": "Checkout Workflow & Order Coordinator",
+    "tier": "Tier-1",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/checkout-orchestrator",
+    "owner_team_id": "team-payment-billing",
+    "primary_maintainer_id": "person-13"
+  },
+  {
+    "id": "stripe-webhook-worker",
+    "name": "Stripe Event Ingestion & Webhook Processor",
+    "tier": "Tier-1",
+    "language": "TypeScript",
+    "repo_url": "https://github.com/7bitcloud/stripe-webhook-worker",
+    "owner_team_id": "team-payment-billing",
+    "primary_maintainer_id": "person-14"
+  },
+  {
+    "id": "user-profile-service",
+    "name": "User Profile & Organization Directory",
+    "tier": "Tier-1",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/user-profile-service",
+    "owner_team_id": "team-core-platform",
+    "primary_maintainer_id": "person-05"
+  },
+  {
+    "id": "recommendation-service",
+    "name": "Personalized User Recommendation Engine",
+    "tier": "Tier-2",
+    "language": "Python",
+    "repo_url": "https://github.com/7bitcloud/recommendation-service",
+    "owner_team_id": "team-ml-inference",
+    "primary_maintainer_id": "person-21"
+  },
+  {
+    "id": "ml-inference-worker",
+    "name": "Distributed PyTorch Model Inference Worker",
+    "tier": "Tier-1",
+    "language": "Python",
+    "repo_url": "https://github.com/7bitcloud/ml-inference-worker",
+    "owner_team_id": "team-ml-inference",
+    "primary_maintainer_id": "person-20"
+  },
+  {
+    "id": "model-registry-service",
+    "name": "Weights & Versioned Artifact Registry",
+    "tier": "Tier-2",
+    "language": "Python",
+    "repo_url": "https://github.com/7bitcloud/model-registry-service",
+    "owner_team_id": "team-ml-inference",
+    "primary_maintainer_id": "person-22"
+  },
+  {
+    "id": "feature-store-api",
+    "name": "Real-time Low-Latency Feature Store",
+    "tier": "Tier-1",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/feature-store-api",
+    "owner_team_id": "team-ml-inference",
+    "primary_maintainer_id": "person-23"
+  },
+  {
+    "id": "data-lakehouse-ingest",
+    "name": "High-Throughput Lakehouse Ingestion Engine",
+    "tier": "Tier-2",
+    "language": "Scala",
+    "repo_url": "https://github.com/7bitcloud/data-lakehouse-ingest",
+    "owner_team_id": "team-data-pipeline",
+    "primary_maintainer_id": "person-28"
+  },
+  {
+    "id": "event-stream-enricher",
+    "name": "Streaming Flink Event Enricher",
+    "tier": "Tier-1",
+    "language": "Java",
+    "repo_url": "https://github.com/7bitcloud/event-stream-enricher",
+    "owner_team_id": "team-data-pipeline",
+    "primary_maintainer_id": "person-29"
+  },
+  {
+    "id": "metrics-aggregation-pipeline",
+    "name": "Timeseries Telemetry Aggregator",
+    "tier": "Tier-2",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/metrics-aggregation-pipeline",
+    "owner_team_id": "team-data-pipeline",
+    "primary_maintainer_id": "person-30"
+  },
+  {
+    "id": "frontend-bff-gateway",
+    "name": "Backend-For-Frontend GraphQL Gateway",
+    "tier": "Tier-1",
+    "language": "TypeScript",
+    "repo_url": "https://github.com/7bitcloud/frontend-bff-gateway",
+    "owner_team_id": "team-frontend-exp",
+    "primary_maintainer_id": "person-44"
+  },
+  {
+    "id": "web-client-spa",
+    "name": "Next.js Web Enterprise Console",
+    "tier": "Tier-2",
+    "language": "TypeScript",
+    "repo_url": "https://github.com/7bitcloud/web-client-spa",
+    "owner_team_id": "team-frontend-exp",
+    "primary_maintainer_id": "person-45"
+  },
+  {
+    "id": "admin-console-service",
+    "name": "Internal Operational Backoffice API",
+    "tier": "Tier-3",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/admin-console-service",
+    "owner_team_id": "team-frontend-exp",
+    "primary_maintainer_id": "person-46"
+  },
+  {
+    "id": "audit-log-vault",
+    "name": "Immutable Security Audit Ledger",
+    "tier": "Tier-1",
+    "language": "Rust",
+    "repo_url": "https://github.com/7bitcloud/audit-log-vault",
+    "owner_team_id": "team-security-compliance",
+    "primary_maintainer_id": "person-52"
+  },
+  {
+    "id": "secrets-kms-proxy",
+    "name": "Vault & KMS Encryption Proxy",
+    "tier": "Tier-0",
+    "language": "Go",
+    "repo_url": "https://github.com/7bitcloud/secrets-kms-proxy",
+    "owner_team_id": "team-security-compliance",
+    "primary_maintainer_id": "person-53"
+  },
+  {
+    "id": "network-mesh-ingress",
+    "name": "Envoy Global Ingress & API Gateway",
+    "tier": "Tier-0",
+    "language": "C++",
+    "repo_url": "https://github.com/7bitcloud/network-mesh-ingress",
+    "owner_team_id": "team-sre-infra",
+    "primary_maintainer_id": "person-36"
+  },
+  {
+    "id": "cloud-cost-optimizer",
+    "name": "Spot Instance & Autoscaling Controller",
+    "tier": "Tier-3",
+    "language": "Python",
+    "repo_url": "https://github.com/7bitcloud/cloud-cost-optimizer",
+    "owner_team_id": "team-sre-infra",
+    "primary_maintainer_id": "person-37"
+  }
+]

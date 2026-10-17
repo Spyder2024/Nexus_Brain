@@ -1,0 +1,1078 @@
+id,label,name_or_title,extra_info
+team-core-platform,Team,Core Platform,Platform Engineering
+team-auth-identity,Team,Auth & Identity,Security & Identity
+team-payment-billing,Team,Payment & Billing,Commerce & Revenue
+team-ml-inference,Team,ML Inference Engine,AI & Machine Learning
+team-data-pipeline,Team,Data Pipeline,Data Engineering
+team-sre-infra,Team,SRE & Cloud Infra,Platform & Reliability
+team-frontend-exp,Team,Frontend Experience,Product Engineering
+team-security-compliance,Team,Security & Compliance,InfoSec & Governance
+person-01,Person,Marcus Vance,Principal Platform Architect (team-core-platform)
+person-02,Person,Liam Chen,Cloud Reliability Engineer (team-auth-identity)
+person-03,Person,Marcus Vance,Backend Engineer (team-payment-billing)
+person-04,Person,Liam Chen,Lead Identity Architect (team-auth-identity)
+person-05,Person,Devon Kim,Cloud Reliability Engineer (team-data-pipeline)
+person-06,Person,Siddharth Patel,Lead Security Engineer (team-sre-infra)
+person-07,Person,Chloe Dubois,Staff SRE (team-frontend-exp)
+person-08,Person,Zainab Al-Mansoor,Lead Security Engineer (team-security-compliance)
+person-09,Person,Kenji Takahashi,Principal Architect (team-core-platform)
+person-10,Person,Priya Sharma,Cloud Reliability Engineer (team-auth-identity)
+person-11,Person,Carlos Mendoza,Backend Engineer (team-payment-billing)
+person-12,Person,Sophia Novak,Systems Engineer (team-ml-inference)
+person-13,Person,Alexei Volkov,Backend Engineer (team-data-pipeline)
+person-14,Person,Fatima Haddad,Engineering Manager (team-sre-infra)
+person-15,Person,Tobias Lindqvist,Senior Frontend Engineer (team-frontend-exp)
+person-16,Person,Mei Zhang,Senior Frontend Engineer (team-security-compliance)
+person-17,Person,Julian Moreau,Systems Engineer (team-core-platform)
+person-18,Person,Ananya Iyer,Engineering Manager (team-auth-identity)
+person-19,Person,Elena Rostova,Staff Site Reliability Engineer (team-sre-infra)
+person-20,Person,Devon Kim,Staff ML Systems Architect (team-ml-inference)
+person-21,Person,Vikram Reddy,Principal Architect (team-data-pipeline)
+person-22,Person,Tara O'Connor,MLOps Engineer (team-sre-infra)
+person-23,Person,Nathalie Boucher,Principal Architect (team-frontend-exp)
+person-24,Person,Dante Costa,Staff SRE (team-security-compliance)
+person-25,Person,Freja Berg,MLOps Engineer (team-core-platform)
+person-26,Person,Kiran Deshmukh,Senior Frontend Engineer (team-auth-identity)
+person-27,Person,Lucas Santoro,Staff SRE (team-payment-billing)
+person-28,Person,Yuki Sato,Backend Engineer (team-ml-inference)
+person-29,Person,Omari Diallo,Backend Engineer (team-data-pipeline)
+person-30,Person,Leila Khoury,Engineering Manager (team-sre-infra)
+person-31,Person,Dmitri Popov,Backend Engineer (team-frontend-exp)
+person-32,Person,Samira Jamil,Data Infrastructure Engineer (team-security-compliance)
+person-33,Person,Ethan Brooks,Senior Backend Engineer (team-core-platform)
+person-34,Person,Mira Nair,Systems Engineer (team-auth-identity)
+person-35,Person,Rafael Reyes,Cloud Reliability Engineer (team-payment-billing)
+person-36,Person,Hana Tanaka,Principal Architect (team-ml-inference)
+person-37,Person,Arjun Choudhury,Principal Architect (team-data-pipeline)
+person-38,Person,Valeria Gomez,Backend Engineer (team-sre-infra)
+person-39,Person,Nico Ricci,MLOps Engineer (team-frontend-exp)
+person-40,Person,Lin Wu,MLOps Engineer (team-security-compliance)
+person-41,Person,Gabriel Fischer,Senior Backend Engineer (team-core-platform)
+person-42,Person,Sunita Gupta,Principal Architect (team-auth-identity)
+person-43,Person,Oliver Gallagher,MLOps Engineer (team-payment-billing)
+person-44,Person,Maya Kapoor,Backend Engineer (team-ml-inference)
+person-45,Person,Henrik Nygard,Cloud Reliability Engineer (team-data-pipeline)
+person-46,Person,Noor Bakhash,Engineering Manager (team-sre-infra)
+person-47,Person,Xavier Mercier,Principal Architect (team-frontend-exp)
+person-48,Person,Rhea Verma,Senior Backend Engineer (team-security-compliance)
+person-49,Person,Lars Jensen,Principal Architect (team-core-platform)
+person-50,Person,Amara Eze,Cloud Reliability Engineer (team-auth-identity)
+person-51,Person,Tariq Kassim,Backend Engineer (team-payment-billing)
+person-52,Person,Chiara Conti,Cloud Reliability Engineer (team-ml-inference)
+person-53,Person,Rowan Adler,Cloud Reliability Engineer (team-data-pipeline)
+person-54,Person,Sora Morita,Cloud Reliability Engineer (team-sre-infra)
+person-55,Person,Dara Connolly,Lead Security Engineer (team-frontend-exp)
+person-56,Person,Zubair Rahman,Senior Frontend Engineer (team-security-compliance)
+person-57,Person,Clara Sinclair,Engineering Manager (team-core-platform)
+person-58,Person,Kaelen Sinha,Engineering Manager (team-auth-identity)
+person-59,Person,Amina Suleiman,Cloud Reliability Engineer (team-payment-billing)
+person-60,Person,Einar Holm,Principal Architect (team-ml-inference)
+person-61,Person,Shreya Sen,Data Infrastructure Engineer (team-data-pipeline)
+person-62,Person,Ezra Sterling,Staff SRE (team-sre-infra)
+person-63,Person,Siobhan Kowalski,MLOps Engineer (team-frontend-exp)
+person-64,Person,Farhan Mirza,Staff SRE (team-security-compliance)
+person-65,Person,Yasmine Zhao,MLOps Engineer (team-core-platform)
+auth-service,System,Authentication & Authorization Service,Tier-0 / Go
+redis-session-store,System,Redis Session & Token Cache Cluster,Tier-0 / Rust
+auth-token-validator,System,Edge JWT & Session Token Validator,Tier-0 / Go
+kafka-event-bus,System,Enterprise Kafka Distributed Bus,Tier-0 / Java
+redis-state-cluster,System,Distributed Distributed State Cache,Tier-0 / C
+vector-gateway,System,Vector Search & FalkorDB Graph Gateway,Tier-1 / Python
+billing-ledger,System,Double-Entry Ledger & Invoicing Engine,Tier-0 / Go
+checkout-orchestrator,System,Checkout Workflow & Order Coordinator,Tier-1 / Go
+stripe-webhook-worker,System,Stripe Event Ingestion & Webhook Processor,Tier-1 / TypeScript
+user-profile-service,System,User Profile & Organization Directory,Tier-1 / Go
+recommendation-service,System,Personalized User Recommendation Engine,Tier-2 / Python
+ml-inference-worker,System,Distributed PyTorch Model Inference Worker,Tier-1 / Python
+model-registry-service,System,Weights & Versioned Artifact Registry,Tier-2 / Python
+feature-store-api,System,Real-time Low-Latency Feature Store,Tier-1 / Go
+data-lakehouse-ingest,System,High-Throughput Lakehouse Ingestion Engine,Tier-2 / Scala
+event-stream-enricher,System,Streaming Flink Event Enricher,Tier-1 / Java
+metrics-aggregation-pipeline,System,Timeseries Telemetry Aggregator,Tier-2 / Go
+frontend-bff-gateway,System,Backend-For-Frontend GraphQL Gateway,Tier-1 / TypeScript
+web-client-spa,System,Next.js Web Enterprise Console,Tier-2 / TypeScript
+admin-console-service,System,Internal Operational Backoffice API,Tier-3 / Go
+audit-log-vault,System,Immutable Security Audit Ledger,Tier-1 / Rust
+secrets-kms-proxy,System,Vault & KMS Encryption Proxy,Tier-0 / Go
+network-mesh-ingress,System,Envoy Global Ingress & API Gateway,Tier-0 / C++
+cloud-cost-optimizer,System,Spot Instance & Autoscaling Controller,Tier-3 / Python
+INC-AUTH-001,Ticket,Critical auth-service connection pool saturation & latency spike #1,SEV-1 / resolved
+INC-AUTH-002,Ticket,Critical auth-service connection pool saturation & latency spike #2,SEV-1 / resolved
+INC-AUTH-003,Ticket,Critical auth-service connection pool saturation & latency spike #3,SEV-1 / resolved
+INC-AUTH-004,Ticket,Critical auth-service connection pool saturation & latency spike #4,SEV-1 / resolved
+INC-AUTH-005,Ticket,Critical auth-service connection pool saturation & latency spike #5,SEV-1 / resolved
+INC-AUTH-006,Ticket,Critical auth-service connection pool saturation & latency spike #6,SEV-1 / resolved
+INC-AUTH-007,Ticket,Critical auth-service connection pool saturation & latency spike #7,SEV-1 / resolved
+INC-AUTH-008,Ticket,Critical auth-service connection pool saturation & latency spike #8,SEV-1 / resolved
+INC-AUTH-009,Ticket,Critical auth-service connection pool saturation & latency spike #9,SEV-1 / resolved
+INC-AUTH-010,Ticket,Critical auth-service connection pool saturation & latency spike #10,SEV-1 / resolved
+INC-AUTH-011,Ticket,Critical auth-service connection pool saturation & latency spike #11,SEV-1 / resolved
+INC-AUTH-012,Ticket,Critical auth-service connection pool saturation & latency spike #12,SEV-1 / resolved
+INC-AUTH-013,Ticket,Critical auth-service connection pool saturation & latency spike #13,SEV-1 / resolved
+INC-AUTH-014,Ticket,Critical auth-service connection pool saturation & latency spike #14,SEV-1 / resolved
+INC-AUTH-015,Ticket,Critical auth-service connection pool saturation & latency spike #15,SEV-1 / resolved
+INC-AUTH-016,Ticket,Critical auth-service connection pool saturation & latency spike #16,SEV-1 / resolved
+INC-AUTH-017,Ticket,Critical auth-service connection pool saturation & latency spike #17,SEV-1 / resolved
+INC-AUTH-018,Ticket,Critical auth-service connection pool saturation & latency spike #18,SEV-1 / resolved
+INC-204,Ticket,Production Deadlock: Synchronous Kafka RPC consumer lag blocking checkout authorizations,SEV-1 / resolved
+INC-119,Ticket,Cascading Checkout Outage: Redis session cluster OOM eviction propagating to payment webhooks,SEV-1 / resolved
+INC-045,Ticket,ML Inference Worker CUDA Memory Leak & OOM Killer crash under batch tensor load,SEV-1 / resolved
+INC-249,Ticket,ML Inference Worker CUDA Memory Leak Resurfaces: Worker nodes OOM killed on GPU shard 4,SEV-1 / in_progress
+INC-250,Ticket,Recommendation Engine Unmarshaling Panic: Missing required field 'account_tier' in User Profile payload,SEV-2 / open
+TICKET-101,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (checkout-orchestrator),SEV-4 / resolved
+TICKET-102,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (recommendation-service),SEV-2 / resolved
+TICKET-103,Ticket,Migrate billing-ledger balance calculations to decimal precision library (auth-service),SEV-4 / resolved
+TICKET-104,Ticket,Decommission legacy v1 user authentication endpoints (network-mesh-ingress),SEV-4 / resolved
+TICKET-105,Ticket,Decommission legacy v1 user authentication endpoints (web-client-spa),SEV-4 / resolved
+TICKET-106,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (data-lakehouse-ingest),SEV-3 / in_progress
+TICKET-107,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (cloud-cost-optimizer),SEV-2 / resolved
+TICKET-108,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (billing-ledger),SEV-4 / resolved
+TICKET-109,Ticket,Database connection pool starvation during flash sale traffic (redis-session-store),SEV-2 / resolved
+TICKET-110,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (user-profile-service),SEV-3 / resolved
+TICKET-111,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (auth-token-validator),SEV-2 / resolved
+TICKET-112,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (web-client-spa),SEV-3 / resolved
+TICKET-113,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (data-lakehouse-ingest),SEV-2 / resolved
+TICKET-114,Ticket,TLS certificate rotation failure on internal network mesh ingress (secrets-kms-proxy),SEV-1 / resolved
+TICKET-115,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (network-mesh-ingress),SEV-2 / resolved
+TICKET-116,Ticket,Decommission legacy v1 user authentication endpoints (checkout-orchestrator),SEV-4 / resolved
+TICKET-117,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (redis-session-store),SEV-2 / resolved
+TICKET-118,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (user-profile-service),SEV-3 / resolved
+TICKET-119,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (feature-store-api),SEV-3 / in_progress
+TICKET-120,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (secrets-kms-proxy),SEV-3 / resolved
+TICKET-121,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (feature-store-api),SEV-3 / resolved
+TICKET-122,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (vector-gateway),SEV-4 / resolved
+TICKET-123,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (recommendation-service),SEV-2 / resolved
+TICKET-124,Ticket,Database connection pool starvation during flash sale traffic (billing-ledger),SEV-2 / resolved
+TICKET-125,Ticket,Migrate billing-ledger balance calculations to decimal precision library (redis-state-cluster),SEV-4 / in_progress
+TICKET-126,Ticket,TLS certificate rotation failure on internal network mesh ingress (frontend-bff-gateway),SEV-1 / resolved
+TICKET-127,Ticket,Decommission legacy v1 user authentication endpoints (redis-state-cluster),SEV-4 / resolved
+TICKET-128,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (frontend-bff-gateway),SEV-2 / resolved
+TICKET-129,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (feature-store-api),SEV-3 / resolved
+TICKET-130,Ticket,Migrate billing-ledger balance calculations to decimal precision library (event-stream-enricher),SEV-4 / resolved
+TICKET-131,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (model-registry-service),SEV-3 / resolved
+TICKET-132,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (redis-session-store),SEV-2 / in_progress
+TICKET-133,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (redis-state-cluster),SEV-3 / resolved
+TICKET-134,Ticket,Decommission legacy v1 user authentication endpoints (auth-token-validator),SEV-4 / resolved
+TICKET-135,Ticket,Stale read replicas returning outdated user organization metadata (audit-log-vault),SEV-3 / resolved
+TICKET-136,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (network-mesh-ingress),SEV-2 / resolved
+TICKET-137,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (redis-state-cluster),SEV-3 / resolved
+TICKET-138,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (web-client-spa),SEV-2 / resolved
+TICKET-139,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (user-profile-service),SEV-3 / resolved
+TICKET-140,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (user-profile-service),SEV-2 / resolved
+TICKET-141,Ticket,Database connection pool starvation during flash sale traffic (secrets-kms-proxy),SEV-2 / resolved
+TICKET-142,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (checkout-orchestrator),SEV-3 / resolved
+TICKET-143,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (audit-log-vault),SEV-3 / in_progress
+TICKET-144,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (user-profile-service),SEV-2 / in_progress
+TICKET-145,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (stripe-webhook-worker),SEV-3 / resolved
+TICKET-146,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (redis-state-cluster),SEV-2 / in_progress
+TICKET-147,Ticket,TLS certificate rotation failure on internal network mesh ingress (frontend-bff-gateway),SEV-1 / resolved
+TICKET-148,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (auth-service),SEV-2 / resolved
+TICKET-149,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (redis-state-cluster),SEV-2 / in_progress
+TICKET-150,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (data-lakehouse-ingest),SEV-3 / resolved
+TICKET-151,Ticket,TLS certificate rotation failure on internal network mesh ingress (redis-session-store),SEV-1 / resolved
+TICKET-152,Ticket,Decommission legacy v1 user authentication endpoints (ml-inference-worker),SEV-4 / resolved
+TICKET-153,Ticket,Decommission legacy v1 user authentication endpoints (billing-ledger),SEV-4 / resolved
+TICKET-154,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (frontend-bff-gateway),SEV-4 / resolved
+TICKET-155,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (frontend-bff-gateway),SEV-2 / in_progress
+TICKET-156,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (recommendation-service),SEV-3 / in_progress
+TICKET-157,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (auth-token-validator),SEV-3 / resolved
+TICKET-158,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (redis-session-store),SEV-3 / resolved
+TICKET-159,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (secrets-kms-proxy),SEV-3 / in_progress
+TICKET-160,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (redis-state-cluster),SEV-3 / resolved
+TICKET-161,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (metrics-aggregation-pipeline),SEV-3 / resolved
+TICKET-162,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (checkout-orchestrator),SEV-2 / resolved
+TICKET-163,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (secrets-kms-proxy),SEV-3 / in_progress
+TICKET-164,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (kafka-event-bus),SEV-3 / in_progress
+TICKET-165,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (ml-inference-worker),SEV-3 / resolved
+TICKET-166,Ticket,Stale read replicas returning outdated user organization metadata (redis-state-cluster),SEV-3 / resolved
+TICKET-167,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (stripe-webhook-worker),SEV-3 / resolved
+TICKET-168,Ticket,Database connection pool starvation during flash sale traffic (vector-gateway),SEV-2 / in_progress
+TICKET-169,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (redis-state-cluster),SEV-2 / resolved
+TICKET-170,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (ml-inference-worker),SEV-2 / in_progress
+TICKET-171,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (admin-console-service),SEV-2 / resolved
+TICKET-172,Ticket,TLS certificate rotation failure on internal network mesh ingress (billing-ledger),SEV-1 / in_progress
+TICKET-173,Ticket,Database connection pool starvation during flash sale traffic (checkout-orchestrator),SEV-2 / resolved
+TICKET-174,Ticket,TLS certificate rotation failure on internal network mesh ingress (recommendation-service),SEV-1 / resolved
+TICKET-175,Ticket,Migrate billing-ledger balance calculations to decimal precision library (secrets-kms-proxy),SEV-4 / resolved
+TICKET-176,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (feature-store-api),SEV-3 / resolved
+TICKET-177,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (vector-gateway),SEV-3 / in_progress
+TICKET-178,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (web-client-spa),SEV-3 / resolved
+TICKET-179,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (metrics-aggregation-pipeline),SEV-2 / resolved
+TICKET-180,Ticket,Stale read replicas returning outdated user organization metadata (kafka-event-bus),SEV-3 / resolved
+TICKET-181,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (web-client-spa),SEV-2 / resolved
+TICKET-182,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (auth-token-validator),SEV-2 / resolved
+TICKET-183,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (user-profile-service),SEV-2 / resolved
+TICKET-184,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (admin-console-service),SEV-3 / resolved
+TICKET-185,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (admin-console-service),SEV-3 / in_progress
+TICKET-186,Ticket,Migrate billing-ledger balance calculations to decimal precision library (audit-log-vault),SEV-4 / resolved
+TICKET-187,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (user-profile-service),SEV-3 / in_progress
+TICKET-188,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (kafka-event-bus),SEV-3 / resolved
+TICKET-189,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (secrets-kms-proxy),SEV-3 / resolved
+TICKET-190,Ticket,TLS certificate rotation failure on internal network mesh ingress (frontend-bff-gateway),SEV-1 / in_progress
+TICKET-191,Ticket,Database connection pool starvation during flash sale traffic (ml-inference-worker),SEV-2 / resolved
+TICKET-192,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (redis-state-cluster),SEV-2 / resolved
+TICKET-193,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (admin-console-service),SEV-3 / resolved
+TICKET-194,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (ml-inference-worker),SEV-3 / resolved
+TICKET-195,Ticket,TLS certificate rotation failure on internal network mesh ingress (event-stream-enricher),SEV-1 / resolved
+TICKET-196,Ticket,Migrate billing-ledger balance calculations to decimal precision library (metrics-aggregation-pipeline),SEV-4 / in_progress
+TICKET-197,Ticket,Decommission legacy v1 user authentication endpoints (event-stream-enricher),SEV-4 / resolved
+TICKET-198,Ticket,TLS certificate rotation failure on internal network mesh ingress (data-lakehouse-ingest),SEV-1 / resolved
+TICKET-199,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (auth-service),SEV-3 / resolved
+TICKET-200,Ticket,Stale read replicas returning outdated user organization metadata (auth-service),SEV-3 / resolved
+TICKET-201,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (event-stream-enricher),SEV-3 / resolved
+TICKET-202,Ticket,TLS certificate rotation failure on internal network mesh ingress (billing-ledger),SEV-1 / resolved
+TICKET-203,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (audit-log-vault),SEV-3 / resolved
+TICKET-204,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (redis-state-cluster),SEV-3 / resolved
+TICKET-205,Ticket,Migrate billing-ledger balance calculations to decimal precision library (ml-inference-worker),SEV-4 / in_progress
+TICKET-206,Ticket,TLS certificate rotation failure on internal network mesh ingress (cloud-cost-optimizer),SEV-1 / resolved
+TICKET-207,Ticket,Database connection pool starvation during flash sale traffic (ml-inference-worker),SEV-2 / resolved
+TICKET-208,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (redis-state-cluster),SEV-3 / resolved
+TICKET-209,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (user-profile-service),SEV-3 / resolved
+TICKET-210,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (redis-session-store),SEV-4 / resolved
+TICKET-211,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (model-registry-service),SEV-3 / resolved
+TICKET-212,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (feature-store-api),SEV-3 / resolved
+TICKET-213,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (secrets-kms-proxy),SEV-3 / resolved
+TICKET-214,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (redis-session-store),SEV-2 / resolved
+TICKET-215,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (metrics-aggregation-pipeline),SEV-3 / resolved
+TICKET-216,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (checkout-orchestrator),SEV-2 / resolved
+TICKET-217,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (ml-inference-worker),SEV-3 / resolved
+TICKET-218,Ticket,Stale read replicas returning outdated user organization metadata (kafka-event-bus),SEV-3 / resolved
+TICKET-219,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (stripe-webhook-worker),SEV-3 / resolved
+TICKET-220,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (auth-token-validator),SEV-2 / resolved
+TICKET-221,Ticket,Migrate billing-ledger balance calculations to decimal precision library (frontend-bff-gateway),SEV-4 / resolved
+TICKET-222,Ticket,Stale read replicas returning outdated user organization metadata (redis-state-cluster),SEV-3 / resolved
+TICKET-223,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (auth-token-validator),SEV-3 / resolved
+TICKET-224,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (audit-log-vault),SEV-3 / resolved
+TICKET-225,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (metrics-aggregation-pipeline),SEV-3 / resolved
+TICKET-226,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (metrics-aggregation-pipeline),SEV-3 / resolved
+TICKET-227,Ticket,Decommission legacy v1 user authentication endpoints (user-profile-service),SEV-4 / resolved
+TICKET-228,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (web-client-spa),SEV-4 / resolved
+TICKET-229,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (audit-log-vault),SEV-3 / resolved
+TICKET-230,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (secrets-kms-proxy),SEV-3 / resolved
+TICKET-231,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (data-lakehouse-ingest),SEV-2 / resolved
+TICKET-232,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (ml-inference-worker),SEV-2 / resolved
+TICKET-233,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (kafka-event-bus),SEV-2 / resolved
+TICKET-234,Ticket,Stale read replicas returning outdated user organization metadata (vector-gateway),SEV-3 / resolved
+TICKET-235,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (checkout-orchestrator),SEV-2 / resolved
+TICKET-236,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (kafka-event-bus),SEV-4 / resolved
+TICKET-237,Ticket,Database connection pool starvation during flash sale traffic (web-client-spa),SEV-2 / resolved
+TICKET-238,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (frontend-bff-gateway),SEV-3 / resolved
+TICKET-239,Ticket,Stale read replicas returning outdated user organization metadata (admin-console-service),SEV-3 / in_progress
+TICKET-240,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (event-stream-enricher),SEV-3 / resolved
+TICKET-241,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (model-registry-service),SEV-2 / resolved
+TICKET-242,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (auth-service),SEV-2 / resolved
+TICKET-243,Ticket,TLS certificate rotation failure on internal network mesh ingress (audit-log-vault),SEV-1 / resolved
+TICKET-244,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (secrets-kms-proxy),SEV-4 / resolved
+TICKET-245,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (feature-store-api),SEV-2 / resolved
+TICKET-246,Ticket,Migrate billing-ledger balance calculations to decimal precision library (billing-ledger),SEV-4 / resolved
+TICKET-247,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (frontend-bff-gateway),SEV-3 / resolved
+TICKET-248,Ticket,Stale read replicas returning outdated user organization metadata (stripe-webhook-worker),SEV-3 / resolved
+TICKET-249,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (ml-inference-worker),SEV-2 / resolved
+TICKET-250,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (ml-inference-worker),SEV-4 / resolved
+TICKET-251,Ticket,Decommission legacy v1 user authentication endpoints (stripe-webhook-worker),SEV-4 / resolved
+TICKET-252,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (admin-console-service),SEV-2 / resolved
+TICKET-253,Ticket,Database connection pool starvation during flash sale traffic (kafka-event-bus),SEV-2 / resolved
+TICKET-254,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (audit-log-vault),SEV-3 / resolved
+TICKET-255,Ticket,Decommission legacy v1 user authentication endpoints (redis-session-store),SEV-4 / resolved
+TICKET-256,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (redis-session-store),SEV-3 / resolved
+TICKET-257,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (recommendation-service),SEV-3 / resolved
+TICKET-258,Ticket,TLS certificate rotation failure on internal network mesh ingress (billing-ledger),SEV-1 / resolved
+TICKET-259,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (user-profile-service),SEV-3 / resolved
+TICKET-260,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (model-registry-service),SEV-2 / resolved
+TICKET-261,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (checkout-orchestrator),SEV-3 / resolved
+TICKET-262,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (checkout-orchestrator),SEV-3 / resolved
+TICKET-263,Ticket,Decommission legacy v1 user authentication endpoints (user-profile-service),SEV-4 / resolved
+TICKET-264,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (frontend-bff-gateway),SEV-3 / resolved
+TICKET-265,Ticket,Kafka consumer rebalance loop causing event lag in streaming enricher (web-client-spa),SEV-2 / resolved
+TICKET-266,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (metrics-aggregation-pipeline),SEV-3 / resolved
+TICKET-267,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (redis-session-store),SEV-3 / resolved
+TICKET-268,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (auth-service),SEV-3 / resolved
+TICKET-269,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (auth-token-validator),SEV-3 / in_progress
+TICKET-270,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (redis-state-cluster),SEV-3 / resolved
+TICKET-271,Ticket,Decommission legacy v1 user authentication endpoints (secrets-kms-proxy),SEV-4 / in_progress
+TICKET-272,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (checkout-orchestrator),SEV-3 / resolved
+TICKET-273,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (checkout-orchestrator),SEV-4 / resolved
+TICKET-274,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (auth-service),SEV-3 / resolved
+TICKET-275,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (redis-session-store),SEV-3 / resolved
+TICKET-276,Ticket,TLS certificate rotation failure on internal network mesh ingress (checkout-orchestrator),SEV-1 / resolved
+TICKET-277,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (redis-state-cluster),SEV-3 / resolved
+TICKET-278,Ticket,Migrate billing-ledger balance calculations to decimal precision library (event-stream-enricher),SEV-4 / resolved
+TICKET-279,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (user-profile-service),SEV-2 / resolved
+TICKET-280,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (data-lakehouse-ingest),SEV-3 / resolved
+TICKET-281,Ticket,Stale read replicas returning outdated user organization metadata (recommendation-service),SEV-3 / in_progress
+TICKET-282,Ticket,TLS certificate rotation failure on internal network mesh ingress (model-registry-service),SEV-1 / resolved
+TICKET-283,Ticket,Stale read replicas returning outdated user organization metadata (recommendation-service),SEV-3 / resolved
+TICKET-284,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (admin-console-service),SEV-3 / resolved
+TICKET-285,Ticket,Migrate billing-ledger balance calculations to decimal precision library (audit-log-vault),SEV-4 / resolved
+TICKET-286,Ticket,Investigate intermittent 502 Bad Gateway from web-client-spa to BFF (cloud-cost-optimizer),SEV-3 / resolved
+TICKET-287,Ticket,Database connection pool starvation during flash sale traffic (stripe-webhook-worker),SEV-2 / resolved
+TICKET-288,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (frontend-bff-gateway),SEV-2 / resolved
+TICKET-289,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (ml-inference-worker),SEV-3 / resolved
+TICKET-290,Ticket,Automate spot instance eviction drain handlers in cloud-cost-optimizer (auth-token-validator),SEV-4 / in_progress
+TICKET-291,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (redis-state-cluster),SEV-3 / resolved
+TICKET-292,Ticket,Database connection pool starvation during flash sale traffic (frontend-bff-gateway),SEV-2 / resolved
+TICKET-293,Ticket,Migrate billing-ledger balance calculations to decimal precision library (network-mesh-ingress),SEV-4 / resolved
+TICKET-294,Ticket,Stale read replicas returning outdated user organization metadata (admin-console-service),SEV-3 / resolved
+TICKET-295,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (web-client-spa),SEV-2 / resolved
+TICKET-296,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (model-registry-service),SEV-3 / in_progress
+TICKET-297,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (feature-store-api),SEV-2 / resolved
+TICKET-298,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (network-mesh-ingress),SEV-3 / resolved
+TICKET-299,Ticket,Lakehouse ingest S3 multipart upload timeout during peak batch window (recommendation-service),SEV-3 / resolved
+TICKET-300,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (web-client-spa),SEV-2 / resolved
+TICKET-301,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (ml-inference-worker),SEV-3 / resolved
+TICKET-302,Ticket,Database connection pool starvation during flash sale traffic (audit-log-vault),SEV-2 / resolved
+TICKET-303,Ticket,Decommission legacy v1 user authentication endpoints (web-client-spa),SEV-4 / resolved
+TICKET-304,Ticket,TLS certificate rotation failure on internal network mesh ingress (redis-state-cluster),SEV-1 / resolved
+TICKET-305,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (ml-inference-worker),SEV-2 / resolved
+TICKET-306,Ticket,Database connection pool starvation during flash sale traffic (auth-token-validator),SEV-2 / resolved
+TICKET-307,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (model-registry-service),SEV-3 / resolved
+TICKET-308,Ticket,TLS certificate rotation failure on internal network mesh ingress (user-profile-service),SEV-1 / resolved
+TICKET-309,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (auth-token-validator),SEV-2 / resolved
+TICKET-310,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (user-profile-service),SEV-2 / resolved
+TICKET-311,Ticket,Vector gateway FalkorDB Cypher timeout on multi-hop graph queries (audit-log-vault),SEV-3 / resolved
+TICKET-312,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (model-registry-service),SEV-2 / resolved
+TICKET-313,Ticket,TLS certificate rotation failure on internal network mesh ingress (model-registry-service),SEV-1 / resolved
+TICKET-314,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (data-lakehouse-ingest),SEV-3 / resolved
+TICKET-315,Ticket,gRPC deadline exceeded between checkout-orchestrator and billing-ledger (audit-log-vault),SEV-2 / resolved
+TICKET-316,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (admin-console-service),SEV-2 / resolved
+TICKET-317,Ticket,Add OpenTelemetry distributed tracing context propagation to Redis clients (frontend-bff-gateway),SEV-3 / resolved
+TICKET-318,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (audit-log-vault),SEV-3 / in_progress
+TICKET-319,Ticket,Stale read replicas returning outdated user organization metadata (metrics-aggregation-pipeline),SEV-3 / resolved
+TICKET-320,Ticket,Database connection pool starvation during flash sale traffic (event-stream-enricher),SEV-2 / in_progress
+TICKET-321,Ticket,TLS certificate rotation failure on internal network mesh ingress (recommendation-service),SEV-1 / resolved
+TICKET-322,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (auth-token-validator),SEV-3 / in_progress
+TICKET-323,Ticket,Decommission legacy v1 user authentication endpoints (vector-gateway),SEV-4 / resolved
+TICKET-324,Ticket,Stale read replicas returning outdated user organization metadata (model-registry-service),SEV-3 / resolved
+TICKET-325,Ticket,Audit log vault disk threshold alert in EU-Central availability zone (web-client-spa),SEV-2 / resolved
+TICKET-326,Ticket,Frontend BFF memory leak on unclosed GraphQL subscriptions (recommendation-service),SEV-3 / resolved
+TICKET-327,Ticket,Implement distributed rate limiting on public OpenAPI endpoints (model-registry-service),SEV-3 / resolved
+PR-AUTH-001,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #1,Author: person-19
+PR-AUTH-002,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #2,Author: person-19
+PR-AUTH-003,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #3,Author: person-19
+PR-AUTH-004,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #4,Author: person-19
+PR-AUTH-005,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #5,Author: person-19
+PR-AUTH-006,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #6,Author: person-19
+PR-AUTH-007,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #7,Author: person-19
+PR-AUTH-008,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #8,Author: person-19
+PR-AUTH-009,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #9,Author: person-19
+PR-AUTH-010,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #10,Author: person-19
+PR-AUTH-011,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #11,Author: person-19
+PR-AUTH-012,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #12,Author: person-19
+PR-AUTH-013,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #13,Author: person-19
+PR-AUTH-014,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #14,Author: person-19
+PR-AUTH-015,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #15,Author: person-19
+PR-AUTH-016,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #16,Author: person-19
+PR-AUTH-017,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #17,Author: person-19
+PR-AUTH-018,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #18,Author: person-19
+PR-AUTH-019,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #19,Author: person-19
+PR-AUTH-020,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #20,Author: person-19
+PR-AUTH-021,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #21,Author: person-19
+PR-AUTH-022,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #22,Author: person-19
+PR-AUTH-023,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #23,Author: person-19
+PR-AUTH-024,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #24,Author: person-19
+PR-AUTH-025,PullRequest,fix(auth-service): Optimize connection pooling and TCP keepalive #25,Author: person-19
+PR-398,PullRequest,refactor(user-profile): Migrate to subscription_v2 schema and prune deprecated account_tier field,Author: person-05
+PR-027,PullRequest,chore(data-lakehouse-ingest): Bump dependencies and resolve CVE security vulnerabilities,Author: person-10
+PR-028,PullRequest,fix(cloud-cost-optimizer): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-12
+PR-029,PullRequest,perf(stripe-webhook-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-42
+PR-030,PullRequest,perf(audit-log-vault): Add L1 in-memory cache with LRU eviction policy,Author: person-59
+PR-031,PullRequest,chore(network-mesh-ingress): Bump dependencies and resolve CVE security vulnerabilities,Author: person-17
+PR-032,PullRequest,chore(secrets-kms-proxy): Bump dependencies and resolve CVE security vulnerabilities,Author: person-22
+PR-033,PullRequest,refactor(billing-ledger): Extract validation logic into standalone reusable package,Author: person-62
+PR-034,PullRequest,fix(kafka-event-bus): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-55
+PR-035,PullRequest,perf(ml-inference-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-39
+PR-036,PullRequest,feat(data-lakehouse-ingest): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-45
+PR-037,PullRequest,fix(kafka-event-bus): Prevent race condition in concurrent map write,Author: person-50
+PR-038,PullRequest,refactor(admin-console-service): Extract validation logic into standalone reusable package,Author: person-37
+PR-039,PullRequest,feat(audit-log-vault): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-07
+PR-040,PullRequest,feat(ml-inference-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-41
+PR-041,PullRequest,chore(auth-token-validator): Bump dependencies and resolve CVE security vulnerabilities,Author: person-03
+PR-042,PullRequest,feat(network-mesh-ingress): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-65
+PR-043,PullRequest,fix(user-profile-service): Prevent race condition in concurrent map write,Author: person-11
+PR-044,PullRequest,fix(cloud-cost-optimizer): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-31
+PR-045,PullRequest,perf(secrets-kms-proxy): Add L1 in-memory cache with LRU eviction policy,Author: person-23
+PR-046,PullRequest,perf(cloud-cost-optimizer): Add L1 in-memory cache with LRU eviction policy,Author: person-34
+PR-047,PullRequest,test(metrics-aggregation-pipeline): Increase end-to-end integration test coverage to 85%,Author: person-09
+PR-048,PullRequest,fix(vector-gateway): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-48
+PR-049,PullRequest,fix(auth-service): Prevent race condition in concurrent map write,Author: person-32
+PR-050,PullRequest,refactor(network-mesh-ingress): Extract validation logic into standalone reusable package,Author: person-54
+PR-051,PullRequest,feat(metrics-aggregation-pipeline): Implement distributed tracing and SpanContext propagation,Author: person-07
+PR-052,PullRequest,fix(recommendation-service): Prevent race condition in concurrent map write,Author: person-12
+PR-053,PullRequest,refactor(data-lakehouse-ingest): Extract validation logic into standalone reusable package,Author: person-48
+PR-054,PullRequest,feat(ml-inference-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-02
+PR-055,PullRequest,feat(redis-session-store): Implement distributed tracing and SpanContext propagation,Author: person-19
+PR-056,PullRequest,fix(auth-token-validator): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-13
+PR-057,PullRequest,feat(checkout-orchestrator): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-38
+PR-058,PullRequest,perf(auth-token-validator): Add L1 in-memory cache with LRU eviction policy,Author: person-26
+PR-059,PullRequest,chore(frontend-bff-gateway): Bump dependencies and resolve CVE security vulnerabilities,Author: person-46
+PR-060,PullRequest,fix(secrets-kms-proxy): Prevent race condition in concurrent map write,Author: person-39
+PR-061,PullRequest,perf(metrics-aggregation-pipeline): Add L1 in-memory cache with LRU eviction policy,Author: person-07
+PR-062,PullRequest,feat(kafka-event-bus): Implement distributed tracing and SpanContext propagation,Author: person-18
+PR-063,PullRequest,feat(audit-log-vault): Implement distributed tracing and SpanContext propagation,Author: person-11
+PR-064,PullRequest,feat(recommendation-service): Implement distributed tracing and SpanContext propagation,Author: person-16
+PR-065,PullRequest,refactor(secrets-kms-proxy): Extract validation logic into standalone reusable package,Author: person-55
+PR-066,PullRequest,feat(admin-console-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-32
+PR-067,PullRequest,feat(redis-state-cluster): Implement distributed tracing and SpanContext propagation,Author: person-54
+PR-068,PullRequest,perf(metrics-aggregation-pipeline): Add L1 in-memory cache with LRU eviction policy,Author: person-42
+PR-069,PullRequest,refactor(stripe-webhook-worker): Extract validation logic into standalone reusable package,Author: person-08
+PR-070,PullRequest,fix(cloud-cost-optimizer): Prevent race condition in concurrent map write,Author: person-08
+PR-071,PullRequest,refactor(ml-inference-worker): Extract validation logic into standalone reusable package,Author: person-04
+PR-072,PullRequest,test(redis-session-store): Increase end-to-end integration test coverage to 85%,Author: person-30
+PR-073,PullRequest,feat(network-mesh-ingress): Implement distributed tracing and SpanContext propagation,Author: person-23
+PR-074,PullRequest,feat(metrics-aggregation-pipeline): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-47
+PR-075,PullRequest,perf(vector-gateway): Add L1 in-memory cache with LRU eviction policy,Author: person-56
+PR-076,PullRequest,perf(vector-gateway): Add L1 in-memory cache with LRU eviction policy,Author: person-49
+PR-077,PullRequest,refactor(web-client-spa): Extract validation logic into standalone reusable package,Author: person-05
+PR-078,PullRequest,fix(cloud-cost-optimizer): Prevent race condition in concurrent map write,Author: person-10
+PR-079,PullRequest,chore(billing-ledger): Bump dependencies and resolve CVE security vulnerabilities,Author: person-32
+PR-080,PullRequest,fix(vector-gateway): Prevent race condition in concurrent map write,Author: person-53
+PR-081,PullRequest,fix(audit-log-vault): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-29
+PR-082,PullRequest,feat(kafka-event-bus): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-10
+PR-083,PullRequest,feat(event-stream-enricher): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-04
+PR-084,PullRequest,chore(billing-ledger): Bump dependencies and resolve CVE security vulnerabilities,Author: person-53
+PR-085,PullRequest,feat(event-stream-enricher): Implement distributed tracing and SpanContext propagation,Author: person-20
+PR-086,PullRequest,fix(auth-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-27
+PR-087,PullRequest,perf(secrets-kms-proxy): Add L1 in-memory cache with LRU eviction policy,Author: person-34
+PR-088,PullRequest,chore(data-lakehouse-ingest): Bump dependencies and resolve CVE security vulnerabilities,Author: person-60
+PR-089,PullRequest,feat(ml-inference-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-53
+PR-090,PullRequest,feat(event-stream-enricher): Implement distributed tracing and SpanContext propagation,Author: person-39
+PR-091,PullRequest,refactor(data-lakehouse-ingest): Extract validation logic into standalone reusable package,Author: person-23
+PR-092,PullRequest,fix(billing-ledger): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-19
+PR-093,PullRequest,fix(stripe-webhook-worker): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-59
+PR-094,PullRequest,chore(kafka-event-bus): Bump dependencies and resolve CVE security vulnerabilities,Author: person-37
+PR-095,PullRequest,feat(stripe-webhook-worker): Implement distributed tracing and SpanContext propagation,Author: person-52
+PR-096,PullRequest,fix(event-stream-enricher): Prevent race condition in concurrent map write,Author: person-35
+PR-097,PullRequest,test(kafka-event-bus): Increase end-to-end integration test coverage to 85%,Author: person-30
+PR-098,PullRequest,test(billing-ledger): Increase end-to-end integration test coverage to 85%,Author: person-57
+PR-099,PullRequest,feat(network-mesh-ingress): Implement distributed tracing and SpanContext propagation,Author: person-65
+PR-100,PullRequest,chore(data-lakehouse-ingest): Bump dependencies and resolve CVE security vulnerabilities,Author: person-07
+PR-101,PullRequest,test(secrets-kms-proxy): Increase end-to-end integration test coverage to 85%,Author: person-04
+PR-102,PullRequest,chore(ml-inference-worker): Bump dependencies and resolve CVE security vulnerabilities,Author: person-21
+PR-103,PullRequest,chore(billing-ledger): Bump dependencies and resolve CVE security vulnerabilities,Author: person-29
+PR-104,PullRequest,perf(secrets-kms-proxy): Add L1 in-memory cache with LRU eviction policy,Author: person-02
+PR-105,PullRequest,fix(user-profile-service): Prevent race condition in concurrent map write,Author: person-36
+PR-106,PullRequest,fix(admin-console-service): Prevent race condition in concurrent map write,Author: person-51
+PR-107,PullRequest,chore(kafka-event-bus): Bump dependencies and resolve CVE security vulnerabilities,Author: person-62
+PR-108,PullRequest,refactor(audit-log-vault): Extract validation logic into standalone reusable package,Author: person-39
+PR-109,PullRequest,feat(auth-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-64
+PR-110,PullRequest,perf(checkout-orchestrator): Add L1 in-memory cache with LRU eviction policy,Author: person-61
+PR-111,PullRequest,fix(redis-state-cluster): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-34
+PR-112,PullRequest,test(recommendation-service): Increase end-to-end integration test coverage to 85%,Author: person-48
+PR-113,PullRequest,feat(metrics-aggregation-pipeline): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-16
+PR-114,PullRequest,fix(data-lakehouse-ingest): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-19
+PR-115,PullRequest,perf(auth-service): Add L1 in-memory cache with LRU eviction policy,Author: person-58
+PR-116,PullRequest,test(feature-store-api): Increase end-to-end integration test coverage to 85%,Author: person-55
+PR-117,PullRequest,feat(auth-service): Implement distributed tracing and SpanContext propagation,Author: person-42
+PR-118,PullRequest,fix(model-registry-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-65
+PR-119,PullRequest,fix(metrics-aggregation-pipeline): Prevent race condition in concurrent map write,Author: person-44
+PR-120,PullRequest,perf(model-registry-service): Add L1 in-memory cache with LRU eviction policy,Author: person-03
+PR-121,PullRequest,feat(network-mesh-ingress): Implement distributed tracing and SpanContext propagation,Author: person-05
+PR-122,PullRequest,feat(redis-session-store): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-15
+PR-123,PullRequest,fix(network-mesh-ingress): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-02
+PR-124,PullRequest,fix(kafka-event-bus): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-16
+PR-125,PullRequest,chore(metrics-aggregation-pipeline): Bump dependencies and resolve CVE security vulnerabilities,Author: person-26
+PR-126,PullRequest,feat(event-stream-enricher): Implement distributed tracing and SpanContext propagation,Author: person-43
+PR-127,PullRequest,refactor(auth-token-validator): Extract validation logic into standalone reusable package,Author: person-10
+PR-128,PullRequest,fix(vector-gateway): Prevent race condition in concurrent map write,Author: person-06
+PR-129,PullRequest,test(redis-state-cluster): Increase end-to-end integration test coverage to 85%,Author: person-22
+PR-130,PullRequest,chore(vector-gateway): Bump dependencies and resolve CVE security vulnerabilities,Author: person-15
+PR-131,PullRequest,feat(network-mesh-ingress): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-08
+PR-132,PullRequest,test(model-registry-service): Increase end-to-end integration test coverage to 85%,Author: person-46
+PR-133,PullRequest,fix(stripe-webhook-worker): Prevent race condition in concurrent map write,Author: person-41
+PR-134,PullRequest,perf(checkout-orchestrator): Add L1 in-memory cache with LRU eviction policy,Author: person-62
+PR-135,PullRequest,fix(metrics-aggregation-pipeline): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-61
+PR-136,PullRequest,refactor(metrics-aggregation-pipeline): Extract validation logic into standalone reusable package,Author: person-29
+PR-137,PullRequest,test(event-stream-enricher): Increase end-to-end integration test coverage to 85%,Author: person-58
+PR-138,PullRequest,refactor(frontend-bff-gateway): Extract validation logic into standalone reusable package,Author: person-01
+PR-139,PullRequest,fix(checkout-orchestrator): Prevent race condition in concurrent map write,Author: person-59
+PR-140,PullRequest,feat(ml-inference-worker): Implement distributed tracing and SpanContext propagation,Author: person-38
+PR-141,PullRequest,feat(admin-console-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-26
+PR-142,PullRequest,test(feature-store-api): Increase end-to-end integration test coverage to 85%,Author: person-06
+PR-143,PullRequest,perf(metrics-aggregation-pipeline): Add L1 in-memory cache with LRU eviction policy,Author: person-07
+PR-144,PullRequest,refactor(secrets-kms-proxy): Extract validation logic into standalone reusable package,Author: person-42
+PR-145,PullRequest,refactor(redis-state-cluster): Extract validation logic into standalone reusable package,Author: person-53
+PR-146,PullRequest,fix(secrets-kms-proxy): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-17
+PR-147,PullRequest,fix(frontend-bff-gateway): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-37
+PR-148,PullRequest,perf(stripe-webhook-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-21
+PR-149,PullRequest,chore(kafka-event-bus): Bump dependencies and resolve CVE security vulnerabilities,Author: person-29
+PR-150,PullRequest,chore(secrets-kms-proxy): Bump dependencies and resolve CVE security vulnerabilities,Author: person-41
+PR-151,PullRequest,chore(network-mesh-ingress): Bump dependencies and resolve CVE security vulnerabilities,Author: person-48
+PR-152,PullRequest,feat(vector-gateway): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-16
+PR-153,PullRequest,perf(stripe-webhook-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-01
+PR-154,PullRequest,fix(admin-console-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-39
+PR-155,PullRequest,fix(metrics-aggregation-pipeline): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-21
+PR-156,PullRequest,fix(billing-ledger): Prevent race condition in concurrent map write,Author: person-61
+PR-157,PullRequest,chore(recommendation-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-49
+PR-158,PullRequest,refactor(data-lakehouse-ingest): Extract validation logic into standalone reusable package,Author: person-63
+PR-159,PullRequest,refactor(frontend-bff-gateway): Extract validation logic into standalone reusable package,Author: person-01
+PR-160,PullRequest,feat(cloud-cost-optimizer): Implement distributed tracing and SpanContext propagation,Author: person-56
+PR-161,PullRequest,chore(vector-gateway): Bump dependencies and resolve CVE security vulnerabilities,Author: person-33
+PR-162,PullRequest,feat(model-registry-service): Implement distributed tracing and SpanContext propagation,Author: person-16
+PR-163,PullRequest,test(secrets-kms-proxy): Increase end-to-end integration test coverage to 85%,Author: person-39
+PR-164,PullRequest,perf(checkout-orchestrator): Add L1 in-memory cache with LRU eviction policy,Author: person-18
+PR-165,PullRequest,feat(redis-state-cluster): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-16
+PR-166,PullRequest,perf(cloud-cost-optimizer): Add L1 in-memory cache with LRU eviction policy,Author: person-45
+PR-167,PullRequest,chore(vector-gateway): Bump dependencies and resolve CVE security vulnerabilities,Author: person-07
+PR-168,PullRequest,perf(web-client-spa): Add L1 in-memory cache with LRU eviction policy,Author: person-63
+PR-169,PullRequest,test(auth-token-validator): Increase end-to-end integration test coverage to 85%,Author: person-25
+PR-170,PullRequest,perf(web-client-spa): Add L1 in-memory cache with LRU eviction policy,Author: person-47
+PR-171,PullRequest,fix(feature-store-api): Prevent race condition in concurrent map write,Author: person-36
+PR-172,PullRequest,chore(frontend-bff-gateway): Bump dependencies and resolve CVE security vulnerabilities,Author: person-14
+PR-173,PullRequest,feat(auth-token-validator): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-10
+PR-174,PullRequest,refactor(event-stream-enricher): Extract validation logic into standalone reusable package,Author: person-20
+PR-175,PullRequest,perf(model-registry-service): Add L1 in-memory cache with LRU eviction policy,Author: person-47
+PR-176,PullRequest,feat(web-client-spa): Implement distributed tracing and SpanContext propagation,Author: person-19
+PR-177,PullRequest,feat(checkout-orchestrator): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-06
+PR-178,PullRequest,feat(kafka-event-bus): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-36
+PR-179,PullRequest,test(checkout-orchestrator): Increase end-to-end integration test coverage to 85%,Author: person-52
+PR-180,PullRequest,perf(auth-token-validator): Add L1 in-memory cache with LRU eviction policy,Author: person-36
+PR-181,PullRequest,perf(recommendation-service): Add L1 in-memory cache with LRU eviction policy,Author: person-15
+PR-182,PullRequest,perf(web-client-spa): Add L1 in-memory cache with LRU eviction policy,Author: person-21
+PR-183,PullRequest,refactor(admin-console-service): Extract validation logic into standalone reusable package,Author: person-03
+PR-184,PullRequest,perf(feature-store-api): Add L1 in-memory cache with LRU eviction policy,Author: person-19
+PR-185,PullRequest,refactor(model-registry-service): Extract validation logic into standalone reusable package,Author: person-17
+PR-186,PullRequest,fix(kafka-event-bus): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-23
+PR-187,PullRequest,feat(auth-service): Implement distributed tracing and SpanContext propagation,Author: person-56
+PR-188,PullRequest,perf(model-registry-service): Add L1 in-memory cache with LRU eviction policy,Author: person-45
+PR-189,PullRequest,feat(frontend-bff-gateway): Implement distributed tracing and SpanContext propagation,Author: person-53
+PR-190,PullRequest,fix(audit-log-vault): Prevent race condition in concurrent map write,Author: person-27
+PR-191,PullRequest,feat(frontend-bff-gateway): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-55
+PR-192,PullRequest,fix(frontend-bff-gateway): Prevent race condition in concurrent map write,Author: person-62
+PR-193,PullRequest,feat(network-mesh-ingress): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-21
+PR-194,PullRequest,test(audit-log-vault): Increase end-to-end integration test coverage to 85%,Author: person-01
+PR-195,PullRequest,feat(ml-inference-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-11
+PR-196,PullRequest,feat(redis-session-store): Implement distributed tracing and SpanContext propagation,Author: person-23
+PR-197,PullRequest,fix(admin-console-service): Prevent race condition in concurrent map write,Author: person-30
+PR-198,PullRequest,feat(stripe-webhook-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-52
+PR-199,PullRequest,refactor(auth-token-validator): Extract validation logic into standalone reusable package,Author: person-37
+PR-200,PullRequest,chore(vector-gateway): Bump dependencies and resolve CVE security vulnerabilities,Author: person-53
+PR-201,PullRequest,test(web-client-spa): Increase end-to-end integration test coverage to 85%,Author: person-33
+PR-202,PullRequest,fix(auth-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-62
+PR-203,PullRequest,chore(ml-inference-worker): Bump dependencies and resolve CVE security vulnerabilities,Author: person-02
+PR-204,PullRequest,refactor(vector-gateway): Extract validation logic into standalone reusable package,Author: person-61
+PR-205,PullRequest,refactor(checkout-orchestrator): Extract validation logic into standalone reusable package,Author: person-31
+PR-206,PullRequest,feat(kafka-event-bus): Implement distributed tracing and SpanContext propagation,Author: person-16
+PR-207,PullRequest,chore(web-client-spa): Bump dependencies and resolve CVE security vulnerabilities,Author: person-36
+PR-208,PullRequest,feat(feature-store-api): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-62
+PR-209,PullRequest,feat(recommendation-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-02
+PR-210,PullRequest,test(vector-gateway): Increase end-to-end integration test coverage to 85%,Author: person-34
+PR-211,PullRequest,chore(feature-store-api): Bump dependencies and resolve CVE security vulnerabilities,Author: person-48
+PR-212,PullRequest,feat(checkout-orchestrator): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-13
+PR-213,PullRequest,fix(vector-gateway): Prevent race condition in concurrent map write,Author: person-54
+PR-214,PullRequest,test(vector-gateway): Increase end-to-end integration test coverage to 85%,Author: person-08
+PR-215,PullRequest,feat(ml-inference-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-33
+PR-216,PullRequest,fix(audit-log-vault): Prevent race condition in concurrent map write,Author: person-23
+PR-217,PullRequest,perf(admin-console-service): Add L1 in-memory cache with LRU eviction policy,Author: person-37
+PR-218,PullRequest,fix(auth-token-validator): Prevent race condition in concurrent map write,Author: person-21
+PR-219,PullRequest,feat(stripe-webhook-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-57
+PR-220,PullRequest,feat(stripe-webhook-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-11
+PR-221,PullRequest,perf(model-registry-service): Add L1 in-memory cache with LRU eviction policy,Author: person-11
+PR-222,PullRequest,perf(cloud-cost-optimizer): Add L1 in-memory cache with LRU eviction policy,Author: person-37
+PR-223,PullRequest,test(recommendation-service): Increase end-to-end integration test coverage to 85%,Author: person-61
+PR-224,PullRequest,test(web-client-spa): Increase end-to-end integration test coverage to 85%,Author: person-56
+PR-225,PullRequest,feat(stripe-webhook-worker): Implement distributed tracing and SpanContext propagation,Author: person-20
+PR-226,PullRequest,feat(network-mesh-ingress): Implement distributed tracing and SpanContext propagation,Author: person-63
+PR-227,PullRequest,feat(ml-inference-worker): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-25
+PR-228,PullRequest,chore(stripe-webhook-worker): Bump dependencies and resolve CVE security vulnerabilities,Author: person-11
+PR-229,PullRequest,fix(auth-token-validator): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-24
+PR-230,PullRequest,feat(admin-console-service): Implement distributed tracing and SpanContext propagation,Author: person-63
+PR-231,PullRequest,test(kafka-event-bus): Increase end-to-end integration test coverage to 85%,Author: person-37
+PR-232,PullRequest,test(billing-ledger): Increase end-to-end integration test coverage to 85%,Author: person-44
+PR-233,PullRequest,fix(redis-state-cluster): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-08
+PR-234,PullRequest,feat(model-registry-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-02
+PR-235,PullRequest,chore(kafka-event-bus): Bump dependencies and resolve CVE security vulnerabilities,Author: person-27
+PR-236,PullRequest,chore(metrics-aggregation-pipeline): Bump dependencies and resolve CVE security vulnerabilities,Author: person-16
+PR-237,PullRequest,perf(audit-log-vault): Add L1 in-memory cache with LRU eviction policy,Author: person-56
+PR-238,PullRequest,fix(redis-session-store): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-61
+PR-239,PullRequest,perf(audit-log-vault): Add L1 in-memory cache with LRU eviction policy,Author: person-08
+PR-240,PullRequest,feat(frontend-bff-gateway): Implement distributed tracing and SpanContext propagation,Author: person-45
+PR-241,PullRequest,test(redis-session-store): Increase end-to-end integration test coverage to 85%,Author: person-63
+PR-242,PullRequest,test(stripe-webhook-worker): Increase end-to-end integration test coverage to 85%,Author: person-21
+PR-243,PullRequest,feat(audit-log-vault): Implement distributed tracing and SpanContext propagation,Author: person-65
+PR-244,PullRequest,perf(secrets-kms-proxy): Add L1 in-memory cache with LRU eviction policy,Author: person-50
+PR-245,PullRequest,perf(kafka-event-bus): Add L1 in-memory cache with LRU eviction policy,Author: person-09
+PR-246,PullRequest,feat(redis-session-store): Implement distributed tracing and SpanContext propagation,Author: person-50
+PR-247,PullRequest,feat(billing-ledger): Implement distributed tracing and SpanContext propagation,Author: person-63
+PR-248,PullRequest,chore(admin-console-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-35
+PR-249,PullRequest,perf(checkout-orchestrator): Add L1 in-memory cache with LRU eviction policy,Author: person-50
+PR-250,PullRequest,perf(ml-inference-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-59
+PR-251,PullRequest,fix(admin-console-service): Prevent race condition in concurrent map write,Author: person-57
+PR-252,PullRequest,chore(admin-console-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-31
+PR-253,PullRequest,chore(redis-session-store): Bump dependencies and resolve CVE security vulnerabilities,Author: person-37
+PR-254,PullRequest,feat(network-mesh-ingress): Implement distributed tracing and SpanContext propagation,Author: person-36
+PR-255,PullRequest,chore(web-client-spa): Bump dependencies and resolve CVE security vulnerabilities,Author: person-32
+PR-256,PullRequest,fix(recommendation-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-62
+PR-257,PullRequest,fix(model-registry-service): Prevent race condition in concurrent map write,Author: person-11
+PR-258,PullRequest,chore(admin-console-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-02
+PR-259,PullRequest,test(checkout-orchestrator): Increase end-to-end integration test coverage to 85%,Author: person-20
+PR-260,PullRequest,fix(user-profile-service): Prevent race condition in concurrent map write,Author: person-51
+PR-261,PullRequest,perf(auth-token-validator): Add L1 in-memory cache with LRU eviction policy,Author: person-52
+PR-262,PullRequest,chore(billing-ledger): Bump dependencies and resolve CVE security vulnerabilities,Author: person-32
+PR-263,PullRequest,refactor(feature-store-api): Extract validation logic into standalone reusable package,Author: person-55
+PR-264,PullRequest,feat(ml-inference-worker): Implement distributed tracing and SpanContext propagation,Author: person-57
+PR-265,PullRequest,refactor(cloud-cost-optimizer): Extract validation logic into standalone reusable package,Author: person-11
+PR-266,PullRequest,feat(kafka-event-bus): Implement distributed tracing and SpanContext propagation,Author: person-40
+PR-267,PullRequest,feat(metrics-aggregation-pipeline): Implement distributed tracing and SpanContext propagation,Author: person-34
+PR-268,PullRequest,feat(redis-session-store): Implement distributed tracing and SpanContext propagation,Author: person-37
+PR-269,PullRequest,chore(secrets-kms-proxy): Bump dependencies and resolve CVE security vulnerabilities,Author: person-47
+PR-270,PullRequest,perf(kafka-event-bus): Add L1 in-memory cache with LRU eviction policy,Author: person-41
+PR-271,PullRequest,feat(metrics-aggregation-pipeline): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-40
+PR-272,PullRequest,chore(checkout-orchestrator): Bump dependencies and resolve CVE security vulnerabilities,Author: person-65
+PR-273,PullRequest,feat(recommendation-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-51
+PR-274,PullRequest,test(redis-state-cluster): Increase end-to-end integration test coverage to 85%,Author: person-55
+PR-275,PullRequest,feat(billing-ledger): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-18
+PR-276,PullRequest,perf(frontend-bff-gateway): Add L1 in-memory cache with LRU eviction policy,Author: person-16
+PR-277,PullRequest,fix(audit-log-vault): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-36
+PR-278,PullRequest,fix(checkout-orchestrator): Prevent race condition in concurrent map write,Author: person-30
+PR-279,PullRequest,perf(vector-gateway): Add L1 in-memory cache with LRU eviction policy,Author: person-50
+PR-280,PullRequest,refactor(auth-service): Extract validation logic into standalone reusable package,Author: person-35
+PR-281,PullRequest,feat(network-mesh-ingress): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-42
+PR-282,PullRequest,test(admin-console-service): Increase end-to-end integration test coverage to 85%,Author: person-05
+PR-283,PullRequest,chore(frontend-bff-gateway): Bump dependencies and resolve CVE security vulnerabilities,Author: person-50
+PR-284,PullRequest,test(user-profile-service): Increase end-to-end integration test coverage to 85%,Author: person-07
+PR-285,PullRequest,fix(network-mesh-ingress): Prevent race condition in concurrent map write,Author: person-18
+PR-286,PullRequest,fix(billing-ledger): Prevent race condition in concurrent map write,Author: person-59
+PR-287,PullRequest,fix(auth-token-validator): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-15
+PR-288,PullRequest,perf(redis-session-store): Add L1 in-memory cache with LRU eviction policy,Author: person-22
+PR-289,PullRequest,fix(cloud-cost-optimizer): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-58
+PR-290,PullRequest,refactor(event-stream-enricher): Extract validation logic into standalone reusable package,Author: person-64
+PR-291,PullRequest,refactor(auth-token-validator): Extract validation logic into standalone reusable package,Author: person-01
+PR-292,PullRequest,fix(redis-state-cluster): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-05
+PR-293,PullRequest,feat(user-profile-service): Implement distributed tracing and SpanContext propagation,Author: person-23
+PR-294,PullRequest,test(auth-token-validator): Increase end-to-end integration test coverage to 85%,Author: person-55
+PR-295,PullRequest,fix(metrics-aggregation-pipeline): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-27
+PR-296,PullRequest,chore(admin-console-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-37
+PR-297,PullRequest,refactor(web-client-spa): Extract validation logic into standalone reusable package,Author: person-64
+PR-298,PullRequest,feat(audit-log-vault): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-16
+PR-299,PullRequest,chore(billing-ledger): Bump dependencies and resolve CVE security vulnerabilities,Author: person-37
+PR-300,PullRequest,feat(secrets-kms-proxy): Implement distributed tracing and SpanContext propagation,Author: person-43
+PR-301,PullRequest,perf(event-stream-enricher): Add L1 in-memory cache with LRU eviction policy,Author: person-05
+PR-302,PullRequest,feat(feature-store-api): Implement distributed tracing and SpanContext propagation,Author: person-08
+PR-303,PullRequest,feat(ml-inference-worker): Implement distributed tracing and SpanContext propagation,Author: person-09
+PR-304,PullRequest,feat(vector-gateway): Implement distributed tracing and SpanContext propagation,Author: person-15
+PR-305,PullRequest,perf(data-lakehouse-ingest): Add L1 in-memory cache with LRU eviction policy,Author: person-39
+PR-306,PullRequest,refactor(metrics-aggregation-pipeline): Extract validation logic into standalone reusable package,Author: person-04
+PR-307,PullRequest,test(kafka-event-bus): Increase end-to-end integration test coverage to 85%,Author: person-17
+PR-308,PullRequest,feat(secrets-kms-proxy): Implement distributed tracing and SpanContext propagation,Author: person-12
+PR-309,PullRequest,refactor(user-profile-service): Extract validation logic into standalone reusable package,Author: person-27
+PR-310,PullRequest,chore(kafka-event-bus): Bump dependencies and resolve CVE security vulnerabilities,Author: person-35
+PR-311,PullRequest,chore(ml-inference-worker): Bump dependencies and resolve CVE security vulnerabilities,Author: person-41
+PR-312,PullRequest,feat(recommendation-service): Implement distributed tracing and SpanContext propagation,Author: person-57
+PR-313,PullRequest,fix(feature-store-api): Prevent race condition in concurrent map write,Author: person-51
+PR-314,PullRequest,fix(data-lakehouse-ingest): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-17
+PR-315,PullRequest,feat(checkout-orchestrator): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-19
+PR-316,PullRequest,test(event-stream-enricher): Increase end-to-end integration test coverage to 85%,Author: person-15
+PR-317,PullRequest,chore(network-mesh-ingress): Bump dependencies and resolve CVE security vulnerabilities,Author: person-14
+PR-318,PullRequest,fix(checkout-orchestrator): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-21
+PR-319,PullRequest,fix(web-client-spa): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-44
+PR-320,PullRequest,fix(data-lakehouse-ingest): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-23
+PR-321,PullRequest,perf(secrets-kms-proxy): Add L1 in-memory cache with LRU eviction policy,Author: person-08
+PR-322,PullRequest,refactor(frontend-bff-gateway): Extract validation logic into standalone reusable package,Author: person-38
+PR-323,PullRequest,feat(feature-store-api): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-45
+PR-324,PullRequest,chore(redis-session-store): Bump dependencies and resolve CVE security vulnerabilities,Author: person-01
+PR-325,PullRequest,refactor(model-registry-service): Extract validation logic into standalone reusable package,Author: person-52
+PR-326,PullRequest,chore(model-registry-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-47
+PR-327,PullRequest,perf(auth-service): Add L1 in-memory cache with LRU eviction policy,Author: person-19
+PR-328,PullRequest,feat(network-mesh-ingress): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-55
+PR-329,PullRequest,chore(feature-store-api): Bump dependencies and resolve CVE security vulnerabilities,Author: person-01
+PR-330,PullRequest,test(redis-session-store): Increase end-to-end integration test coverage to 85%,Author: person-62
+PR-331,PullRequest,fix(metrics-aggregation-pipeline): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-12
+PR-332,PullRequest,test(recommendation-service): Increase end-to-end integration test coverage to 85%,Author: person-02
+PR-333,PullRequest,chore(user-profile-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-38
+PR-334,PullRequest,test(redis-session-store): Increase end-to-end integration test coverage to 85%,Author: person-38
+PR-335,PullRequest,feat(stripe-webhook-worker): Implement distributed tracing and SpanContext propagation,Author: person-17
+PR-336,PullRequest,perf(vector-gateway): Add L1 in-memory cache with LRU eviction policy,Author: person-34
+PR-337,PullRequest,refactor(redis-state-cluster): Extract validation logic into standalone reusable package,Author: person-64
+PR-338,PullRequest,fix(cloud-cost-optimizer): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-45
+PR-339,PullRequest,test(cloud-cost-optimizer): Increase end-to-end integration test coverage to 85%,Author: person-30
+PR-340,PullRequest,fix(data-lakehouse-ingest): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-49
+PR-341,PullRequest,chore(stripe-webhook-worker): Bump dependencies and resolve CVE security vulnerabilities,Author: person-43
+PR-342,PullRequest,fix(checkout-orchestrator): Prevent race condition in concurrent map write,Author: person-25
+PR-343,PullRequest,fix(feature-store-api): Prevent race condition in concurrent map write,Author: person-13
+PR-344,PullRequest,fix(admin-console-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-12
+PR-345,PullRequest,chore(audit-log-vault): Bump dependencies and resolve CVE security vulnerabilities,Author: person-24
+PR-346,PullRequest,perf(stripe-webhook-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-55
+PR-347,PullRequest,fix(stripe-webhook-worker): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-34
+PR-348,PullRequest,refactor(event-stream-enricher): Extract validation logic into standalone reusable package,Author: person-14
+PR-349,PullRequest,test(redis-session-store): Increase end-to-end integration test coverage to 85%,Author: person-10
+PR-350,PullRequest,feat(model-registry-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-35
+PR-351,PullRequest,feat(cloud-cost-optimizer): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-09
+PR-352,PullRequest,fix(model-registry-service): Prevent race condition in concurrent map write,Author: person-08
+PR-353,PullRequest,feat(redis-session-store): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-50
+PR-354,PullRequest,feat(audit-log-vault): Implement distributed tracing and SpanContext propagation,Author: person-57
+PR-355,PullRequest,feat(frontend-bff-gateway): Implement distributed tracing and SpanContext propagation,Author: person-40
+PR-356,PullRequest,perf(model-registry-service): Add L1 in-memory cache with LRU eviction policy,Author: person-16
+PR-357,PullRequest,refactor(audit-log-vault): Extract validation logic into standalone reusable package,Author: person-03
+PR-358,PullRequest,fix(user-profile-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-13
+PR-359,PullRequest,fix(billing-ledger): Prevent race condition in concurrent map write,Author: person-55
+PR-360,PullRequest,fix(billing-ledger): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-06
+PR-361,PullRequest,feat(ml-inference-worker): Implement distributed tracing and SpanContext propagation,Author: person-22
+PR-362,PullRequest,fix(event-stream-enricher): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-11
+PR-363,PullRequest,chore(event-stream-enricher): Bump dependencies and resolve CVE security vulnerabilities,Author: person-17
+PR-364,PullRequest,fix(network-mesh-ingress): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-05
+PR-365,PullRequest,fix(checkout-orchestrator): Prevent race condition in concurrent map write,Author: person-25
+PR-366,PullRequest,fix(billing-ledger): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-36
+PR-367,PullRequest,refactor(redis-session-store): Extract validation logic into standalone reusable package,Author: person-07
+PR-368,PullRequest,feat(cloud-cost-optimizer): Implement distributed tracing and SpanContext propagation,Author: person-07
+PR-369,PullRequest,fix(data-lakehouse-ingest): Prevent race condition in concurrent map write,Author: person-42
+PR-370,PullRequest,refactor(cloud-cost-optimizer): Extract validation logic into standalone reusable package,Author: person-53
+PR-371,PullRequest,perf(feature-store-api): Add L1 in-memory cache with LRU eviction policy,Author: person-19
+PR-372,PullRequest,perf(ml-inference-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-35
+PR-373,PullRequest,fix(data-lakehouse-ingest): Prevent race condition in concurrent map write,Author: person-59
+PR-374,PullRequest,feat(admin-console-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-22
+PR-375,PullRequest,feat(auth-service): Add Prometheus histogram metrics for p99 latency monitoring,Author: person-55
+PR-376,PullRequest,feat(auth-service): Implement distributed tracing and SpanContext propagation,Author: person-54
+PR-377,PullRequest,fix(kafka-event-bus): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-58
+PR-378,PullRequest,feat(ml-inference-worker): Implement distributed tracing and SpanContext propagation,Author: person-38
+PR-379,PullRequest,perf(web-client-spa): Add L1 in-memory cache with LRU eviction policy,Author: person-04
+PR-380,PullRequest,feat(audit-log-vault): Implement distributed tracing and SpanContext propagation,Author: person-10
+PR-381,PullRequest,feat(admin-console-service): Implement distributed tracing and SpanContext propagation,Author: person-43
+PR-382,PullRequest,perf(ml-inference-worker): Add L1 in-memory cache with LRU eviction policy,Author: person-23
+PR-383,PullRequest,fix(web-client-spa): Prevent race condition in concurrent map write,Author: person-27
+PR-384,PullRequest,test(auth-token-validator): Increase end-to-end integration test coverage to 85%,Author: person-48
+PR-385,PullRequest,fix(frontend-bff-gateway): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-38
+PR-386,PullRequest,chore(user-profile-service): Bump dependencies and resolve CVE security vulnerabilities,Author: person-10
+PR-387,PullRequest,perf(audit-log-vault): Add L1 in-memory cache with LRU eviction policy,Author: person-03
+PR-388,PullRequest,refactor(user-profile-service): Extract validation logic into standalone reusable package,Author: person-25
+PR-389,PullRequest,test(audit-log-vault): Increase end-to-end integration test coverage to 85%,Author: person-42
+PR-390,PullRequest,chore(stripe-webhook-worker): Bump dependencies and resolve CVE security vulnerabilities,Author: person-30
+PR-391,PullRequest,perf(admin-console-service): Add L1 in-memory cache with LRU eviction policy,Author: person-21
+PR-392,PullRequest,fix(recommendation-service): Prevent race condition in concurrent map write,Author: person-17
+PR-393,PullRequest,chore(redis-state-cluster): Bump dependencies and resolve CVE security vulnerabilities,Author: person-48
+PR-394,PullRequest,fix(data-lakehouse-ingest): Prevent race condition in concurrent map write,Author: person-41
+PR-395,PullRequest,fix(web-client-spa): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-19
+PR-396,PullRequest,fix(admin-console-service): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-29
+PR-397,PullRequest,test(stripe-webhook-worker): Increase end-to-end integration test coverage to 85%,Author: person-26
+PR-398,PullRequest,perf(recommendation-service): Add L1 in-memory cache with LRU eviction policy,Author: person-08
+PR-399,PullRequest,fix(ml-inference-worker): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-45
+PR-400,PullRequest,fix(cloud-cost-optimizer): Handle graceful shutdown on SIGTERM and flush buffer,Author: person-55
+SLACK-088,SlackThread,#arch-sync,Msgs: 5
+SLACK-002,SlackThread,#ml-inference,Msgs: 3
+SLACK-003,SlackThread,#arch-sync,Msgs: 3
+SLACK-004,SlackThread,#security-ops,Msgs: 3
+SLACK-005,SlackThread,#auth-identity,Msgs: 3
+SLACK-006,SlackThread,#security-ops,Msgs: 3
+SLACK-007,SlackThread,#arch-sync,Msgs: 3
+SLACK-008,SlackThread,#core-platform,Msgs: 3
+SLACK-009,SlackThread,#ml-inference,Msgs: 3
+SLACK-010,SlackThread,#infra-ops,Msgs: 3
+SLACK-011,SlackThread,#incident-war-room,Msgs: 3
+SLACK-012,SlackThread,#auth-identity,Msgs: 3
+SLACK-013,SlackThread,#data-pipeline,Msgs: 3
+SLACK-014,SlackThread,#incident-war-room,Msgs: 3
+SLACK-015,SlackThread,#infra-ops,Msgs: 3
+SLACK-016,SlackThread,#infra-ops,Msgs: 3
+SLACK-017,SlackThread,#infra-ops,Msgs: 3
+SLACK-018,SlackThread,#core-platform,Msgs: 3
+SLACK-019,SlackThread,#security-ops,Msgs: 3
+SLACK-020,SlackThread,#core-platform,Msgs: 3
+SLACK-021,SlackThread,#arch-sync,Msgs: 3
+SLACK-022,SlackThread,#infra-ops,Msgs: 3
+SLACK-023,SlackThread,#arch-sync,Msgs: 3
+SLACK-024,SlackThread,#incident-war-room,Msgs: 3
+SLACK-025,SlackThread,#core-platform,Msgs: 3
+SLACK-026,SlackThread,#incident-war-room,Msgs: 3
+SLACK-027,SlackThread,#auth-identity,Msgs: 3
+SLACK-028,SlackThread,#security-ops,Msgs: 3
+SLACK-029,SlackThread,#auth-identity,Msgs: 3
+SLACK-030,SlackThread,#core-platform,Msgs: 3
+SLACK-031,SlackThread,#core-platform,Msgs: 3
+SLACK-032,SlackThread,#data-pipeline,Msgs: 3
+SLACK-033,SlackThread,#infra-ops,Msgs: 3
+SLACK-034,SlackThread,#infra-ops,Msgs: 3
+SLACK-035,SlackThread,#ml-inference,Msgs: 3
+SLACK-036,SlackThread,#ml-inference,Msgs: 3
+SLACK-037,SlackThread,#arch-sync,Msgs: 3
+SLACK-038,SlackThread,#arch-sync,Msgs: 3
+SLACK-039,SlackThread,#infra-ops,Msgs: 3
+SLACK-040,SlackThread,#incident-war-room,Msgs: 3
+SLACK-041,SlackThread,#security-ops,Msgs: 3
+SLACK-042,SlackThread,#arch-sync,Msgs: 3
+SLACK-043,SlackThread,#ml-inference,Msgs: 3
+SLACK-044,SlackThread,#data-pipeline,Msgs: 3
+SLACK-045,SlackThread,#arch-sync,Msgs: 3
+SLACK-046,SlackThread,#data-pipeline,Msgs: 3
+SLACK-047,SlackThread,#core-platform,Msgs: 3
+SLACK-048,SlackThread,#incident-war-room,Msgs: 3
+SLACK-049,SlackThread,#core-platform,Msgs: 3
+SLACK-050,SlackThread,#arch-sync,Msgs: 3
+SLACK-051,SlackThread,#arch-sync,Msgs: 3
+SLACK-052,SlackThread,#core-platform,Msgs: 3
+SLACK-053,SlackThread,#core-platform,Msgs: 3
+SLACK-054,SlackThread,#arch-sync,Msgs: 3
+SLACK-055,SlackThread,#security-ops,Msgs: 3
+SLACK-056,SlackThread,#auth-identity,Msgs: 3
+SLACK-057,SlackThread,#data-pipeline,Msgs: 3
+SLACK-058,SlackThread,#ml-inference,Msgs: 3
+SLACK-059,SlackThread,#arch-sync,Msgs: 3
+SLACK-060,SlackThread,#arch-sync,Msgs: 3
+SLACK-061,SlackThread,#auth-identity,Msgs: 3
+SLACK-062,SlackThread,#incident-war-room,Msgs: 3
+SLACK-063,SlackThread,#security-ops,Msgs: 3
+SLACK-064,SlackThread,#auth-identity,Msgs: 3
+SLACK-065,SlackThread,#core-platform,Msgs: 3
+SLACK-066,SlackThread,#auth-identity,Msgs: 3
+SLACK-067,SlackThread,#incident-war-room,Msgs: 3
+SLACK-068,SlackThread,#data-pipeline,Msgs: 3
+SLACK-069,SlackThread,#core-platform,Msgs: 3
+SLACK-070,SlackThread,#ml-inference,Msgs: 3
+SLACK-071,SlackThread,#security-ops,Msgs: 3
+SLACK-072,SlackThread,#data-pipeline,Msgs: 3
+SLACK-073,SlackThread,#auth-identity,Msgs: 3
+SLACK-074,SlackThread,#auth-identity,Msgs: 3
+SLACK-075,SlackThread,#core-platform,Msgs: 3
+SLACK-076,SlackThread,#security-ops,Msgs: 3
+SLACK-077,SlackThread,#infra-ops,Msgs: 3
+SLACK-078,SlackThread,#auth-identity,Msgs: 3
+SLACK-079,SlackThread,#incident-war-room,Msgs: 3
+SLACK-080,SlackThread,#security-ops,Msgs: 3
+SLACK-081,SlackThread,#auth-identity,Msgs: 3
+SLACK-082,SlackThread,#ml-inference,Msgs: 3
+SLACK-083,SlackThread,#ml-inference,Msgs: 3
+SLACK-084,SlackThread,#data-pipeline,Msgs: 3
+SLACK-085,SlackThread,#incident-war-room,Msgs: 3
+SLACK-086,SlackThread,#ml-inference,Msgs: 3
+SLACK-087,SlackThread,#core-platform,Msgs: 3
+SLACK-088,SlackThread,#security-ops,Msgs: 3
+SLACK-090,SlackThread,#security-ops,Msgs: 3
+SLACK-091,SlackThread,#data-pipeline,Msgs: 3
+SLACK-092,SlackThread,#arch-sync,Msgs: 3
+SLACK-093,SlackThread,#arch-sync,Msgs: 3
+SLACK-094,SlackThread,#arch-sync,Msgs: 3
+SLACK-095,SlackThread,#data-pipeline,Msgs: 3
+SLACK-096,SlackThread,#auth-identity,Msgs: 3
+SLACK-097,SlackThread,#core-platform,Msgs: 3
+SLACK-098,SlackThread,#infra-ops,Msgs: 3
+SLACK-099,SlackThread,#core-platform,Msgs: 3
+SLACK-100,SlackThread,#core-platform,Msgs: 3
+SLACK-101,SlackThread,#arch-sync,Msgs: 3
+SLACK-102,SlackThread,#core-platform,Msgs: 3
+SLACK-103,SlackThread,#auth-identity,Msgs: 3
+SLACK-104,SlackThread,#core-platform,Msgs: 3
+SLACK-105,SlackThread,#arch-sync,Msgs: 3
+SLACK-106,SlackThread,#infra-ops,Msgs: 3
+SLACK-107,SlackThread,#core-platform,Msgs: 3
+SLACK-108,SlackThread,#infra-ops,Msgs: 3
+SLACK-109,SlackThread,#data-pipeline,Msgs: 3
+SLACK-110,SlackThread,#arch-sync,Msgs: 3
+SLACK-111,SlackThread,#incident-war-room,Msgs: 3
+SLACK-112,SlackThread,#infra-ops,Msgs: 3
+SLACK-113,SlackThread,#data-pipeline,Msgs: 3
+SLACK-114,SlackThread,#arch-sync,Msgs: 3
+SLACK-115,SlackThread,#data-pipeline,Msgs: 3
+SLACK-116,SlackThread,#auth-identity,Msgs: 3
+SLACK-117,SlackThread,#core-platform,Msgs: 3
+SLACK-118,SlackThread,#infra-ops,Msgs: 3
+SLACK-119,SlackThread,#incident-war-room,Msgs: 3
+SLACK-120,SlackThread,#core-platform,Msgs: 3
+SLACK-121,SlackThread,#incident-war-room,Msgs: 3
+SLACK-122,SlackThread,#security-ops,Msgs: 3
+SLACK-123,SlackThread,#security-ops,Msgs: 3
+SLACK-124,SlackThread,#auth-identity,Msgs: 3
+SLACK-125,SlackThread,#ml-inference,Msgs: 3
+SLACK-126,SlackThread,#auth-identity,Msgs: 3
+SLACK-127,SlackThread,#infra-ops,Msgs: 3
+SLACK-128,SlackThread,#data-pipeline,Msgs: 3
+SLACK-129,SlackThread,#ml-inference,Msgs: 3
+SLACK-130,SlackThread,#core-platform,Msgs: 3
+SLACK-131,SlackThread,#data-pipeline,Msgs: 3
+SLACK-132,SlackThread,#incident-war-room,Msgs: 3
+SLACK-133,SlackThread,#ml-inference,Msgs: 3
+SLACK-134,SlackThread,#ml-inference,Msgs: 3
+SLACK-135,SlackThread,#infra-ops,Msgs: 3
+SLACK-136,SlackThread,#ml-inference,Msgs: 3
+SLACK-137,SlackThread,#infra-ops,Msgs: 3
+SLACK-138,SlackThread,#incident-war-room,Msgs: 3
+SLACK-139,SlackThread,#incident-war-room,Msgs: 3
+SLACK-140,SlackThread,#arch-sync,Msgs: 3
+SLACK-141,SlackThread,#infra-ops,Msgs: 3
+SLACK-142,SlackThread,#infra-ops,Msgs: 3
+SLACK-143,SlackThread,#auth-identity,Msgs: 3
+SLACK-144,SlackThread,#core-platform,Msgs: 3
+SLACK-145,SlackThread,#security-ops,Msgs: 3
+SLACK-146,SlackThread,#auth-identity,Msgs: 3
+SLACK-147,SlackThread,#infra-ops,Msgs: 3
+SLACK-148,SlackThread,#auth-identity,Msgs: 3
+SLACK-149,SlackThread,#core-platform,Msgs: 3
+SLACK-150,SlackThread,#ml-inference,Msgs: 3
+SLACK-151,SlackThread,#data-pipeline,Msgs: 3
+SLACK-152,SlackThread,#security-ops,Msgs: 3
+SLACK-153,SlackThread,#ml-inference,Msgs: 3
+SLACK-154,SlackThread,#data-pipeline,Msgs: 3
+SLACK-155,SlackThread,#infra-ops,Msgs: 3
+SLACK-156,SlackThread,#arch-sync,Msgs: 3
+SLACK-157,SlackThread,#infra-ops,Msgs: 3
+SLACK-158,SlackThread,#data-pipeline,Msgs: 3
+SLACK-159,SlackThread,#infra-ops,Msgs: 3
+SLACK-160,SlackThread,#security-ops,Msgs: 3
+SLACK-161,SlackThread,#security-ops,Msgs: 3
+SLACK-162,SlackThread,#arch-sync,Msgs: 3
+SLACK-163,SlackThread,#infra-ops,Msgs: 3
+SLACK-164,SlackThread,#incident-war-room,Msgs: 3
+SLACK-165,SlackThread,#core-platform,Msgs: 3
+SLACK-166,SlackThread,#security-ops,Msgs: 3
+SLACK-167,SlackThread,#incident-war-room,Msgs: 3
+SLACK-168,SlackThread,#core-platform,Msgs: 3
+SLACK-169,SlackThread,#core-platform,Msgs: 3
+SLACK-170,SlackThread,#arch-sync,Msgs: 3
+SLACK-171,SlackThread,#data-pipeline,Msgs: 3
+SLACK-172,SlackThread,#data-pipeline,Msgs: 3
+SLACK-173,SlackThread,#infra-ops,Msgs: 3
+SLACK-174,SlackThread,#arch-sync,Msgs: 3
+SLACK-175,SlackThread,#infra-ops,Msgs: 3
+SLACK-176,SlackThread,#security-ops,Msgs: 3
+SLACK-177,SlackThread,#auth-identity,Msgs: 3
+SLACK-178,SlackThread,#infra-ops,Msgs: 3
+SLACK-179,SlackThread,#arch-sync,Msgs: 3
+SLACK-180,SlackThread,#arch-sync,Msgs: 3
+SLACK-181,SlackThread,#security-ops,Msgs: 3
+DOC-082,Document,Engineering Onboarding: Inter-Service Communication and Async RPC via Kafka,onboarding / outdated
+DOC-012,Document,Runbook: ML Inference Worker PyTorch CUDA Memory Leak Mitigation & Shard Recycling,runbook / active
+DOC-013,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-013),rfc / active
+DOC-014,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-014),postmortem / active
+DOC-015,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-015),rfc / active
+DOC-016,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-016),onboarding / active
+DOC-017,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-017),postmortem / active
+DOC-018,Document,Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-018),runbook / active
+DOC-019,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-019),postmortem / active
+DOC-020,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-020),postmortem / active
+DOC-021,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-021),rfc / active
+DOC-022,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-022),postmortem / active
+DOC-023,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-023),runbook / active
+DOC-024,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-024),postmortem / active
+DOC-025,Document,Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-025),runbook / active
+DOC-026,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-026),runbook / active
+DOC-027,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-027),rfc / active
+DOC-028,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-028),rfc / active
+DOC-029,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-029),runbook / active
+DOC-030,Document,Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-030),runbook / active
+DOC-031,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-031),onboarding / active
+DOC-032,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-032),rfc / outdated
+DOC-033,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-033),rfc / active
+DOC-034,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-034),runbook / active
+DOC-035,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-035),runbook / active
+DOC-036,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-036),onboarding / active
+DOC-037,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-037),rfc / active
+DOC-038,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-038),postmortem / active
+DOC-039,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-039),runbook / active
+DOC-040,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-040),runbook / active
+DOC-041,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-041),onboarding / active
+DOC-042,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-042),postmortem / active
+DOC-043,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-043),postmortem / active
+DOC-044,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-044),runbook / active
+DOC-045,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-045),runbook / active
+DOC-046,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-046),onboarding / active
+DOC-047,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-047),postmortem / active
+DOC-048,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-048),postmortem / outdated
+DOC-049,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-049),postmortem / active
+DOC-050,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-050),runbook / active
+DOC-051,Document,Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-051),runbook / active
+DOC-052,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-052),rfc / active
+DOC-053,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-053),postmortem / active
+DOC-054,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-054),postmortem / active
+DOC-055,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-055),rfc / active
+DOC-056,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-056),rfc / active
+DOC-057,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-057),rfc / active
+DOC-058,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-058),postmortem / active
+DOC-059,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-059),rfc / active
+DOC-060,Document,Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-060),runbook / active
+DOC-061,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-061),runbook / active
+DOC-062,Document,Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-062),runbook / active
+DOC-063,Document,Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-063),runbook / active
+DOC-064,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-064),rfc / active
+DOC-065,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-065),runbook / active
+DOC-066,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-066),onboarding / active
+DOC-067,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-067),rfc / active
+DOC-068,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-068),postmortem / active
+DOC-069,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-069),rfc / active
+DOC-070,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-070),postmortem / active
+DOC-071,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-071),postmortem / active
+DOC-072,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-072),postmortem / active
+DOC-073,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-073),rfc / active
+DOC-074,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-074),runbook / active
+DOC-075,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-075),postmortem / active
+DOC-076,Document,Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-076),runbook / outdated
+DOC-077,Document,Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-077),postmortem / active
+DOC-078,Document,Runbook: Redis Cluster Failover & Replication Resync (DOC-078),runbook / active
+DOC-079,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-079),rfc / active
+DOC-080,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-080),rfc / outdated
+DOC-081,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-081),onboarding / active
+DOC-082,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-082),rfc / active
+DOC-083,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-083),onboarding / active
+DOC-084,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-084),rfc / active
+DOC-085,Document,Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-085),runbook / outdated
+DOC-086,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-086),rfc / active
+DOC-087,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-087),postmortem / active
+DOC-088,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-088),postmortem / active
+DOC-089,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-089),runbook / active
+DOC-090,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-090),rfc / active
+DOC-091,Document,Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-091),runbook / active
+DOC-092,Document,RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-092),rfc / outdated
+DOC-093,Document,Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-093),postmortem / outdated
+DOC-095,Document,RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-095),rfc / active
+DOC-096,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-096),rfc / active
+DOC-097,Document,Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-097),onboarding / outdated
+DOC-098,Document,Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-098),runbook / active
+DOC-099,Document,Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-099),runbook / active
+DOC-100,Document,Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-100),runbook / active
+DOC-101,Document,RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-101),rfc / active
+ADR-001,Decision,Short-Polling for Client Status Updates,superseded (Chain: Client Communication)
+ADR-021,Decision,WebSocket Connections for Live Dashboards,superseded (Chain: Client Communication)
+ADR-041,Decision,gRPC-Web with Server-Sent Events (SSE) for Real-Time Streaming,active (Chain: Client Communication)
+ADR-002,Decision,Static Pre-shared API Keys for Service Communication,superseded (Chain: Service Authentication)
+ADR-022,Decision,RS256 Signed Asymmetric JWT Tokens with JWKS,superseded (Chain: Service Authentication)
+ADR-042,Decision,Mutual TLS (mTLS) with SPIFFE/SPIRE Ephemeral X.509 Certificates,active (Chain: Service Authentication)
+ADR-003,Decision,Single Monolithic PostgreSQL Instance with Read Replicas,superseded (Chain: Database Sharding)
+ADR-023,Decision,Citus Distributed PostgreSQL Sharding by OrgID,superseded (Chain: Database Sharding)
+ADR-043,Decision,Distributed Multi-Region Ledger with Raft Consensus,active (Chain: Database Sharding)
+ADR-004,Decision,Simple Time-to-Live (TTL) Cache Expiration,superseded (Chain: Cache Invalidation Strategy)
+ADR-024,Decision,Redis Pub/Sub Event-Driven Cache Busting,superseded (Chain: Cache Invalidation Strategy)
+ADR-044,Decision,Change-Data-Capture (CDC) via Debezium and Kafka Cache Invalidator,active (Chain: Cache Invalidation Strategy)
+ADR-005,Decision,Structured JSON Logging with Request Correlation IDs,superseded (Chain: Distributed Tracing)
+ADR-025,Decision,OpenTracing with Zipkin Collector Agent,superseded (Chain: Distributed Tracing)
+ADR-045,Decision,OpenTelemetry (OTel) Collector with eBPF Automatic Instrumentation,active (Chain: Distributed Tracing)
+ADR-006,Decision,Docker Compose and Nomad Clusters,superseded (Chain: Container Orchestration)
+ADR-026,Decision,Self-Managed Kubernetes on EC2 with Kubeadm,superseded (Chain: Container Orchestration)
+ADR-046,Decision,Managed AWS EKS with Karpenter Autoscaling Just-in-Time,active (Chain: Container Orchestration)
+ADR-007,Decision,Environment Variables Injected from Encrypted S3 Bucket,superseded (Chain: Secrets Management)
+ADR-027,Decision,HashiCorp Vault Sidecar Agent with Token Renewal,superseded (Chain: Secrets Management)
+ADR-047,Decision,AWS KMS with External Secrets Operator and IRSA Roles,active (Chain: Secrets Management)
+ADR-008,Decision,Redux Monolithic Store with Redux-Saga,superseded (Chain: Frontend State Management)
+ADR-028,Decision,Zustand Lightweight State Slices,superseded (Chain: Frontend State Management)
+ADR-048,Decision,TanStack Query (React Query) for Server State Caching,active (Chain: Frontend State Management)
+ADR-009,Decision,Celery with Redis Broker for Background Tasks,superseded (Chain: Background Job Queue)
+ADR-029,Decision,BullMQ on Redis for Distributed Node.js Queueing,superseded (Chain: Background Job Queue)
+ADR-049,Decision,Temporal.io Stateful Workflows for Long-Running Sagas,active (Chain: Background Job Queue)
+ADR-010,Decision,RabbitMQ Topic Exchanges for Event Distribution,superseded (Chain: Event Streaming)
+ADR-030,Decision,Apache Kafka Multi-Node Cluster on NVMe EBS,superseded (Chain: Event Streaming)
+ADR-050,Decision,Apache Kafka with Tiered Storage to S3 and Compacted Topics,active (Chain: Event Streaming)
+ADR-018,Decision,Asynchronous & Synchronous RPC via Kafka Topics,superseded (Chain: Inter-Service RPC Protocol)
+ADR-051,Decision,Deprecate Synchronous Kafka RPC in Favor of gRPC with Protobuf,superseded (Chain: Inter-Service RPC Protocol)
+ADR-060,Decision,gRPC with eBPF Acceleration and Envoy Mesh Sidecar Proxy,active (Chain: Inter-Service RPC Protocol)
+ADR-011,Decision,Flask REST API wrapping PyTorch Model,superseded (Chain: ML Model Serving)
+ADR-031,Decision,TorchServe with Multi-Worker GPU Allocation,superseded (Chain: ML Model Serving)
+ADR-052,Decision,Triton Inference Server with vLLM PagedAttention Integration,active (Chain: ML Model Serving)
+ADR-012,Decision,Jenkins On-Premise Master-Worker Pipeline,superseded (Chain: CI/CD Pipeline)
+ADR-032,Decision,GitHub Actions Enterprise with Self-Hosted Runners,superseded (Chain: CI/CD Pipeline)
+ADR-053,Decision,ArgoCD GitOps Continuous Delivery with Automated Canary Rollouts,active (Chain: CI/CD Pipeline)
+ADR-013,Decision,In-Memory Configuration Reload via SIGHUP,superseded (Chain: Feature Flagging)
+ADR-033,Decision,LaunchDarkly Managed SaaS Feature Flags,superseded (Chain: Feature Flagging)
+ADR-054,Decision,Unleash Self-Hosted with Local Proxy Edge Evaluation,active (Chain: Feature Flagging)
+ADR-014,Decision,Fixed Window Counter in Application Memory,superseded (Chain: Rate Limiting Architecture)
+ADR-034,Decision,Distributed Sliding Window Log in Redis Cluster,superseded (Chain: Rate Limiting Architecture)
+ADR-055,Decision,Envoy Global Rate Limiting Service (RLS) with Token Bucket,active (Chain: Rate Limiting Architecture)
+ADR-015,Decision,PostgreSQL Full-Text Search with GIN Indexes,superseded (Chain: Search & Vector Indexing)
+ADR-035,Decision,Elasticsearch Cluster for Text and Log Search,superseded (Chain: Search & Vector Indexing)
+ADR-056,Decision,FalkorDB Graph + Hybrid Dense Vector Search,active (Chain: Search & Vector Indexing)
+ADR-016,Decision,"ELK Stack (Elasticsearch, Logstash, Kibana)",superseded (Chain: Telemetry Log Aggregation)
+ADR-036,Decision,Fluentbit Log Forwarding to ClickHouse Columnar Store,superseded (Chain: Telemetry Log Aggregation)
+ADR-057,Decision,Vector.dev + ClickHouse + Grafana Loki Unified Telemetry,active (Chain: Telemetry Log Aggregation)
+ADR-017,Decision,Direct Single Stripe API Integration,superseded (Chain: Payment Orchestration)
+ADR-037,Decision,Dual Gateway Fallback (Stripe + Adyen),superseded (Chain: Payment Orchestration)
+ADR-058,Decision,Smart Routing Engine with Machine Learning Fraud Scoring,active (Chain: Payment Orchestration)
+ADR-019,Decision,Nginx Reverse Proxy with Lua Scripts,superseded (Chain: API Gateway Architecture)
+ADR-038,Decision,Kong Gateway Enterprise on Kubernetes,superseded (Chain: API Gateway Architecture)
+ADR-059,Decision,Envoy Gateway API with eBPF Accelerated Routing,active (Chain: API Gateway Architecture)
+ADR-020,Decision,Daily S3 CSV and JSON Dumps,superseded (Chain: Lakehouse Storage Format)
+ADR-039,Decision,Apache Parquet on AWS S3 with Glue Metastore,superseded (Chain: Lakehouse Storage Format)
+ADR-040,Decision,Apache Iceberg Open Table Format with Branching & Time-Travel,active (Chain: Lakehouse Storage Format)

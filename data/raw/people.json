@@ -1,0 +1,1065 @@
+[
+  {
+    "id": "person-01",
+    "name": "Marcus Vance",
+    "role": "Principal Platform Architect",
+    "seniority": "Principal",
+    "team_id": "team-core-platform",
+    "skills": [
+      "Go",
+      "Rust",
+      "Distributed Systems",
+      "Kafka",
+      "FalkorDB",
+      "Kubernetes"
+    ],
+    "joined_date": "2021-01-10",
+    "active": true
+  },
+  {
+    "id": "person-02",
+    "name": "Liam Chen",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Principal",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "Prometheus",
+      "FalkorDB",
+      "Redis",
+      "Distributed Systems"
+    ],
+    "joined_date": "2021-11-24",
+    "active": true
+  },
+  {
+    "id": "person-03",
+    "name": "Marcus Vance",
+    "role": "Backend Engineer",
+    "seniority": "Principal",
+    "team_id": "team-payment-billing",
+    "skills": [
+      "Rust",
+      "Go",
+      "Python",
+      "Kafka",
+      "Redis",
+      "React",
+      "Prometheus"
+    ],
+    "joined_date": "2025-04-23",
+    "active": true
+  },
+  {
+    "id": "person-04",
+    "name": "Liam Chen",
+    "role": "Lead Identity Architect",
+    "seniority": "Staff",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "Go",
+      "Distributed Systems",
+      "OAuth2",
+      "gRPC",
+      "Redis",
+      "Security Auditing"
+    ],
+    "joined_date": "2022-03-15",
+    "active": true
+  },
+  {
+    "id": "person-05",
+    "name": "Devon Kim",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Junior",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "Redis",
+      "AWS",
+      "OpenTelemetry",
+      "FalkorDB",
+      "Go",
+      "Kubernetes",
+      "PostgreSQL"
+    ],
+    "joined_date": "2023-05-05",
+    "active": true
+  },
+  {
+    "id": "person-06",
+    "name": "Siddharth Patel",
+    "role": "Lead Security Engineer",
+    "seniority": "Senior",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "Python",
+      "vLLM",
+      "TypeScript",
+      "PyTorch"
+    ],
+    "joined_date": "2023-10-09",
+    "active": true
+  },
+  {
+    "id": "person-07",
+    "name": "Chloe Dubois",
+    "role": "Staff SRE",
+    "seniority": "Mid",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "vLLM",
+      "Python",
+      "Terraform",
+      "gRPC"
+    ],
+    "joined_date": "2025-06-19",
+    "active": true
+  },
+  {
+    "id": "person-08",
+    "name": "Zainab Al-Mansoor",
+    "role": "Lead Security Engineer",
+    "seniority": "Principal",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "CUDA",
+      "Redis",
+      "Citus Sharding",
+      "gRPC"
+    ],
+    "joined_date": "2021-04-28",
+    "active": true
+  },
+  {
+    "id": "person-09",
+    "name": "Kenji Takahashi",
+    "role": "Principal Architect",
+    "seniority": "Mid",
+    "team_id": "team-core-platform",
+    "skills": [
+      "AWS",
+      "eBPF",
+      "PyTorch",
+      "Kubernetes",
+      "CI/CD",
+      "Prometheus"
+    ],
+    "joined_date": "2022-11-09",
+    "active": true
+  },
+  {
+    "id": "person-10",
+    "name": "Priya Sharma",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Principal",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "Terraform",
+      "Prometheus",
+      "Redis",
+      "Kubernetes",
+      "AWS"
+    ],
+    "joined_date": "2024-05-21",
+    "active": true
+  },
+  {
+    "id": "person-11",
+    "name": "Carlos Mendoza",
+    "role": "Backend Engineer",
+    "seniority": "Staff",
+    "team_id": "team-payment-billing",
+    "skills": [
+      "Citus Sharding",
+      "Rust",
+      "Redis",
+      "Prometheus",
+      "Docker",
+      "vLLM"
+    ],
+    "joined_date": "2023-02-07",
+    "active": true
+  },
+  {
+    "id": "person-12",
+    "name": "Sophia Novak",
+    "role": "Systems Engineer",
+    "seniority": "Senior",
+    "team_id": "team-ml-inference",
+    "skills": [
+      "eBPF",
+      "GraphQL",
+      "vLLM",
+      "AWS",
+      "Distributed Systems"
+    ],
+    "joined_date": "2023-03-08",
+    "active": true
+  },
+  {
+    "id": "person-13",
+    "name": "Alexei Volkov",
+    "role": "Backend Engineer",
+    "seniority": "Junior",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "Prometheus",
+      "OpenTelemetry",
+      "PostgreSQL",
+      "Citus Sharding",
+      "vLLM",
+      "PyTorch"
+    ],
+    "joined_date": "2022-03-17",
+    "active": true
+  },
+  {
+    "id": "person-14",
+    "name": "Fatima Haddad",
+    "role": "Engineering Manager",
+    "seniority": "Principal",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "TypeScript",
+      "Distributed Systems",
+      "eBPF",
+      "Kubernetes"
+    ],
+    "joined_date": "2024-10-03",
+    "active": true
+  },
+  {
+    "id": "person-15",
+    "name": "Tobias Lindqvist",
+    "role": "Senior Frontend Engineer",
+    "seniority": "Mid",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "React",
+      "FalkorDB",
+      "Terraform",
+      "Go",
+      "TypeScript",
+      "CI/CD",
+      "Prometheus"
+    ],
+    "joined_date": "2023-02-10",
+    "active": true
+  },
+  {
+    "id": "person-16",
+    "name": "Mei Zhang",
+    "role": "Senior Frontend Engineer",
+    "seniority": "Staff",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "Go",
+      "Prometheus",
+      "FalkorDB",
+      "React",
+      "Kubernetes",
+      "CUDA",
+      "TypeScript"
+    ],
+    "joined_date": "2023-11-17",
+    "active": true
+  },
+  {
+    "id": "person-17",
+    "name": "Julian Moreau",
+    "role": "Systems Engineer",
+    "seniority": "Staff",
+    "team_id": "team-core-platform",
+    "skills": [
+      "PyTorch",
+      "Citus Sharding",
+      "Kubernetes",
+      "Terraform",
+      "React"
+    ],
+    "joined_date": "2021-10-11",
+    "active": true
+  },
+  {
+    "id": "person-18",
+    "name": "Ananya Iyer",
+    "role": "Engineering Manager",
+    "seniority": "Principal",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "PyTorch",
+      "gRPC",
+      "Redis",
+      "Rust"
+    ],
+    "joined_date": "2022-10-03",
+    "active": true
+  },
+  {
+    "id": "person-19",
+    "name": "Elena Rostova",
+    "role": "Staff Site Reliability Engineer",
+    "seniority": "Staff",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "Go",
+      "Kubernetes",
+      "Redis",
+      "eBPF",
+      "Prometheus",
+      "Distributed Systems",
+      "gRPC"
+    ],
+    "joined_date": "2021-11-01",
+    "active": true
+  },
+  {
+    "id": "person-20",
+    "name": "Devon Kim",
+    "role": "Staff ML Systems Architect",
+    "seniority": "Staff",
+    "team_id": "team-ml-inference",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "CUDA",
+      "vLLM",
+      "Docker",
+      "Triton"
+    ],
+    "joined_date": "2022-07-01",
+    "active": true
+  },
+  {
+    "id": "person-21",
+    "name": "Vikram Reddy",
+    "role": "Principal Architect",
+    "seniority": "Mid",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "Citus Sharding",
+      "Terraform",
+      "Distributed Systems",
+      "CUDA"
+    ],
+    "joined_date": "2024-09-06",
+    "active": true
+  },
+  {
+    "id": "person-22",
+    "name": "Tara O'Connor",
+    "role": "MLOps Engineer",
+    "seniority": "Junior",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "Kafka",
+      "Terraform",
+      "CI/CD",
+      "Citus Sharding",
+      "gRPC",
+      "vLLM",
+      "PyTorch"
+    ],
+    "joined_date": "2024-09-15",
+    "active": true
+  },
+  {
+    "id": "person-23",
+    "name": "Nathalie Boucher",
+    "role": "Principal Architect",
+    "seniority": "Staff",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "Python",
+      "Docker",
+      "Go",
+      "OpenTelemetry",
+      "Terraform"
+    ],
+    "joined_date": "2022-10-08",
+    "active": true
+  },
+  {
+    "id": "person-24",
+    "name": "Dante Costa",
+    "role": "Staff SRE",
+    "seniority": "Principal",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "Redis",
+      "Python",
+      "Rust",
+      "Docker"
+    ],
+    "joined_date": "2021-09-08",
+    "active": true
+  },
+  {
+    "id": "person-25",
+    "name": "Freja Berg",
+    "role": "MLOps Engineer",
+    "seniority": "Mid",
+    "team_id": "team-core-platform",
+    "skills": [
+      "Terraform",
+      "Distributed Systems",
+      "Prometheus",
+      "OpenTelemetry",
+      "GraphQL"
+    ],
+    "joined_date": "2022-08-26",
+    "active": true
+  },
+  {
+    "id": "person-26",
+    "name": "Kiran Deshmukh",
+    "role": "Senior Frontend Engineer",
+    "seniority": "Staff",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "TypeScript",
+      "CUDA",
+      "PostgreSQL",
+      "PyTorch"
+    ],
+    "joined_date": "2024-07-15",
+    "active": true
+  },
+  {
+    "id": "person-27",
+    "name": "Lucas Santoro",
+    "role": "Staff SRE",
+    "seniority": "Principal",
+    "team_id": "team-payment-billing",
+    "skills": [
+      "vLLM",
+      "Prometheus",
+      "Docker",
+      "TypeScript"
+    ],
+    "joined_date": "2022-04-07",
+    "active": true
+  },
+  {
+    "id": "person-28",
+    "name": "Yuki Sato",
+    "role": "Backend Engineer",
+    "seniority": "Mid",
+    "team_id": "team-ml-inference",
+    "skills": [
+      "PostgreSQL",
+      "Kubernetes",
+      "FalkorDB",
+      "AWS",
+      "Redis"
+    ],
+    "joined_date": "2021-08-26",
+    "active": true
+  },
+  {
+    "id": "person-29",
+    "name": "Omari Diallo",
+    "role": "Backend Engineer",
+    "seniority": "Principal",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "eBPF",
+      "Terraform",
+      "Go",
+      "Python"
+    ],
+    "joined_date": "2022-03-14",
+    "active": true
+  },
+  {
+    "id": "person-30",
+    "name": "Leila Khoury",
+    "role": "Engineering Manager",
+    "seniority": "Mid",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "vLLM",
+      "Rust",
+      "Kubernetes",
+      "Go",
+      "FalkorDB"
+    ],
+    "joined_date": "2024-05-14",
+    "active": true
+  },
+  {
+    "id": "person-31",
+    "name": "Dmitri Popov",
+    "role": "Backend Engineer",
+    "seniority": "Mid",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "Kafka",
+      "gRPC",
+      "Rust",
+      "OpenTelemetry",
+      "Prometheus"
+    ],
+    "joined_date": "2025-01-24",
+    "active": true
+  },
+  {
+    "id": "person-32",
+    "name": "Samira Jamil",
+    "role": "Data Infrastructure Engineer",
+    "seniority": "Principal",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "OpenTelemetry",
+      "GraphQL",
+      "React",
+      "Kubernetes"
+    ],
+    "joined_date": "2021-09-03",
+    "active": true
+  },
+  {
+    "id": "person-33",
+    "name": "Ethan Brooks",
+    "role": "Senior Backend Engineer",
+    "seniority": "Principal",
+    "team_id": "team-core-platform",
+    "skills": [
+      "CUDA",
+      "Redis",
+      "vLLM",
+      "TypeScript"
+    ],
+    "joined_date": "2025-04-19",
+    "active": true
+  },
+  {
+    "id": "person-34",
+    "name": "Mira Nair",
+    "role": "Systems Engineer",
+    "seniority": "Principal",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "PostgreSQL",
+      "CUDA",
+      "OpenTelemetry",
+      "React"
+    ],
+    "joined_date": "2023-05-07",
+    "active": true
+  },
+  {
+    "id": "person-35",
+    "name": "Rafael Reyes",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Senior",
+    "team_id": "team-payment-billing",
+    "skills": [
+      "FalkorDB",
+      "vLLM",
+      "Distributed Systems",
+      "CUDA",
+      "eBPF"
+    ],
+    "joined_date": "2023-08-11",
+    "active": true
+  },
+  {
+    "id": "person-36",
+    "name": "Hana Tanaka",
+    "role": "Principal Architect",
+    "seniority": "Principal",
+    "team_id": "team-ml-inference",
+    "skills": [
+      "Security Auditing",
+      "OpenTelemetry",
+      "TypeScript",
+      "Python",
+      "Terraform",
+      "Kafka",
+      "React"
+    ],
+    "joined_date": "2023-03-12",
+    "active": true
+  },
+  {
+    "id": "person-37",
+    "name": "Arjun Choudhury",
+    "role": "Principal Architect",
+    "seniority": "Staff",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "gRPC",
+      "Kubernetes",
+      "AWS",
+      "Terraform",
+      "Citus Sharding",
+      "Security Auditing"
+    ],
+    "joined_date": "2025-01-22",
+    "active": true
+  },
+  {
+    "id": "person-38",
+    "name": "Valeria Gomez",
+    "role": "Backend Engineer",
+    "seniority": "Senior",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "Distributed Systems",
+      "FalkorDB",
+      "TypeScript",
+      "Prometheus"
+    ],
+    "joined_date": "2025-03-09",
+    "active": true
+  },
+  {
+    "id": "person-39",
+    "name": "Nico Ricci",
+    "role": "MLOps Engineer",
+    "seniority": "Junior",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "CI/CD",
+      "Docker",
+      "Kafka",
+      "CUDA",
+      "eBPF"
+    ],
+    "joined_date": "2023-09-16",
+    "active": true
+  },
+  {
+    "id": "person-40",
+    "name": "Lin Wu",
+    "role": "MLOps Engineer",
+    "seniority": "Principal",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "eBPF",
+      "PostgreSQL",
+      "FalkorDB",
+      "Rust"
+    ],
+    "joined_date": "2021-06-25",
+    "active": true
+  },
+  {
+    "id": "person-41",
+    "name": "Gabriel Fischer",
+    "role": "Senior Backend Engineer",
+    "seniority": "Senior",
+    "team_id": "team-core-platform",
+    "skills": [
+      "Prometheus",
+      "AWS",
+      "Terraform",
+      "CI/CD",
+      "PostgreSQL"
+    ],
+    "joined_date": "2025-01-04",
+    "active": true
+  },
+  {
+    "id": "person-42",
+    "name": "Sunita Gupta",
+    "role": "Principal Architect",
+    "seniority": "Staff",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "PyTorch",
+      "OpenTelemetry",
+      "Terraform",
+      "Distributed Systems"
+    ],
+    "joined_date": "2024-03-02",
+    "active": true
+  },
+  {
+    "id": "person-43",
+    "name": "Oliver Gallagher",
+    "role": "MLOps Engineer",
+    "seniority": "Senior",
+    "team_id": "team-payment-billing",
+    "skills": [
+      "PyTorch",
+      "Kafka",
+      "CUDA",
+      "Redis"
+    ],
+    "joined_date": "2021-06-25",
+    "active": true
+  },
+  {
+    "id": "person-44",
+    "name": "Maya Kapoor",
+    "role": "Backend Engineer",
+    "seniority": "Mid",
+    "team_id": "team-ml-inference",
+    "skills": [
+      "Redis",
+      "Kubernetes",
+      "PostgreSQL",
+      "Go",
+      "Prometheus"
+    ],
+    "joined_date": "2023-07-26",
+    "active": true
+  },
+  {
+    "id": "person-45",
+    "name": "Henrik Nygard",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Staff",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "Kubernetes",
+      "CI/CD",
+      "TypeScript",
+      "vLLM",
+      "Rust",
+      "GraphQL"
+    ],
+    "joined_date": "2022-04-27",
+    "active": true
+  },
+  {
+    "id": "person-46",
+    "name": "Noor Bakhash",
+    "role": "Engineering Manager",
+    "seniority": "Senior",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "Redis",
+      "Citus Sharding",
+      "Go",
+      "CUDA",
+      "Kafka",
+      "vLLM"
+    ],
+    "joined_date": "2023-05-28",
+    "active": true
+  },
+  {
+    "id": "person-47",
+    "name": "Xavier Mercier",
+    "role": "Principal Architect",
+    "seniority": "Senior",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "eBPF",
+      "React",
+      "vLLM",
+      "CUDA",
+      "Terraform",
+      "Docker"
+    ],
+    "joined_date": "2021-02-09",
+    "active": true
+  },
+  {
+    "id": "person-48",
+    "name": "Rhea Verma",
+    "role": "Senior Backend Engineer",
+    "seniority": "Junior",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "Rust",
+      "TypeScript",
+      "Security Auditing",
+      "PostgreSQL",
+      "PyTorch",
+      "Docker"
+    ],
+    "joined_date": "2024-10-17",
+    "active": true
+  },
+  {
+    "id": "person-49",
+    "name": "Lars Jensen",
+    "role": "Principal Architect",
+    "seniority": "Mid",
+    "team_id": "team-core-platform",
+    "skills": [
+      "FalkorDB",
+      "Rust",
+      "CI/CD",
+      "PostgreSQL",
+      "Go"
+    ],
+    "joined_date": "2025-09-22",
+    "active": true
+  },
+  {
+    "id": "person-50",
+    "name": "Amara Eze",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Staff",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "PostgreSQL",
+      "Python",
+      "CUDA",
+      "Docker",
+      "Security Auditing",
+      "CI/CD"
+    ],
+    "joined_date": "2021-12-10",
+    "active": true
+  },
+  {
+    "id": "person-51",
+    "name": "Tariq Kassim",
+    "role": "Backend Engineer",
+    "seniority": "Senior",
+    "team_id": "team-payment-billing",
+    "skills": [
+      "Docker",
+      "vLLM",
+      "CI/CD",
+      "gRPC",
+      "Terraform",
+      "Distributed Systems",
+      "Kafka"
+    ],
+    "joined_date": "2024-11-13",
+    "active": true
+  },
+  {
+    "id": "person-52",
+    "name": "Chiara Conti",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Staff",
+    "team_id": "team-ml-inference",
+    "skills": [
+      "vLLM",
+      "Terraform",
+      "Go",
+      "gRPC",
+      "CUDA",
+      "Kafka"
+    ],
+    "joined_date": "2024-10-20",
+    "active": true
+  },
+  {
+    "id": "person-53",
+    "name": "Rowan Adler",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Senior",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "AWS",
+      "Citus Sharding",
+      "CUDA",
+      "Kafka",
+      "React",
+      "GraphQL",
+      "Kubernetes"
+    ],
+    "joined_date": "2021-05-17",
+    "active": true
+  },
+  {
+    "id": "person-54",
+    "name": "Sora Morita",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Junior",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "Python",
+      "Redis",
+      "CUDA",
+      "gRPC",
+      "Prometheus",
+      "Kafka"
+    ],
+    "joined_date": "2022-01-02",
+    "active": true
+  },
+  {
+    "id": "person-55",
+    "name": "Dara Connolly",
+    "role": "Lead Security Engineer",
+    "seniority": "Mid",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "AWS",
+      "PostgreSQL",
+      "eBPF",
+      "OpenTelemetry"
+    ],
+    "joined_date": "2022-12-23",
+    "active": true
+  },
+  {
+    "id": "person-56",
+    "name": "Zubair Rahman",
+    "role": "Senior Frontend Engineer",
+    "seniority": "Mid",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "Redis",
+      "Distributed Systems",
+      "eBPF",
+      "Go",
+      "TypeScript",
+      "PostgreSQL",
+      "Citus Sharding"
+    ],
+    "joined_date": "2022-12-17",
+    "active": true
+  },
+  {
+    "id": "person-57",
+    "name": "Clara Sinclair",
+    "role": "Engineering Manager",
+    "seniority": "Principal",
+    "team_id": "team-core-platform",
+    "skills": [
+      "TypeScript",
+      "AWS",
+      "Distributed Systems",
+      "CUDA",
+      "React"
+    ],
+    "joined_date": "2025-10-11",
+    "active": true
+  },
+  {
+    "id": "person-58",
+    "name": "Kaelen Sinha",
+    "role": "Engineering Manager",
+    "seniority": "Junior",
+    "team_id": "team-auth-identity",
+    "skills": [
+      "Terraform",
+      "AWS",
+      "Kubernetes",
+      "GraphQL",
+      "Prometheus",
+      "FalkorDB",
+      "Redis"
+    ],
+    "joined_date": "2023-09-16",
+    "active": true
+  },
+  {
+    "id": "person-59",
+    "name": "Amina Suleiman",
+    "role": "Cloud Reliability Engineer",
+    "seniority": "Staff",
+    "team_id": "team-payment-billing",
+    "skills": [
+      "AWS",
+      "Python",
+      "CI/CD",
+      "gRPC",
+      "Redis",
+      "FalkorDB"
+    ],
+    "joined_date": "2023-06-18",
+    "active": true
+  },
+  {
+    "id": "person-60",
+    "name": "Einar Holm",
+    "role": "Principal Architect",
+    "seniority": "Staff",
+    "team_id": "team-ml-inference",
+    "skills": [
+      "Redis",
+      "vLLM",
+      "CI/CD",
+      "Distributed Systems",
+      "Kafka"
+    ],
+    "joined_date": "2021-07-14",
+    "active": true
+  },
+  {
+    "id": "person-61",
+    "name": "Shreya Sen",
+    "role": "Data Infrastructure Engineer",
+    "seniority": "Junior",
+    "team_id": "team-data-pipeline",
+    "skills": [
+      "PostgreSQL",
+      "Rust",
+      "Kafka",
+      "Citus Sharding",
+      "vLLM",
+      "OpenTelemetry",
+      "Go"
+    ],
+    "joined_date": "2025-07-16",
+    "active": true
+  },
+  {
+    "id": "person-62",
+    "name": "Ezra Sterling",
+    "role": "Staff SRE",
+    "seniority": "Senior",
+    "team_id": "team-sre-infra",
+    "skills": [
+      "Citus Sharding",
+      "vLLM",
+      "PostgreSQL",
+      "Terraform",
+      "CUDA",
+      "Security Auditing"
+    ],
+    "joined_date": "2022-08-08",
+    "active": true
+  },
+  {
+    "id": "person-63",
+    "name": "Siobhan Kowalski",
+    "role": "MLOps Engineer",
+    "seniority": "Mid",
+    "team_id": "team-frontend-exp",
+    "skills": [
+      "Go",
+      "vLLM",
+      "Docker",
+      "CUDA",
+      "Prometheus",
+      "Kubernetes",
+      "AWS"
+    ],
+    "joined_date": "2022-10-18",
+    "active": true
+  },
+  {
+    "id": "person-64",
+    "name": "Farhan Mirza",
+    "role": "Staff SRE",
+    "seniority": "Mid",
+    "team_id": "team-security-compliance",
+    "skills": [
+      "Python",
+      "eBPF",
+      "PostgreSQL",
+      "Distributed Systems"
+    ],
+    "joined_date": "2024-03-02",
+    "active": true
+  },
+  {
+    "id": "person-65",
+    "name": "Yasmine Zhao",
+    "role": "MLOps Engineer",
+    "seniority": "Mid",
+    "team_id": "team-core-platform",
+    "skills": [
+      "Kafka",
+      "AWS",
+      "Docker",
+      "CI/CD",
+      "vLLM",
+      "FalkorDB"
+    ],
+    "joined_date": "2024-05-27",
+    "active": true
+  }
+]
