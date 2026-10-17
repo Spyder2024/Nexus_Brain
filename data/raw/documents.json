@@ -20,883 +20,883 @@
     "content": "# ML Inference Worker CUDA OOM Triage Runbook\n\n## Symptoms:\n- PyTorch worker nodes experiencing CUDA memory fragmentation and uncollected tensor graphs after 72h runtime.\n- Linux kernel OOM Killer terminating process `torch_worker` with ExitCode 137 on GPU shard 4.\n\n## Resolution Steps:\n1. Trigger rolling pod restart with command: `kubectl rollout restart deployment/ml-inference-worker -n ml-prod`.\n2. Force CUDA cache deallocation via admin probe: `curl -X POST http://localhost:8080/admin/cuda/empty_cache`.\n3. Verify tensor shard memory stabilizes under 14GB on Grafana dashboard #402.\n4. Check historical incident reference: INC-045 and active recurrence INC-249."
   },
   {
-    "id": "DOC-013",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-013)",
+    "id": "DOC-001",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-001)",
     "doc_type": "rfc",
     "author_id": "person-62",
     "system_id": "vector-gateway",
     "last_updated": "2026-09-29T22:06:47+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-013: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-001: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-014",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-014)",
+    "id": "DOC-002",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-002)",
     "doc_type": "postmortem",
     "author_id": "person-39",
     "system_id": "checkout-orchestrator",
     "last_updated": "2025-12-09T16:26:29+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-014: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-002: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-015",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-015)",
+    "id": "DOC-003",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-003)",
     "doc_type": "rfc",
     "author_id": "person-33",
     "system_id": "vector-gateway",
     "last_updated": "2026-03-29T19:07:09+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-015: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-003: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-016",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-016)",
+    "id": "DOC-004",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-004)",
     "doc_type": "onboarding",
     "author_id": "person-49",
     "system_id": "network-mesh-ingress",
     "last_updated": "2025-12-26T13:56:08+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-016: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-004: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-017",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-017)",
+    "id": "DOC-005",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-005)",
     "doc_type": "postmortem",
     "author_id": "person-18",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-02-12T04:52:28+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-017: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-005: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-018",
-    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-018)",
+    "id": "DOC-006",
+    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-006)",
     "doc_type": "runbook",
     "author_id": "person-01",
     "system_id": "auth-token-validator",
     "last_updated": "2026-10-03T17:46:13+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-018: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
+    "content": "Technical documentation DOC-006: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
   },
   {
-    "id": "DOC-019",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-019)",
+    "id": "DOC-007",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-007)",
     "doc_type": "postmortem",
     "author_id": "person-63",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-03-16T20:51:38+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-019: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-007: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-020",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-020)",
+    "id": "DOC-008",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-008)",
     "doc_type": "postmortem",
     "author_id": "person-50",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-02-02T00:47:35+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-020: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-008: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-021",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-021)",
+    "id": "DOC-009",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-009)",
     "doc_type": "rfc",
     "author_id": "person-10",
     "system_id": "web-client-spa",
     "last_updated": "2026-03-15T10:35:11+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-021: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-009: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-022",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-022)",
+    "id": "DOC-010",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-010)",
     "doc_type": "postmortem",
     "author_id": "person-50",
     "system_id": "checkout-orchestrator",
     "last_updated": "2025-12-25T06:05:19+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-022: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-010: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-023",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-023)",
+    "id": "DOC-011",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-011)",
     "doc_type": "runbook",
     "author_id": "person-33",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2026-04-14T17:26:45+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-023: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-011: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-024",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-024)",
+    "id": "DOC-013",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-013)",
     "doc_type": "postmortem",
     "author_id": "person-08",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-03-26T20:33:41+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-024: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-013: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-025",
-    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-025)",
+    "id": "DOC-014",
+    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-014)",
     "doc_type": "runbook",
     "author_id": "person-62",
     "system_id": "auth-token-validator",
     "last_updated": "2026-09-22T22:50:29+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-025: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
+    "content": "Technical documentation DOC-014: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
   },
   {
-    "id": "DOC-026",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-026)",
+    "id": "DOC-015",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-015)",
     "doc_type": "runbook",
     "author_id": "person-19",
     "system_id": "redis-session-store",
     "last_updated": "2026-05-29T13:57:25+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-026: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-015: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-027",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-027)",
+    "id": "DOC-016",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-016)",
     "doc_type": "rfc",
     "author_id": "person-33",
     "system_id": "vector-gateway",
     "last_updated": "2026-06-05T14:04:36+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-027: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-016: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-028",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-028)",
+    "id": "DOC-017",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-017)",
     "doc_type": "rfc",
     "author_id": "person-02",
     "system_id": "vector-gateway",
     "last_updated": "2026-08-12T08:38:22+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-028: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-017: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-029",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-029)",
+    "id": "DOC-018",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-018)",
     "doc_type": "runbook",
     "author_id": "person-51",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2025-12-14T09:04:29+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-029: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-018: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-030",
-    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-030)",
+    "id": "DOC-019",
+    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-019)",
     "doc_type": "runbook",
     "author_id": "person-55",
     "system_id": "auth-token-validator",
     "last_updated": "2026-07-17T20:27:30+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-030: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
+    "content": "Technical documentation DOC-019: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
   },
   {
-    "id": "DOC-031",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-031)",
+    "id": "DOC-020",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-020)",
     "doc_type": "onboarding",
     "author_id": "person-65",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-01-10T12:01:31+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-031: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-020: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-032",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-032)",
+    "id": "DOC-021",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-021)",
     "doc_type": "rfc",
     "author_id": "person-40",
     "system_id": "web-client-spa",
     "last_updated": "2026-03-14T08:45:52+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-032: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-021: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-033",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-033)",
+    "id": "DOC-022",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-022)",
     "doc_type": "rfc",
     "author_id": "person-45",
     "system_id": "web-client-spa",
     "last_updated": "2026-07-29T02:12:19+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-033: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-022: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-034",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-034)",
+    "id": "DOC-023",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-023)",
     "doc_type": "runbook",
     "author_id": "person-40",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2026-10-07T05:52:08+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-034: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-023: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-035",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-035)",
+    "id": "DOC-024",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-024)",
     "doc_type": "runbook",
     "author_id": "person-13",
     "system_id": "redis-session-store",
     "last_updated": "2026-09-04T20:47:13+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-035: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-024: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-036",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-036)",
+    "id": "DOC-025",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-025)",
     "doc_type": "onboarding",
     "author_id": "person-56",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-07-15T05:34:39+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-036: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-025: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-037",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-037)",
+    "id": "DOC-026",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-026)",
     "doc_type": "rfc",
     "author_id": "person-26",
     "system_id": "vector-gateway",
     "last_updated": "2026-02-03T05:22:27+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-037: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-026: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-038",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-038)",
+    "id": "DOC-027",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-027)",
     "doc_type": "postmortem",
     "author_id": "person-58",
     "system_id": "checkout-orchestrator",
     "last_updated": "2025-12-24T04:15:38+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-038: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-027: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-039",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-039)",
+    "id": "DOC-028",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-028)",
     "doc_type": "runbook",
     "author_id": "person-24",
     "system_id": "redis-session-store",
     "last_updated": "2026-07-04T02:33:27+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-039: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-028: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-040",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-040)",
+    "id": "DOC-029",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-029)",
     "doc_type": "runbook",
     "author_id": "person-57",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2026-08-15T12:49:42+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-040: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-029: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-041",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-041)",
+    "id": "DOC-030",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-030)",
     "doc_type": "onboarding",
     "author_id": "person-11",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-03-31T07:27:38+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-041: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-030: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-042",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-042)",
+    "id": "DOC-031",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-031)",
     "doc_type": "postmortem",
     "author_id": "person-04",
     "system_id": "kafka-event-bus",
     "last_updated": "2025-12-15T03:27:07+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-042: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-031: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-043",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-043)",
+    "id": "DOC-032",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-032)",
     "doc_type": "postmortem",
     "author_id": "person-02",
     "system_id": "checkout-orchestrator",
     "last_updated": "2026-09-09T02:18:45+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-043: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-032: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-044",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-044)",
+    "id": "DOC-033",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-033)",
     "doc_type": "runbook",
     "author_id": "person-06",
     "system_id": "redis-session-store",
     "last_updated": "2026-08-22T04:18:55+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-044: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-033: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-045",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-045)",
+    "id": "DOC-034",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-034)",
     "doc_type": "runbook",
     "author_id": "person-49",
     "system_id": "redis-session-store",
     "last_updated": "2025-12-05T17:03:53+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-045: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-034: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-046",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-046)",
+    "id": "DOC-035",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-035)",
     "doc_type": "onboarding",
     "author_id": "person-63",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-02-09T23:43:45+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-046: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-035: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-047",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-047)",
+    "id": "DOC-036",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-036)",
     "doc_type": "postmortem",
     "author_id": "person-48",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-04-18T00:31:23+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-047: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-036: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-048",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-048)",
+    "id": "DOC-037",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-037)",
     "doc_type": "postmortem",
     "author_id": "person-52",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-03-30T13:45:41+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-048: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-037: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-049",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-049)",
+    "id": "DOC-038",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-038)",
     "doc_type": "postmortem",
     "author_id": "person-43",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-08-20T11:53:16+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-049: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-038: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-050",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-050)",
+    "id": "DOC-039",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-039)",
     "doc_type": "runbook",
     "author_id": "person-18",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2026-09-26T14:05:07+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-050: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-039: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-051",
-    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-051)",
+    "id": "DOC-040",
+    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-040)",
     "doc_type": "runbook",
     "author_id": "person-36",
     "system_id": "data-lakehouse-ingest",
     "last_updated": "2026-06-04T22:35:10+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-051: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
+    "content": "Technical documentation DOC-040: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
   },
   {
-    "id": "DOC-052",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-052)",
+    "id": "DOC-041",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-041)",
     "doc_type": "rfc",
     "author_id": "person-53",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2026-07-06T11:53:10+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-052: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-041: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-053",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-053)",
+    "id": "DOC-042",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-042)",
     "doc_type": "postmortem",
     "author_id": "person-03",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-04-09T10:20:03+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-053: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-042: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-054",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-054)",
+    "id": "DOC-043",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-043)",
     "doc_type": "postmortem",
     "author_id": "person-57",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-06-12T13:54:31+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-054: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-043: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-055",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-055)",
+    "id": "DOC-044",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-044)",
     "doc_type": "rfc",
     "author_id": "person-11",
     "system_id": "web-client-spa",
     "last_updated": "2026-04-14T20:25:13+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-055: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-044: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-056",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-056)",
+    "id": "DOC-045",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-045)",
     "doc_type": "rfc",
     "author_id": "person-13",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2026-03-27T01:18:03+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-056: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-045: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-057",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-057)",
+    "id": "DOC-046",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-046)",
     "doc_type": "rfc",
     "author_id": "person-65",
     "system_id": "vector-gateway",
     "last_updated": "2026-09-24T07:20:41+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-057: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-046: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-058",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-058)",
+    "id": "DOC-047",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-047)",
     "doc_type": "postmortem",
     "author_id": "person-39",
     "system_id": "checkout-orchestrator",
     "last_updated": "2026-01-02T19:00:16+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-058: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-047: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-059",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-059)",
+    "id": "DOC-048",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-048)",
     "doc_type": "rfc",
     "author_id": "person-15",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2026-02-05T16:18:54+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-059: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-048: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-060",
-    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-060)",
+    "id": "DOC-049",
+    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-049)",
     "doc_type": "runbook",
     "author_id": "person-22",
     "system_id": "auth-token-validator",
     "last_updated": "2026-08-26T08:09:36+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-060: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
+    "content": "Technical documentation DOC-049: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
   },
   {
-    "id": "DOC-061",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-061)",
+    "id": "DOC-050",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-050)",
     "doc_type": "runbook",
     "author_id": "person-21",
     "system_id": "redis-session-store",
     "last_updated": "2026-04-25T22:02:16+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-061: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-050: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-062",
-    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-062)",
+    "id": "DOC-051",
+    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-051)",
     "doc_type": "runbook",
     "author_id": "person-33",
     "system_id": "auth-token-validator",
     "last_updated": "2026-02-09T07:31:06+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-062: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
+    "content": "Technical documentation DOC-051: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
   },
   {
-    "id": "DOC-063",
-    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-063)",
+    "id": "DOC-052",
+    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-052)",
     "doc_type": "runbook",
     "author_id": "person-63",
     "system_id": "data-lakehouse-ingest",
     "last_updated": "2026-08-24T23:53:00+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-063: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
+    "content": "Technical documentation DOC-052: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
   },
   {
-    "id": "DOC-064",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-064)",
+    "id": "DOC-053",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-053)",
     "doc_type": "rfc",
     "author_id": "person-09",
     "system_id": "web-client-spa",
     "last_updated": "2026-04-17T22:16:25+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-064: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-053: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-065",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-065)",
+    "id": "DOC-054",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-054)",
     "doc_type": "runbook",
     "author_id": "person-56",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2026-06-13T03:51:39+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-065: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-054: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-066",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-066)",
+    "id": "DOC-055",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-055)",
     "doc_type": "onboarding",
     "author_id": "person-12",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-08-14T08:45:17+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-066: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-055: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-067",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-067)",
+    "id": "DOC-056",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-056)",
     "doc_type": "rfc",
     "author_id": "person-25",
     "system_id": "web-client-spa",
     "last_updated": "2026-08-11T15:08:37+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-067: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-056: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-068",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-068)",
+    "id": "DOC-057",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-057)",
     "doc_type": "postmortem",
     "author_id": "person-49",
     "system_id": "kafka-event-bus",
     "last_updated": "2025-12-19T11:56:20+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-068: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-057: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-069",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-069)",
+    "id": "DOC-058",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-058)",
     "doc_type": "rfc",
     "author_id": "person-25",
     "system_id": "web-client-spa",
     "last_updated": "2026-03-25T20:34:25+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-069: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-058: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-070",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-070)",
+    "id": "DOC-059",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-059)",
     "doc_type": "postmortem",
     "author_id": "person-17",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-01-16T14:05:45+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-070: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-059: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-071",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-071)",
+    "id": "DOC-060",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-060)",
     "doc_type": "postmortem",
     "author_id": "person-51",
     "system_id": "checkout-orchestrator",
     "last_updated": "2026-10-05T16:24:05+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-071: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-060: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-072",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-072)",
+    "id": "DOC-061",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-061)",
     "doc_type": "postmortem",
     "author_id": "person-19",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-05-12T04:01:48+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-072: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-061: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-073",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-073)",
+    "id": "DOC-062",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-062)",
     "doc_type": "rfc",
     "author_id": "person-19",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2025-12-07T01:40:56+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-073: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-062: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-074",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-074)",
+    "id": "DOC-063",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-063)",
     "doc_type": "runbook",
     "author_id": "person-41",
     "system_id": "redis-session-store",
     "last_updated": "2026-05-04T17:42:33+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-074: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-063: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-075",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-075)",
+    "id": "DOC-064",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-064)",
     "doc_type": "postmortem",
     "author_id": "person-36",
     "system_id": "checkout-orchestrator",
     "last_updated": "2025-12-20T18:35:11+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-075: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-064: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-076",
-    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-076)",
+    "id": "DOC-065",
+    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-065)",
     "doc_type": "runbook",
     "author_id": "person-64",
     "system_id": "auth-token-validator",
     "last_updated": "2026-05-13T22:17:05+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-076: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
+    "content": "Technical documentation DOC-065: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
   },
   {
-    "id": "DOC-077",
-    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-077)",
+    "id": "DOC-066",
+    "title": "Postmortem: INC-204 Kafka Consumer Partition Lag Deadlock (DOC-066)",
     "doc_type": "postmortem",
     "author_id": "person-20",
     "system_id": "kafka-event-bus",
     "last_updated": "2026-06-25T03:48:20+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-077: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
+    "content": "Technical documentation DOC-066: Detailed operational guidelines, architecture decisions, and procedures for kafka-event-bus."
   },
   {
-    "id": "DOC-078",
-    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-078)",
+    "id": "DOC-067",
+    "title": "Runbook: Redis Cluster Failover & Replication Resync (DOC-067)",
     "doc_type": "runbook",
     "author_id": "person-23",
     "system_id": "redis-session-store",
     "last_updated": "2026-02-02T21:44:05+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-078: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
+    "content": "Technical documentation DOC-067: Detailed operational guidelines, architecture decisions, and procedures for redis-session-store."
   },
   {
-    "id": "DOC-079",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-079)",
+    "id": "DOC-068",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-068)",
     "doc_type": "rfc",
     "author_id": "person-03",
     "system_id": "vector-gateway",
     "last_updated": "2026-01-02T21:43:03+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-079: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-068: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-080",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-080)",
+    "id": "DOC-069",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-069)",
     "doc_type": "rfc",
     "author_id": "person-45",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2026-03-23T21:45:43+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-080: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-069: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-081",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-081)",
+    "id": "DOC-070",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-070)",
     "doc_type": "onboarding",
     "author_id": "person-37",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-07-02T16:02:52+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-081: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-070: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-082",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-082)",
+    "id": "DOC-071",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-071)",
     "doc_type": "rfc",
     "author_id": "person-42",
     "system_id": "vector-gateway",
     "last_updated": "2025-12-17T10:01:46+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-082: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-071: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-083",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-083)",
+    "id": "DOC-072",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-072)",
     "doc_type": "onboarding",
     "author_id": "person-59",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-07-18T14:59:11+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-083: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-072: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-084",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-084)",
+    "id": "DOC-073",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-073)",
     "doc_type": "rfc",
     "author_id": "person-38",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2026-07-28T04:21:46+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-084: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-073: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-085",
-    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-085)",
+    "id": "DOC-074",
+    "title": "Runbook: Emergency Auth Token Revocation & JWKS Key Rotation (DOC-074)",
     "doc_type": "runbook",
     "author_id": "person-02",
     "system_id": "auth-token-validator",
     "last_updated": "2026-04-07T15:02:25+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-085: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
+    "content": "Technical documentation DOC-074: Detailed operational guidelines, architecture decisions, and procedures for auth-token-validator."
   },
   {
-    "id": "DOC-086",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-086)",
+    "id": "DOC-075",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-075)",
     "doc_type": "rfc",
     "author_id": "person-49",
     "system_id": "vector-gateway",
     "last_updated": "2026-03-06T05:52:31+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-086: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-075: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-087",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-087)",
+    "id": "DOC-076",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-076)",
     "doc_type": "postmortem",
     "author_id": "person-46",
     "system_id": "checkout-orchestrator",
     "last_updated": "2026-02-10T05:27:36+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-087: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-076: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-088",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-088)",
+    "id": "DOC-077",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-077)",
     "doc_type": "postmortem",
     "author_id": "person-44",
     "system_id": "checkout-orchestrator",
     "last_updated": "2025-12-10T20:12:19+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-088: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-077: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-089",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-089)",
+    "id": "DOC-078",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-078)",
     "doc_type": "runbook",
     "author_id": "person-32",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2026-09-23T07:40:29+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-089: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-078: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-090",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-090)",
+    "id": "DOC-079",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-079)",
     "doc_type": "rfc",
     "author_id": "person-39",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2025-12-09T05:43:12+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-090: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-079: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-091",
-    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-091)",
+    "id": "DOC-080",
+    "title": "Runbook: Stripe Webhook Signature Verification and Dead-Letter Replay (DOC-080)",
     "doc_type": "runbook",
     "author_id": "person-12",
     "system_id": "stripe-webhook-worker",
     "last_updated": "2026-02-14T12:19:23+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-091: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
+    "content": "Technical documentation DOC-080: Detailed operational guidelines, architecture decisions, and procedures for stripe-webhook-worker."
   },
   {
-    "id": "DOC-092",
-    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-092)",
+    "id": "DOC-081",
+    "title": "RFC-048: Zero-Trust mTLS with SPIFFE/SPIRE Identity Provisioning (DOC-081)",
     "doc_type": "rfc",
     "author_id": "person-48",
     "system_id": "secrets-kms-proxy",
     "last_updated": "2026-10-05T07:37:52+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-092: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
+    "content": "Technical documentation DOC-081: Detailed operational guidelines, architecture decisions, and procedures for secrets-kms-proxy."
   },
   {
-    "id": "DOC-093",
-    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-093)",
+    "id": "DOC-083",
+    "title": "Postmortem: INC-119 Cascading Checkout Outage Root Cause Analysis (DOC-083)",
     "doc_type": "postmortem",
     "author_id": "person-63",
     "system_id": "checkout-orchestrator",
     "last_updated": "2026-01-23T03:48:38+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-093: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
+    "content": "Technical documentation DOC-083: Detailed operational guidelines, architecture decisions, and procedures for checkout-orchestrator."
   },
   {
-    "id": "DOC-095",
-    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-095)",
+    "id": "DOC-084",
+    "title": "RFC-052: Micro-frontend Architecture for Enterprise Web Console (DOC-084)",
     "doc_type": "rfc",
     "author_id": "person-62",
     "system_id": "web-client-spa",
     "last_updated": "2026-05-23T08:33:27+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-095: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
+    "content": "Technical documentation DOC-084: Detailed operational guidelines, architecture decisions, and procedures for web-client-spa."
   },
   {
-    "id": "DOC-096",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-096)",
+    "id": "DOC-085",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-085)",
     "doc_type": "rfc",
     "author_id": "person-50",
     "system_id": "vector-gateway",
     "last_updated": "2026-02-04T12:31:52+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-096: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-085: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   },
   {
-    "id": "DOC-097",
-    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-097)",
+    "id": "DOC-086",
+    "title": "Onboarding: Platform Engineering Guidelines and Local Dev Environment (DOC-086)",
     "doc_type": "onboarding",
     "author_id": "person-17",
     "system_id": "network-mesh-ingress",
     "last_updated": "2026-08-21T00:09:32+00:00",
     "status": "outdated",
-    "content": "Technical documentation DOC-097: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
+    "content": "Technical documentation DOC-086: Detailed operational guidelines, architecture decisions, and procedures for network-mesh-ingress."
   },
   {
-    "id": "DOC-098",
-    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-098)",
+    "id": "DOC-087",
+    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-087)",
     "doc_type": "runbook",
     "author_id": "person-24",
     "system_id": "data-lakehouse-ingest",
     "last_updated": "2026-03-17T11:16:52+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-098: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
+    "content": "Technical documentation DOC-087: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
   },
   {
-    "id": "DOC-099",
-    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-099)",
+    "id": "DOC-088",
+    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-088)",
     "doc_type": "runbook",
     "author_id": "person-63",
     "system_id": "data-lakehouse-ingest",
     "last_updated": "2026-09-07T17:06:27+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-099: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
+    "content": "Technical documentation DOC-088: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
   },
   {
-    "id": "DOC-100",
-    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-100)",
+    "id": "DOC-089",
+    "title": "Runbook: Lakehouse Ingest Pipeline Backpressure and S3 Rate Limiting (DOC-089)",
     "doc_type": "runbook",
     "author_id": "person-16",
     "system_id": "data-lakehouse-ingest",
     "last_updated": "2026-06-25T12:01:19+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-100: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
+    "content": "Technical documentation DOC-089: Detailed operational guidelines, architecture decisions, and procedures for data-lakehouse-ingest."
   },
   {
-    "id": "DOC-101",
-    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-101)",
+    "id": "DOC-090",
+    "title": "RFC-034: FalkorDB GraphRAG Knowledge Layer Integration Architecture (DOC-090)",
     "doc_type": "rfc",
     "author_id": "person-24",
     "system_id": "vector-gateway",
     "last_updated": "2026-10-07T15:48:12+00:00",
     "status": "active",
-    "content": "Technical documentation DOC-101: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
+    "content": "Technical documentation DOC-090: Detailed operational guidelines, architecture decisions, and procedures for vector-gateway."
   }
 ]

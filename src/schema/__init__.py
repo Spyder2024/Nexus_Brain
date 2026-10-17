@@ -14,6 +14,15 @@ from src.schema.models import (
     GraphBundle,
     RelationType,
     NodeType,
+    Session,
+    Turn,
+    Playbook,
+    AgentTrace,
+    Citation,
+    SubgraphNode,
+    SubgraphEdge,
+    Subgraph,
+    AgentQueryResponse,
 )
 
 __all__ = [
@@ -30,4 +39,13 @@ __all__ = [
     "GraphBundle",
     "RelationType",
     "NodeType",
+    "Session",
+    "Turn",
+    "Playbook",
+    "AgentTrace",
+    "Citation",
+    "SubgraphNode",
+    "SubgraphEdge",
+    "Subgraph",
+    "AgentQueryResponse",
 ]

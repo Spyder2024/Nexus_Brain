@@ -714,9 +714,17 @@ class EnterpriseDataGenerator:
             "test({sys}): Increase end-to-end integration test coverage to 85%",
         ]
 
-        for i in range(1, needed + 1):
-            pr_num = i + 26
-            pr_id = f"PR-{pr_num:03d}"
+        existing_pr_ids = {pr.id for pr in self.pull_requests}
+        pr_counter = 1
+        for _ in range(needed):
+            while True:
+                candidate_id = f"PR-{pr_counter:03d}"
+                pr_counter += 1
+                if candidate_id not in existing_pr_ids:
+                    pr_id = candidate_id
+                    existing_pr_ids.add(pr_id)
+                    break
+
             target_sys = self.rng.choice(self.systems)
             author = self.rng.choice(self.people).id
             candidate_reviewers = [p.id for p in self.people if p.id != author]
@@ -800,6 +808,33 @@ class EnterpriseDataGenerator:
         # SLACK-088: In #arch-sync debating INC-204 and agreeing to ADR-051
         # ---------------------------------------------------------------------
         t_088_dt = self.base_date - timedelta(days=22)
+        slack_088_messages = [
+            SlackMessage(
+                sender_id="person-12",
+                timestamp=self._format_dt(t_088_dt),
+                text="Team, INC-204 was unacceptable. We had checkout authorization hanging for 45 minutes because Kafka consumer partition rebalance paused replies.",
+            ),
+            SlackMessage(
+                sender_id="person-01",
+                timestamp=self._format_dt(t_088_dt + timedelta(minutes=6)),
+                text="Agreed Marcus. ADR-018 originally prescribed Kafka for RPC back in 2023, but at our current 85,000 req/sec scale, async RPC emulation over message queues creates unbounded tail latencies.",
+            ),
+            SlackMessage(
+                sender_id="person-19",
+                timestamp=self._format_dt(t_088_dt + timedelta(minutes=14)),
+                text="From SRE vantage: when broker rebalance triggers, timeouts cascade to upstream proxies. We must move synchronous inter-service calls directly to gRPC with HTTP/2 and mTLS.",
+            ),
+            SlackMessage(
+                sender_id="person-04",
+                timestamp=self._format_dt(t_088_dt + timedelta(minutes=22)),
+                text="Identity team supports this. We have protobuf specs ready. I will draft ADR-051 to officially deprecate sync Kafka RPC and supersede ADR-018 immediately.",
+            ),
+            SlackMessage(
+                sender_id="person-01",
+                timestamp=self._format_dt(t_088_dt + timedelta(minutes=30)),
+                text="Consensus reached. Let's record ADR-051 and update all service runbooks. Note: Ensure onboarding docs get updated so newcomers stop using Kafka for sync queries!",
+            ),
+        ]
         slack_088 = SlackThread(
             id="SLACK-088",
             channel="#arch-sync",
@@ -807,33 +842,8 @@ class EnterpriseDataGenerator:
             participant_ids=["person-01", "person-04", "person-12", "person-19", "person-36"],
             linked_ticket_id="INC-204",
             linked_decision_id="ADR-051",
-            messages=[
-                SlackMessage(
-                    sender_id="person-12",
-                    timestamp=self._format_dt(t_088_dt),
-                    text="Team, INC-204 was unacceptable. We had checkout authorization hanging for 45 minutes because Kafka consumer partition rebalance paused replies.",
-                ),
-                SlackMessage(
-                    sender_id="person-01",
-                    timestamp=self._format_dt(t_088_dt + timedelta(minutes=6)),
-                    text="Agreed Marcus. ADR-018 originally prescribed Kafka for RPC back in 2023, but at our current 85,000 req/sec scale, async RPC emulation over message queues creates unbounded tail latencies.",
-                ),
-                SlackMessage(
-                    sender_id="person-19",
-                    timestamp=self._format_dt(t_088_dt + timedelta(minutes=14)),
-                    text="From SRE vantage: when broker rebalance triggers, timeouts cascade to upstream proxies. We must move synchronous inter-service calls directly to gRPC with HTTP/2 and mTLS.",
-                ),
-                SlackMessage(
-                    sender_id="person-04",
-                    timestamp=self._format_dt(t_088_dt + timedelta(minutes=22)),
-                    text="Identity team supports this. We have protobuf specs ready. I will draft ADR-051 to officially deprecate sync Kafka RPC and supersede ADR-018 immediately.",
-                ),
-                SlackMessage(
-                    sender_id="person-01",
-                    timestamp=self._format_dt(t_088_dt + timedelta(minutes=30)),
-                    text="Consensus reached. Let's record ADR-051 and update all service runbooks. Note: Ensure onboarding docs get updated so newcomers stop using Kafka for sync queries!",
-                ),
-            ],
+            messages=slack_088_messages,
+            transcript="\n".join([f"[{m.timestamp}] {m.sender_id}: {m.text}" for m in slack_088_messages]),
         )
         self.slack_threads.append(slack_088)
 
@@ -869,9 +879,17 @@ class EnterpriseDataGenerator:
             ),
         ]
 
-        for i in range(1, needed + 1):
-            s_num = i + 1 if i < 88 else i + 2
-            sid = f"SLACK-{s_num:03d}"
+        existing_thread_ids = {st.id for st in self.slack_threads}
+        thread_counter = 1
+        for _ in range(needed):
+            while True:
+                candidate_id = f"SLACK-{thread_counter:03d}"
+                thread_counter += 1
+                if candidate_id not in existing_thread_ids:
+                    sid = candidate_id
+                    existing_thread_ids.add(sid)
+                    break
+
             channel = self.rng.choice(channels)
             participants = self.rng.sample([p.id for p in self.people], k=self.rng.randint(3, 5))
             topic, msg1, msg2 = self.rng.choice(chat_scenarios)
@@ -880,6 +898,24 @@ class EnterpriseDataGenerator:
             # Optional linked ticket
             linked_t = self.rng.choice(self.tickets).id if self.rng.random() > 0.4 else None
 
+            thread_msgs = [
+                SlackMessage(
+                    sender_id=participants[0],
+                    timestamp=self._format_dt(t_dt),
+                    text=f"[{topic}] {msg1}",
+                ),
+                SlackMessage(
+                    sender_id=participants[1],
+                    timestamp=self._format_dt(t_dt + timedelta(minutes=self.rng.randint(2, 10))),
+                    text=msg2,
+                ),
+                SlackMessage(
+                    sender_id=participants[2],
+                    timestamp=self._format_dt(t_dt + timedelta(minutes=self.rng.randint(11, 25))),
+                    text="Acknowledged. Changes verified in staging and metrics looking clean.",
+                ),
+            ]
+
             thread = SlackThread(
                 id=sid,
                 channel=channel,
@@ -887,23 +923,8 @@ class EnterpriseDataGenerator:
                 participant_ids=participants,
                 linked_ticket_id=linked_t,
                 linked_decision_id=None,
-                messages=[
-                    SlackMessage(
-                        sender_id=participants[0],
-                        timestamp=self._format_dt(t_dt),
-                        text=f"[{topic}] {msg1}",
-                    ),
-                    SlackMessage(
-                        sender_id=participants[1],
-                        timestamp=self._format_dt(t_dt + timedelta(minutes=self.rng.randint(2, 10))),
-                        text=msg2,
-                    ),
-                    SlackMessage(
-                        sender_id=participants[2],
-                        timestamp=self._format_dt(t_dt + timedelta(minutes=self.rng.randint(11, 25))),
-                        text="Acknowledged. Changes verified in staging and metrics looking clean.",
-                    ),
-                ],
+                messages=thread_msgs,
+                transcript="\n".join([f"[{m.timestamp}] {m.sender_id}: {m.text}" for m in thread_msgs]),
             )
             self.slack_threads.append(thread)
 
@@ -1013,9 +1034,17 @@ class EnterpriseDataGenerator:
             ("RFC-052: Micro-frontend Architecture for Enterprise Web Console", DocType.RFC, "web-client-spa"),
         ]
 
-        for i in range(1, needed + 1):
-            d_num = i + 12 if i < 82 else i + 13
-            did = f"DOC-{d_num:03d}"
+        existing_doc_ids = {d.id for d in self.documents}
+        doc_counter = 1
+        for _ in range(needed):
+            while True:
+                candidate_id = f"DOC-{doc_counter:03d}"
+                doc_counter += 1
+                if candidate_id not in existing_doc_ids:
+                    did = candidate_id
+                    existing_doc_ids.add(did)
+                    break
+
             title_tpl, d_type, sys_id = self.rng.choice(doc_templates)
             author = self.rng.choice(self.people).id
             dt = self._rand_dt(start_days_ago=320, end_days_ago=5)
@@ -1186,11 +1215,10 @@ class EnterpriseDataGenerator:
             # CHAIN 11 - Golden Scenario 2: Synchronous RPC Architecture Evolution
             (
                 "Inter-Service RPC Protocol",
-                "kafka-event-bus",
+                "auth-service",
                 [
                     ("ADR-018", "Asynchronous & Synchronous RPC via Kafka Topics", 300, "Uniform message bus for all inter-service communications."),
                     ("ADR-051", "Deprecate Synchronous Kafka RPC in Favor of gRPC with Protobuf", 21, "Direct HTTP/2 multiplexing, sub-millisecond latencies, and total immunity to consumer lag deadlocks."),
-                    ("ADR-060", "gRPC with eBPF Acceleration and Envoy Mesh Sidecar Proxy", 5, "Kernel bypass socket routing for sub-500 microsecond RPC hops."),
                 ],
             ),
             (
@@ -1262,7 +1290,8 @@ class EnterpriseDataGenerator:
                 [
                     ("ADR-019", "Nginx Reverse Proxy with Lua Scripts", 265, "Standard HTTP load balancing."),
                     ("ADR-038", "Kong Gateway Enterprise on Kubernetes", 85, "Plugin ecosystem for authentication and rate limiting."),
-                    ("ADR-059", "Envoy Gateway API with eBPF Accelerated Routing", 2, "Modern Kubernetes Gateway API standard with ultra-low latency."),
+                    ("ADR-059", "Envoy Gateway API with eBPF Accelerated Routing", 15, "Modern Kubernetes Gateway API standard with ultra-low latency."),
+                    ("ADR-060", "Global Multi-Cluster Ingress Mesh with Cilium eBPF Service Mesh", 2, "Kernel-level socket routing across multi-cloud availability zones."),
                 ],
             ),
             (

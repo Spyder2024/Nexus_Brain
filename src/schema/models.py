@@ -184,6 +184,7 @@ class SlackThread(BaseModel):
     started_at: str = Field(..., description="ISO timestamp thread started")
     participant_ids: List[str] = Field(default_factory=list, description="List of Person IDs in discussion")
     messages: List[SlackMessage] = Field(default_factory=list, description="Chronological messages in thread")
+    transcript: Optional[str] = Field(None, description="Concatenated conversation transcript")
     linked_ticket_id: Optional[str] = Field(None, description="Associated Ticket ID if discussed")
     linked_decision_id: Optional[str] = Field(None, description="Associated ADR ID if discussed")
 
@@ -250,3 +251,102 @@ class GraphBundle(BaseModel):
     documents: List[Document] = Field(default_factory=list)
     decisions: List[Decision] = Field(default_factory=list)
     edges: List[GraphEdge] = Field(default_factory=list)
+
+
+# ---------------------------------------------------------------------------
+# Tenant Memory Models (TRD.md Section 4.2)
+# ---------------------------------------------------------------------------
+
+class Session(BaseModel):
+    """Episodic Session entity representing interactive user interactions."""
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(..., description="Unique session identifier, e.g. session-001")
+    user_id: str = Field(..., description="Tenant user persona ID, e.g. user-kabir")
+    started_at: str = Field(..., description="ISO timestamp of session initiation")
+
+
+class Turn(BaseModel):
+    """Conversation turn stored in tenant episodic memory."""
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(..., description="Unique turn identifier, e.g. turn-001")
+    session_id: str = Field(..., description="Parent session ID")
+    role: str = Field(..., description="user or assistant")
+    content: str = Field(..., description="Message text")
+    timestamp: str = Field(..., description="ISO timestamp")
+    referenced_node_ids: List[str] = Field(default_factory=list, description="IDs of graph nodes cited in turn")
+
+
+class Playbook(BaseModel):
+    """Procedural troubleshooting playbook learned by agents."""
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(..., description="Unique playbook identifier, e.g. playbook-001")
+    trigger_signature: str = Field(..., description="Pattern/signature of issue")
+    resolution_steps: List[str] = Field(default_factory=list, description="Ordered mitigation actions")
+    verified_by_ticket_id: Optional[str] = Field(None, description="Ticket ID verifying playbook effectiveness")
+    success_count: int = Field(default=1, description="Times successfully applied")
+
+
+# ---------------------------------------------------------------------------
+# Strict API Contract Models (TRD.md Section 6)
+# ---------------------------------------------------------------------------
+
+class AgentTrace(BaseModel):
+    """Telemetry trace for a single agent tool execution step."""
+    model_config = ConfigDict(extra="forbid")
+
+    agent: str = Field(..., description="Agent name (e.g. RouterAgent, GraphNavigator)")
+    tool: str = Field(..., description="Deterministic tool name invoked")
+    cypher_executed: str = Field(..., description="Exact Cypher query executed against FalkorDB")
+    latency_ms: float = Field(..., description="Query latency in milliseconds")
+
+
+class Citation(BaseModel):
+    """Reference citation for graph entity backing an agent response."""
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(..., description="Entity ID")
+    label: str = Field(..., description="Entity node type (e.g. Decision, Document, System)")
+    title: str = Field(..., description="Entity title or headline")
+    status: Optional[str] = Field(None, description="active, superseded, outdated, etc.")
+    source_ref: Optional[str] = Field(None, description="Linked incident or thread reference")
+
+
+class SubgraphNode(BaseModel):
+    """Node visualization datum for force-directed visualizer."""
+    model_config = ConfigDict(extra="forbid")
+
+    id: str
+    label: str
+    type: str
+    status: Optional[str] = None
+
+
+class SubgraphEdge(BaseModel):
+    """Edge visualization datum for force-directed visualizer."""
+    model_config = ConfigDict(extra="forbid")
+
+    source: str
+    target: str
+    relationship: str
+
+
+class Subgraph(BaseModel):
+    """Exploration subgraph containing traversed nodes and edges."""
+    model_config = ConfigDict(extra="forbid")
+
+    nodes: List[SubgraphNode] = Field(default_factory=list)
+    edges: List[SubgraphEdge] = Field(default_factory=list)
+
+
+class AgentQueryResponse(BaseModel):
+    """Strict API response model matching TRD.md Section 6."""
+    model_config = ConfigDict(extra="forbid")
+
+    answer: str = Field(..., description="Markdown-formatted answer with inline [ID] citations")
+    tenant_graph: str = Field(..., description="FalkorDB tenant graph identifier")
+    agent_trace: List[AgentTrace] = Field(default_factory=list, description="Execution traces")
+    citations: List[Citation] = Field(default_factory=list, description="Inline citations")
+    subgraph: Subgraph = Field(default_factory=Subgraph, description="Visual subgraph")
