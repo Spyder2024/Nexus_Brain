@@ -1,7 +1,8 @@
 version: "3.8"
 
 services:
-  falkordb:
+  # Local FalkorDB Service (Offline Judge Testing / Local Dev)
+  falkordb-local:
     image: falkordb/falkordb:latest
     container_name: nexusbrain-falkordb
     restart: unless-stopped
@@ -17,6 +18,29 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+  # NexusBrain Application Service (FastAPI Backend + Streamlit UI)
+  nexus-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nexusbrain-app
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - FALKORDB_HOST=${FALKORDB_HOST:-falkordb-local}
+      - FALKORDB_PORT=${FALKORDB_PORT:-6379}
+      - FALKORDB_USERNAME=${FALKORDB_USERNAME:-}
+      - FALKORDB_PASSWORD=${FALKORDB_PASSWORD:-}
+      - FALKORDB_SSL=${FALKORDB_SSL:-false}
+    ports:
+      - "8000:8000"  # FastAPI REST API & Swagger Docs
+      - "8501:8501"  # Streamlit Command Center UI
+    depends_on:
+      falkordb-local:
+        condition: service_healthy
+    command: ["--mode", "seed-only"]
 
 volumes:
   falkordb_data:

@@ -36,22 +36,40 @@ class FalkorDBLoader:
         port: Optional[int] = None,
         username: Optional[str] = None,
         password: Optional[str] = None,
+        ssl: Optional[bool] = None,
         graph_name: Optional[str] = None,
     ):
         self.host = host or settings.FALKORDB_HOST
         self.port = port or settings.FALKORDB_PORT
-        self.username = username or settings.FALKORDB_USERNAME
-        self.password = password or settings.FALKORDB_PASSWORD
+        self.username = username if username is not None else settings.FALKORDB_USERNAME
+        self.password = password if password is not None else settings.FALKORDB_PASSWORD
+        self.ssl = ssl if ssl is not None else settings.FALKORDB_SSL
         self.graph_name = graph_name or settings.COMPANY_GRAPH_NAME
 
         from falkordb import FalkorDB
 
-        self.client = FalkorDB(
-            host=self.host,
-            port=self.port,
-            username=self.username,
-            password=self.password,
-        )
+        try:
+            self.client = FalkorDB(
+                host=self.host,
+                port=self.port,
+                username=self.username,
+                password=self.password,
+                ssl=self.ssl,
+            )
+        except Exception as e:
+            err_type = type(e).__name__
+            err_msg = str(e).lower()
+            is_auth_issue = "authentication" in err_type.lower() or "auth" in err_msg or "password" in err_msg or "username" in err_msg
+            if self.host in ("localhost", "127.0.0.1") and is_auth_issue:
+                self.client = FalkorDB(
+                    host=self.host,
+                    port=self.port,
+                    username=None,
+                    password=None,
+                    ssl=False,
+                )
+            else:
+                raise e
         self.graph = self.client.select_graph(self.graph_name)
 
     def ping(self) -> bool:
