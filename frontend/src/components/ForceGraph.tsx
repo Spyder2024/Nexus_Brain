@@ -102,10 +102,10 @@ function computeCleanLayout(nodes: any[], edges: any[]) {
   byLevel.forEach((levelNodes, lvl) => {
     const count = levelNodes.length;
     levelNodes.forEach((node, idx) => {
-      // 210px horizontal spacing ensures long labels never collide
-      const x = (idx - (count - 1) / 2) * 210;
-      // 105px vertical spacing gives generous clearance between levels
-      const y = (lvl - maxLvl / 2) * 105;
+      // 240px horizontal spacing ensures full names never collide
+      const x = (idx - (count - 1) / 2) * 240;
+      // 115px vertical spacing gives generous clearance between levels
+      const y = (lvl - maxLvl / 2) * 115;
       node.fx = x;
       node.fy = y;
       node.x = x;
@@ -208,8 +208,9 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
   // Pre-process nodes & edges with deterministic coordinates
   const rawNodes = subgraph.nodes.map((n) => {
     const rawLabel = String(n.label || n.id || "").trim();
-    const displayLabel = rawLabel.length > 24 ? rawLabel.slice(0, 22) + "…" : rawLabel;
-    const estimatedWidth = Math.max(displayLabel.length * 7.0 + 34, 90);
+    // Allow up to 28 characters so standard names and titles show completely without truncation
+    const displayLabel = rawLabel.length > 28 ? rawLabel.slice(0, 26) + "…" : rawLabel;
+    const estimatedWidth = Math.max(displayLabel.length * 6.8 + 36, 92);
 
     return {
       ...n,
@@ -273,8 +274,15 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
         graphData={graphData}
         minZoom={0.4}
         maxZoom={1.25}
+        cooldownTicks={80}
+        d3VelocityDecay={0.88}
+        d3AlphaDecay={0.08}
         enableNodeDrag={true}
         onNodeDrag={(node: any) => {
+          node.fx = node.x;
+          node.fy = node.y;
+        }}
+        onNodeDragEnd={(node: any) => {
           node.fx = node.x;
           node.fy = node.y;
         }}
