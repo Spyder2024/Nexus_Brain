@@ -111,10 +111,10 @@ export const Header: React.FC<Props> = ({
             className="relative h-2 w-2 rounded-full shrink-0"
             style={{
               background: isMock
-                ? "hsl(38, 92%, 48%)"
+                ? "hsl(187, 85%, 43%)"
                 : "hsl(158, 80%, 38%)",
               boxShadow: isMock
-                ? "0 0 6px hsl(38, 92%, 48%)"
+                ? "0 0 6px hsl(187, 85%, 43%)"
                 : "0 0 6px hsl(158, 80%, 38%)",
             }}
           />
@@ -126,16 +126,18 @@ export const Header: React.FC<Props> = ({
               {stats.avg_query_ms.toFixed(1)}ms
             </span>
           )}
-          {isMock && (
+          {stats && (
             <span
-              className="rounded-full px-2 py-0.2 text-[10px] font-bold uppercase tracking-wider"
+              className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider"
               style={{
-                background: "rgba(239, 68, 68, 0.1)",
-                color: "#dc2626",
-                border: "1px solid rgba(239, 68, 68, 0.25)",
+                background: isMock ? "rgba(6, 182, 212, 0.1)" : "rgba(16, 185, 129, 0.1)",
+                color: isMock ? "#0891b2" : "#059669",
+                border: isMock
+                  ? "1px solid rgba(6, 182, 212, 0.25)"
+                  : "1px solid rgba(16, 185, 129, 0.25)",
               }}
             >
-              Mock
+              {isMock ? "SYNCED" : "LIVE"}
             </span>
           )}
         </div>

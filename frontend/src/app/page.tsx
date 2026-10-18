@@ -320,7 +320,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex-1 w-full h-full flex flex-col" style={{ minHeight: 0 }}>
-                <ForceGraph subgraph={subgraph} />
+                <ForceGraph subgraph={subgraph} activeTab={activeTab} />
               </div>
             </div>
 

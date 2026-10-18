@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Subgraph, SubgraphNode } from "../lib/types";
 import { ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
@@ -12,6 +12,7 @@ const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
 
 interface Props {
   subgraph: Subgraph;
+  activeTab?: string;
 }
 
 // Color tokens for node types tuned for elegant luminous light theme
@@ -116,14 +117,28 @@ function computeCleanLayout(nodes: any[], edges: any[]) {
   return nodes;
 }
 
-export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
+export const ForceGraph: React.FC<Props> = ({ subgraph, activeTab }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
   const [dimensions, setDimensions] = useState({ width: 600, height: 420 });
 
-  // Dynamically update dimensions via ResizeObserver
+  // Dynamically update dimensions matching parent container's bounding client dimensions
   useEffect(() => {
     if (!containerRef.current) return;
+    const updateSize = () => {
+      if (containerRef.current) {
+        const { clientWidth, clientHeight } = containerRef.current;
+        if (clientWidth > 50 && clientHeight > 50) {
+          setDimensions({
+            width: clientWidth,
+            height: clientHeight,
+          });
+        }
+      }
+    };
+
+    updateSize();
+
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
@@ -139,38 +154,17 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
     return () => observer.disconnect();
   }, []);
 
-  const autoFitGraph = useCallback(() => {
-    if (fgRef.current) {
-      fgRef.current.zoomToFit(250, 60);
-      setTimeout(() => {
-        if (fgRef.current) {
-          const z = fgRef.current.zoom();
-          if (z > 1.15) {
-            fgRef.current.zoom(1.0, 150);
-          }
-        }
-      }, 260);
-    }
-  }, []);
-
+  // Auto-center & zoom-to-fit triggered when active subgraph or active tab changes
   useEffect(() => {
     if (!subgraph?.nodes || subgraph.nodes.length === 0) return;
-    const timer = setTimeout(autoFitGraph, 200);
+    const timer = setTimeout(() => {
+      fgRef.current?.zoomToFit(350, 65);
+    }, 150);
     return () => clearTimeout(timer);
-  }, [subgraph, autoFitGraph]);
+  }, [subgraph, activeTab]);
 
   const handleRecenter = () => {
-    if (fgRef.current) {
-      fgRef.current.zoomToFit(250, 60);
-      setTimeout(() => {
-        if (fgRef.current) {
-          const z = fgRef.current.zoom();
-          if (z > 1.15) {
-            fgRef.current.zoom(1.0, 150);
-          }
-        }
-      }, 260);
-    }
+    fgRef.current?.zoomToFit(400, 65);
   };
 
   const handleZoomIn = () => {
@@ -275,6 +269,7 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
         minZoom={0.4}
         maxZoom={1.25}
         cooldownTicks={80}
+        onEngineStop={() => fgRef.current?.zoomToFit(400, 65)}
         d3VelocityDecay={0.88}
         d3AlphaDecay={0.08}
         enableNodeDrag={true}

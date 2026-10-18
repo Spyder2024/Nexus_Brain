@@ -9,8 +9,8 @@ import {
 
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL !== undefined
-    ? process.env.NEXT_PUBLIC_API_URL
-    : process.env.API_URL || (typeof window !== "undefined" ? "" : "http://localhost:8000");
+    ? process.env.NEXT_PUBLIC_API_URL.replace(/\/$/, "")
+    : (process.env.API_URL || (typeof window !== "undefined" ? "" : "http://localhost:8000")).replace(/\/$/, "");
 
 export class ApiError extends Error {
   code: string;

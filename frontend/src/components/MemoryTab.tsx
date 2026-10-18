@@ -27,6 +27,11 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
     fetchMemory();
   }, [persona.id]);
 
+  const rawTurns = memory?.turns || [];
+  const visibleTurns = rawTurns.filter((t) =>
+    Boolean(((t.content || (t as any).text) || "").trim())
+  );
+
   return (
     <div className="flex h-full flex-col gap-3 overflow-y-auto pr-1 text-xs">
       {/* Header Info */}
@@ -71,10 +76,10 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-1.5 font-semibold uppercase tracking-wider text-[11px] text-slate-500">
               <Lock className="h-3 w-3 text-amber-600" />
-              <span>Private Episodic Session Turns ({memory?.turns?.length || 0})</span>
+              <span>Private Episodic Session Turns ({visibleTurns.length})</span>
             </div>
 
-            {!memory?.turns || memory.turns.length === 0 ? (
+            {visibleTurns.length === 0 ? (
               <div
                 className="rounded-xl p-3 text-[11px] italic"
                 style={{
@@ -88,7 +93,7 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
               </div>
             ) : (
               <div className="flex flex-col gap-1.5 max-h-40 overflow-y-auto">
-                {memory.turns.map((t, idx) => (
+                {visibleTurns.map((t, idx) => (
                   <div
                     key={idx}
                     className="flex flex-col gap-0.5 rounded-xl p-2.5 text-[11px] shadow-sm"
@@ -106,7 +111,7 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
                       </span>
                     </div>
                     <div className="line-clamp-2 mt-0.5 text-slate-800">
-                      {t.content}
+                      {t.content || (t as any).text}
                     </div>
                   </div>
                 ))}
