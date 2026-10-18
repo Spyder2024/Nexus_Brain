@@ -24,20 +24,21 @@ export const Header: React.FC<Props> = ({
     <header
       className="relative z-10 flex flex-col gap-3 px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between"
       style={{
-        background: "rgba(6, 7, 13, 0.82)",
-        backdropFilter: "blur(32px) saturate(200%)",
-        WebkitBackdropFilter: "blur(32px) saturate(200%)",
-        borderBottom: "1px solid rgba(255,255,255,0.07)",
+        background: "rgba(255, 255, 255, 0.88)",
+        backdropFilter: "blur(32px) saturate(180%)",
+        WebkitBackdropFilter: "blur(32px) saturate(180%)",
+        borderBottom: "1px solid rgba(15, 23, 42, 0.08)",
+        boxShadow: "0 2px 10px rgba(15, 23, 42, 0.03)",
       }}
     >
       {/* Brand */}
       <div className="flex items-center gap-3">
         <div
-          className="flex h-9 w-9 items-center justify-center"
+          className="flex h-9 w-9 items-center justify-center shadow-md"
           style={{
-            background: "linear-gradient(135deg, hsl(211,95%,55%), hsl(262,80%,65%))",
+            background: "linear-gradient(135deg, hsl(221,83%,53%), hsl(262,72%,56%))",
             borderRadius: "10px",
-            boxShadow: "0 2px 12px hsla(211,95%,60%,0.4)",
+            boxShadow: "0 2px 10px hsla(221,83%,53%,0.3)",
           }}
         >
           <Hexagon className="h-5 w-5 text-white" strokeWidth={1.5} />
@@ -45,7 +46,7 @@ export const Header: React.FC<Props> = ({
         <div>
           <div className="flex items-center gap-2">
             <h1
-              className="text-[15px] font-semibold tracking-tight text-white"
+              className="text-[15px] font-semibold tracking-tight text-slate-900"
               style={{ letterSpacing: "-0.025em" }}
             >
               NexusBrain
@@ -53,15 +54,15 @@ export const Header: React.FC<Props> = ({
             <span
               className="rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-widest uppercase"
               style={{
-                background: "hsla(211,95%,60%,0.15)",
-                color: "hsl(211,95%,72%)",
-                border: "1px solid hsla(211,95%,60%,0.25)",
+                background: "rgba(37, 99, 235, 0.08)",
+                color: "#2563eb",
+                border: "1px solid rgba(37, 99, 235, 0.2)",
               }}
             >
               v2
             </span>
           </div>
-          <p className="text-[11px]" style={{ color: "rgba(255,255,255,0.38)" }}>
+          <p className="text-[11px] text-slate-500 font-medium">
             Graph-Native Enterprise Intelligence · FalkorDB
           </p>
         </div>
@@ -71,12 +72,12 @@ export const Header: React.FC<Props> = ({
       <div className="flex flex-wrap items-center gap-2">
         {/* Persona Selector */}
         <div
-          className="flex items-center gap-2 px-3 py-2 text-xs"
+          className="flex items-center gap-2 px-3 py-1.5 text-xs transition"
           style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "#ffffff",
+            border: "1px solid rgba(15, 23, 42, 0.1)",
             borderRadius: "10px",
-            backdropFilter: "blur(16px)",
+            boxShadow: "0 1px 3px rgba(15, 23, 42, 0.04)",
           }}
         >
           <span className="text-base leading-none">{selectedPersona.avatar}</span>
@@ -86,11 +87,10 @@ export const Header: React.FC<Props> = ({
               const p = PERSONAS.find((item) => item.id === e.target.value);
               if (p) onSelectPersona(p);
             }}
-            className="bg-transparent font-medium outline-none cursor-pointer"
-            style={{ color: "rgba(255,255,255,0.85)" }}
+            className="bg-transparent font-medium text-slate-800 outline-none cursor-pointer"
           >
             {PERSONAS.map((p) => (
-              <option key={p.id} value={p.id} style={{ background: "#111628", color: "white" }}>
+              <option key={p.id} value={p.id} style={{ background: "#ffffff", color: "#0f172a" }}>
                 {p.name} · {p.role}
               </option>
             ))}
@@ -99,39 +99,40 @@ export const Header: React.FC<Props> = ({
 
         {/* Telemetry Badge */}
         <div
-          className="flex items-center gap-2 px-3 py-2 font-mono text-[11px]"
+          className="flex items-center gap-2 px-3 py-1.5 font-mono text-[11px]"
           style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(241, 245, 249, 0.9)",
+            border: "1px solid rgba(15, 23, 42, 0.08)",
             borderRadius: "10px",
+            color: "#475569",
           }}
         >
           <span
             className="relative h-2 w-2 rounded-full shrink-0"
             style={{
               background: isMock
-                ? "hsl(40, 90%, 60%)"
-                : "hsl(158, 75%, 55%)",
+                ? "hsl(38, 92%, 48%)"
+                : "hsl(158, 80%, 38%)",
               boxShadow: isMock
-                ? "0 0 6px hsl(40, 90%, 60%)"
-                : "0 0 6px hsl(158, 75%, 55%)",
+                ? "0 0 6px hsl(38, 92%, 48%)"
+                : "0 0 6px hsl(158, 80%, 38%)",
             }}
           />
-          <span style={{ color: "rgba(255,255,255,0.6)" }}>
+          <span className="font-medium">
             {stats ? `${stats.nodes} nodes · ${stats.edges} edges` : "Connecting…"}
           </span>
           {stats?.avg_query_ms !== undefined && (
-            <span style={{ color: "hsl(158, 75%, 60%)", fontWeight: 600 }}>
+            <span style={{ color: "hsl(158, 80%, 35%)", fontWeight: 600 }}>
               {stats.avg_query_ms.toFixed(1)}ms
             </span>
           )}
           {isMock && (
             <span
-              className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider"
+              className="rounded-full px-2 py-0.2 text-[10px] font-bold uppercase tracking-wider"
               style={{
-                background: "hsla(349, 80%, 65%, 0.15)",
-                color: "hsl(349, 80%, 70%)",
-                border: "1px solid hsla(349, 80%, 65%, 0.3)",
+                background: "rgba(239, 68, 68, 0.1)",
+                color: "#dc2626",
+                border: "1px solid rgba(239, 68, 68, 0.25)",
               }}
             >
               Mock
@@ -145,20 +146,21 @@ export const Header: React.FC<Props> = ({
           onClick={onReset}
           disabled={isResetting}
           title="Reset graph state to pristine Golden Scenarios"
-          className="flex items-center gap-1.5 px-3 py-2 text-xs font-medium transition-all duration-150 disabled:opacity-40"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-all duration-150 disabled:opacity-40"
           style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "#ffffff",
+            border: "1px solid rgba(15, 23, 42, 0.1)",
             borderRadius: "10px",
-            color: "rgba(255,255,255,0.65)",
+            color: "#475569",
+            boxShadow: "0 1px 3px rgba(15, 23, 42, 0.04)",
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.08)";
-            (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.9)";
+            (e.currentTarget as HTMLButtonElement).style.background = "#f8fafc";
+            (e.currentTarget as HTMLButtonElement).style.color = "#0f172a";
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.04)";
-            (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.65)";
+            (e.currentTarget as HTMLButtonElement).style.background = "#ffffff";
+            (e.currentTarget as HTMLButtonElement).style.color = "#475569";
           }}
         >
           <RotateCcw className={`h-3.5 w-3.5 ${isResetting ? "animate-spin" : ""}`} />

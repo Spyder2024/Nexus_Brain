@@ -14,11 +14,11 @@ export const TraceDrawer: React.FC<Props> = ({ traces }) => {
   if (!traces || traces.length === 0) {
     return (
       <div
-        className="flex h-28 items-center justify-center rounded-2xl text-xs"
+        className="flex h-24 items-center justify-center rounded-2xl text-xs"
         style={{
-          background: "rgba(255, 255, 255, 0.02)",
-          border: "1px dashed rgba(255, 255, 255, 0.08)",
-          color: "rgba(255, 255, 255, 0.35)",
+          background: "rgba(241, 245, 249, 0.6)",
+          border: "1px dashed rgba(15, 23, 42, 0.12)",
+          color: "#64748b",
         }}
       >
         Run a query to inspect real-time Cypher execution traces & latencies.
@@ -34,25 +34,24 @@ export const TraceDrawer: React.FC<Props> = ({ traces }) => {
 
   return (
     <div
-      className="flex flex-col gap-2 rounded-2xl p-3"
+      className="flex flex-col gap-2 rounded-2xl p-3 shadow-sm"
       style={{
-        background: "rgba(255, 255, 255, 0.025)",
+        background: "rgba(255, 255, 255, 0.88)",
         backdropFilter: "blur(32px) saturate(180%)",
         WebkitBackdropFilter: "blur(32px) saturate(180%)",
-        border: "1px solid rgba(255, 255, 255, 0.07)",
+        border: "1px solid rgba(15, 23, 42, 0.08)",
       }}
     >
       <div
         className="flex items-center justify-between pb-2"
-        style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.06)" }}
+        style={{ borderBottom: "1px solid rgba(15, 23, 42, 0.06)" }}
       >
-        <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "rgba(255, 255, 255, 0.75)" }}>
-          <Terminal className="h-3.5 w-3.5" style={{ color: "hsl(211, 95%, 60%)" }} />
+        <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+          <Terminal className="h-3.5 w-3.5 text-blue-600" />
           <span>Multi-Agent Execution Trace ({traces.length} steps)</span>
         </div>
         <div
-          className="flex items-center gap-1.5 font-mono text-[11px] font-semibold"
-          style={{ color: "hsl(158, 75%, 60%)" }}
+          className="flex items-center gap-1.5 font-mono text-[11px] font-semibold text-emerald-700"
         >
           <Cpu className="h-3 w-3" />
           <span>{totalLatency.toFixed(1)} ms total</span>
@@ -65,34 +64,33 @@ export const TraceDrawer: React.FC<Props> = ({ traces }) => {
           return (
             <div
               key={idx}
-              className="rounded-xl overflow-hidden text-xs transition-colors"
+              className="rounded-xl overflow-hidden text-xs transition-colors shadow-sm"
               style={{
-                background: "rgba(255, 255, 255, 0.03)",
-                border: "1px solid rgba(255, 255, 255, 0.06)",
+                background: "#ffffff",
+                border: "1px solid rgba(15, 23, 42, 0.08)",
               }}
             >
               <button
                 type="button"
                 onClick={() => toggle(idx)}
-                className="flex w-full items-center justify-between px-3 py-2 text-left font-mono transition-colors"
+                className="flex w-full items-center justify-between px-3 py-2 text-left font-mono transition-colors hover:bg-slate-50"
               >
                 <div className="flex items-center gap-2 truncate">
                   {isOpen ? (
-                    <ChevronDown className="h-3 w-3 shrink-0" style={{ color: "rgba(255, 255, 255, 0.4)" }} />
+                    <ChevronDown className="h-3 w-3 shrink-0 text-slate-400" />
                   ) : (
-                    <ChevronRight className="h-3 w-3 shrink-0" style={{ color: "rgba(255, 255, 255, 0.4)" }} />
+                    <ChevronRight className="h-3 w-3 shrink-0 text-slate-400" />
                   )}
-                  <span className="font-semibold truncate" style={{ color: "hsl(262, 80%, 75%)" }}>
+                  <span className="font-semibold truncate text-purple-700">
                     {trace.agent}
                   </span>
-                  <span style={{ color: "rgba(255, 255, 255, 0.25)" }}>➔</span>
-                  <span className="truncate" style={{ color: "hsl(211, 95%, 72%)" }}>
+                  <span className="text-slate-400">➔</span>
+                  <span className="truncate text-blue-600 font-semibold">
                     {trace.tool}
                   </span>
                 </div>
                 <span
-                  className="text-[10px] shrink-0 font-medium font-mono"
-                  style={{ color: "hsl(158, 75%, 65%)" }}
+                  className="text-[10px] shrink-0 font-medium font-mono text-emerald-700"
                 >
                   {trace.latency_ms} ms
                 </span>
@@ -102,9 +100,9 @@ export const TraceDrawer: React.FC<Props> = ({ traces }) => {
                 <div
                   className="p-2.5 font-mono text-[11px] leading-relaxed"
                   style={{
-                    background: "rgba(0, 0, 0, 0.45)",
-                    borderTop: "1px solid rgba(255, 255, 255, 0.05)",
-                    color: "hsl(211, 90%, 75%)",
+                    background: "#f8fafc",
+                    borderTop: "1px solid rgba(15, 23, 42, 0.06)",
+                    color: "#1e3a8a",
                   }}
                 >
                   <pre className="whitespace-pre-wrap break-all select-all font-mono">
@@ -119,4 +117,3 @@ export const TraceDrawer: React.FC<Props> = ({ traces }) => {
     </div>
   );
 };
-

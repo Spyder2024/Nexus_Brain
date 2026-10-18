@@ -60,17 +60,17 @@ export const MutatorTab: React.FC<Props> = ({
     <div className="flex h-full flex-col gap-3 overflow-y-auto pr-1">
       {/* Overview Card */}
       <div
-        className="rounded-xl p-3 text-xs"
+        className="rounded-xl p-3 text-xs shadow-sm"
         style={{
-          background: "hsla(40, 90%, 60%, 0.05)",
-          border: "1px solid hsla(40, 90%, 60%, 0.15)",
+          background: "rgba(245, 158, 11, 0.08)",
+          border: "1px solid rgba(245, 158, 11, 0.25)",
         }}
       >
-        <div className="flex items-center gap-2 font-semibold" style={{ color: "hsl(40, 90%, 65%)" }}>
+        <div className="flex items-center gap-2 font-semibold" style={{ color: "#b45309" }}>
           <Zap className="h-4 w-4" />
           <span>Bi-Temporal Live Graph Evolution</span>
         </div>
-        <p className="mt-1 text-[11px] leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+        <p className="mt-1 text-[11px] leading-relaxed" style={{ color: "#78350f" }}>
           Simulate a real-time architectural decision made in a Slack war-room.
           NexusBrain atomically invalidates the prior standard in FalkorDB and rewires active decision links.
         </p>
@@ -79,35 +79,35 @@ export const MutatorTab: React.FC<Props> = ({
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-xs">
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <label className="block text-[11px] font-medium mb-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+            <label className="block text-[11px] font-semibold text-slate-700 mb-1">
               Target ADR to Supersede
             </label>
             <input
               type="text"
               value={supersedesId}
               onChange={(e) => setSupersedesId(e.target.value)}
-              className="w-full rounded-lg px-3 py-2 font-mono text-[11px] outline-none transition-all duration-150"
+              className="w-full rounded-lg px-3 py-2 font-mono text-[11px] outline-none transition-all duration-150 shadow-sm"
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "rgba(255,255,255,0.9)",
+                background: "#ffffff",
+                border: "1px solid rgba(15, 23, 42, 0.12)",
+                color: "#0f172a",
               }}
               required
             />
           </div>
           <div>
-            <label className="block text-[11px] font-medium mb-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+            <label className="block text-[11px] font-semibold text-slate-700 mb-1">
               Governed System
             </label>
             <input
               type="text"
               value={systemName}
               onChange={(e) => setSystemName(e.target.value)}
-              className="w-full rounded-lg px-3 py-2 font-mono text-[11px] outline-none transition-all duration-150"
+              className="w-full rounded-lg px-3 py-2 font-mono text-[11px] outline-none transition-all duration-150 shadow-sm"
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "rgba(255,255,255,0.9)",
+                background: "#ffffff",
+                border: "1px solid rgba(15, 23, 42, 0.12)",
+                color: "#0f172a",
               }}
               required
             />
@@ -115,54 +115,54 @@ export const MutatorTab: React.FC<Props> = ({
         </div>
 
         <div>
-          <label className="block text-[11px] font-medium mb-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <label className="block text-[11px] font-semibold text-slate-700 mb-1">
             New Active Decision Title
           </label>
           <input
             type="text"
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
-            className="w-full rounded-lg px-3 py-2 text-[12px] outline-none transition-all duration-150"
+            className="w-full rounded-lg px-3 py-2 text-[12px] outline-none transition-all duration-150 shadow-sm"
             style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "rgba(255,255,255,0.9)",
+              background: "#ffffff",
+              border: "1px solid rgba(15, 23, 42, 0.12)",
+              color: "#0f172a",
             }}
             required
           />
         </div>
 
         <div>
-          <label className="block text-[11px] font-medium mb-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <label className="block text-[11px] font-semibold text-slate-700 mb-1">
             Originating Slack Channel
           </label>
           <input
             type="text"
             value={channel}
             onChange={(e) => setChannel(e.target.value)}
-            className="w-full rounded-lg px-3 py-2 font-mono text-[11px] outline-none transition-all duration-150"
+            className="w-full rounded-lg px-3 py-2 font-mono text-[11px] outline-none transition-all duration-150 shadow-sm"
             style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "rgba(255,255,255,0.9)",
+              background: "#ffffff",
+              border: "1px solid rgba(15, 23, 42, 0.12)",
+              color: "#0f172a",
             }}
             required
           />
         </div>
 
         <div>
-          <label className="block text-[11px] font-medium mb-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+          <label className="block text-[11px] font-semibold text-slate-700 mb-1">
             Architectural Rationale / Incident Context
           </label>
           <textarea
             value={rationale}
             onChange={(e) => setRationale(e.target.value)}
             rows={3}
-            className="w-full rounded-lg px-3 py-2 text-[11px] font-mono leading-relaxed outline-none transition-all duration-150"
+            className="w-full rounded-lg px-3 py-2 text-[11px] font-mono leading-relaxed outline-none transition-all duration-150 shadow-sm"
             style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "rgba(255,255,255,0.85)",
+              background: "#ffffff",
+              border: "1px solid rgba(15, 23, 42, 0.12)",
+              color: "#0f172a",
             }}
             required
           />
@@ -173,8 +173,8 @@ export const MutatorTab: React.FC<Props> = ({
           disabled={isLoading}
           className="flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-semibold text-white transition-all duration-150 disabled:opacity-40 mt-1"
           style={{
-            background: "linear-gradient(135deg, hsl(40, 90%, 50%), hsl(25, 95%, 52%))",
-            boxShadow: "0 2px 10px hsla(40, 90%, 50%, 0.3)",
+            background: "linear-gradient(135deg, hsl(38, 92%, 48%), hsl(25, 95%, 50%))",
+            boxShadow: "0 2px 10px hsla(38, 92%, 48%, 0.3)",
           }}
         >
           {isLoading ? (
@@ -194,11 +194,11 @@ export const MutatorTab: React.FC<Props> = ({
       {/* Error state */}
       {errorMsg && (
         <div
-          className="flex items-start gap-2 rounded-xl p-3 text-xs"
+          className="flex items-start gap-2 rounded-xl p-3 text-xs shadow-sm"
           style={{
-            background: "hsla(349, 80%, 65%, 0.1)",
-            border: "1px solid hsla(349, 80%, 65%, 0.25)",
-            color: "hsl(349, 80%, 75%)",
+            background: "rgba(239, 68, 68, 0.08)",
+            border: "1px solid rgba(239, 68, 68, 0.25)",
+            color: "#991b1b",
           }}
         >
           <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
@@ -212,40 +212,40 @@ export const MutatorTab: React.FC<Props> = ({
       {/* Success Receipt */}
       {lastResult && (
         <div
-          className="flex flex-col gap-2 rounded-xl p-3 text-xs"
+          className="flex flex-col gap-2 rounded-xl p-3 text-xs shadow-sm"
           style={{
-            background: "hsla(158, 75%, 55%, 0.08)",
-            border: "1px solid hsla(158, 75%, 55%, 0.2)",
-            color: "hsl(158, 75%, 75%)",
+            background: "rgba(16, 185, 129, 0.08)",
+            border: "1px solid rgba(16, 185, 129, 0.25)",
+            color: "#065f46",
           }}
         >
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5 font-semibold" style={{ color: "hsl(158, 75%, 65%)" }}>
+            <div className="flex items-center gap-1.5 font-semibold" style={{ color: "#065f46" }}>
               <CheckCircle2 className="h-4 w-4" />
               <span>Graph Mutated Successfully ({lastResult.latency_ms} ms)</span>
             </div>
             <span
               className="font-mono text-[10px] px-2 py-0.5 rounded-full font-bold"
               style={{
-                background: "hsla(158, 75%, 55%, 0.2)",
-                color: "hsl(158, 75%, 70%)",
+                background: "rgba(16, 185, 129, 0.2)",
+                color: "#065f46",
               }}
             >
               {lastResult.new_decision.id} (ACTIVE)
             </span>
           </div>
 
-          <div className="text-[11px]" style={{ color: "rgba(255,255,255,0.7)" }}>
-            Created active decision <b className="text-white">[{lastResult.new_decision.id}]</b> and
-            marked <b style={{ color: "hsl(349, 80%, 70%)" }}>[{lastResult.superseded_decision.id}]</b> as SUPERSEDED.
+          <div className="text-[11px] text-slate-700">
+            Created active decision <b className="text-slate-900">[{lastResult.new_decision.id}]</b> and
+            marked <b className="text-rose-600">[{lastResult.superseded_decision.id}]</b> as SUPERSEDED.
           </div>
 
           <div
-            className="mt-1 rounded-lg p-2 font-mono text-[10px] overflow-x-auto"
+            className="mt-1 rounded-lg p-2.5 font-mono text-[10px] overflow-x-auto shadow-sm"
             style={{
-              background: "rgba(0,0,0,0.4)",
-              border: "1px solid rgba(255,255,255,0.06)",
-              color: "hsl(211, 95%, 75%)",
+              background: "#f8fafc",
+              border: "1px solid rgba(15, 23, 42, 0.08)",
+              color: "#1e3a8a",
             }}
           >
             {lastResult.cypher_executed}
@@ -255,11 +255,11 @@ export const MutatorTab: React.FC<Props> = ({
           <button
             type="button"
             onClick={onGoToPreset2}
-            className="flex items-center justify-center gap-1.5 rounded-lg py-2 font-semibold transition-all duration-150 mt-1"
+            className="flex items-center justify-center gap-1.5 rounded-lg py-2 font-semibold transition-all duration-150 mt-1 shadow-sm"
             style={{
-              background: "hsla(158, 75%, 55%, 0.15)",
-              border: "1px solid hsla(158, 75%, 55%, 0.3)",
-              color: "hsl(158, 75%, 75%)",
+              background: "rgba(16, 185, 129, 0.15)",
+              border: "1px solid rgba(16, 185, 129, 0.35)",
+              color: "#065f46",
             }}
           >
             <span>👉 Return to Ask Brain & Re-run Preset #2</span>

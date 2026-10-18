@@ -31,22 +31,22 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
     <div className="flex h-full flex-col gap-3 overflow-y-auto pr-1 text-xs">
       {/* Header Info */}
       <div
-        className="flex items-center justify-between rounded-xl p-3"
+        className="flex items-center justify-between rounded-xl p-3 shadow-sm"
         style={{
-          background: "hsla(262, 80%, 72%, 0.06)",
-          border: "1px solid hsla(262, 80%, 72%, 0.15)",
+          background: "rgba(124, 58, 237, 0.06)",
+          border: "1px solid rgba(124, 58, 237, 0.2)",
         }}
       >
         <div className="flex items-center gap-2.5">
-          <Brain className="h-4 w-4" style={{ color: "hsl(262, 80%, 72%)" }} />
+          <Brain className="h-4 w-4 text-purple-600" />
           <div>
-            <div className="font-semibold" style={{ color: "hsl(262, 80%, 75%)" }}>
+            <div className="font-semibold text-purple-900">
               Isolated Tenant Memory:{" "}
-              <span className="font-mono text-[11px]" style={{ color: "white" }}>
+              <span className="font-mono text-[11px] font-bold text-purple-700">
                 memory_tenant_{persona.id}
               </span>
             </div>
-            <div className="text-[11px]" style={{ color: "rgba(255, 255, 255, 0.4)" }}>
+            <div className="text-[11px] text-slate-500">
               FalkorDB multigraph isolation: Private chat turns, shared verified playbooks.
             </div>
           </div>
@@ -54,29 +54,23 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
         <button
           type="button"
           onClick={fetchMemory}
-          className="rounded-lg p-1.5 transition-colors"
-          style={{ color: "rgba(255,255,255,0.4)" }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "white"; }}
-          onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.4)"; }}
+          className="rounded-lg p-1.5 transition-colors text-slate-500 hover:text-slate-900 hover:bg-slate-100"
         >
           <RefreshCw className={`h-3.5 w-3.5 ${isLoading ? "animate-spin" : ""}`} />
         </button>
       </div>
 
       {isLoading ? (
-        <div className="flex h-40 items-center justify-center text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-          <Loader2 className="h-4 w-4 animate-spin mr-2" style={{ color: "hsl(262, 80%, 72%)" }} />
+        <div className="flex h-40 items-center justify-center text-xs text-slate-500">
+          <Loader2 className="h-4 w-4 animate-spin mr-2 text-purple-600" />
           <span>Loading tenant memory…</span>
         </div>
       ) : (
         <div className="flex flex-col gap-3">
           {/* Section 1: Private Episodic Turns */}
           <div className="flex flex-col gap-2">
-            <div
-              className="flex items-center gap-1.5 font-semibold uppercase tracking-wider text-[11px]"
-              style={{ color: "rgba(255,255,255,0.4)" }}
-            >
-              <Lock className="h-3 w-3" style={{ color: "hsl(40, 90%, 60%)" }} />
+            <div className="flex items-center gap-1.5 font-semibold uppercase tracking-wider text-[11px] text-slate-500">
+              <Lock className="h-3 w-3 text-amber-600" />
               <span>Private Episodic Session Turns ({memory?.turns?.length || 0})</span>
             </div>
 
@@ -84,34 +78,34 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
               <div
                 className="rounded-xl p-3 text-[11px] italic"
                 style={{
-                  background: "rgba(255,255,255,0.02)",
-                  border: "1px dashed rgba(255,255,255,0.08)",
-                  color: "rgba(255,255,255,0.35)",
+                  background: "rgba(241, 245, 249, 0.5)",
+                  border: "1px dashed rgba(15, 23, 42, 0.12)",
+                  color: "#64748b",
                 }}
               >
                 No private conversation turns for {persona.name} yet. Private session history stays strictly isolated in{" "}
-                <code className="text-white">memory_tenant_{persona.id}</code>.
+                <code className="text-slate-900 font-semibold">memory_tenant_{persona.id}</code>.
               </div>
             ) : (
               <div className="flex flex-col gap-1.5 max-h-40 overflow-y-auto">
                 {memory.turns.map((t, idx) => (
                   <div
                     key={idx}
-                    className="flex flex-col gap-0.5 rounded-xl p-2.5 text-[11px]"
+                    className="flex flex-col gap-0.5 rounded-xl p-2.5 text-[11px] shadow-sm"
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.06)",
+                      background: "#ffffff",
+                      border: "1px solid rgba(15, 23, 42, 0.08)",
                     }}
                   >
                     <div className="flex items-center justify-between font-mono text-[9px]">
-                      <span className="uppercase font-semibold" style={{ color: "hsl(211, 95%, 72%)" }}>
+                      <span className="uppercase font-semibold text-blue-600">
                         {t.role}
                       </span>
-                      <span style={{ color: "rgba(255,255,255,0.3)" }}>
+                      <span className="text-slate-400">
                         {new Date(t.timestamp).toLocaleTimeString()}
                       </span>
                     </div>
-                    <div className="line-clamp-2 mt-0.5" style={{ color: "rgba(255,255,255,0.8)" }}>
+                    <div className="line-clamp-2 mt-0.5 text-slate-800">
                       {t.content}
                     </div>
                   </div>
@@ -122,11 +116,8 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
 
           {/* Section 2: Shared Cross-Tenant Procedural Playbooks */}
           <div className="flex flex-col gap-2">
-            <div
-              className="flex items-center gap-1.5 font-semibold uppercase tracking-wider text-[11px]"
-              style={{ color: "rgba(255,255,255,0.4)" }}
-            >
-              <Share2 className="h-3 w-3" style={{ color: "hsl(158, 75%, 55%)" }} />
+            <div className="flex items-center gap-1.5 font-semibold uppercase tracking-wider text-[11px] text-slate-500">
+              <Share2 className="h-3 w-3 text-emerald-600" />
               <span>
                 Shared Verified Procedural Playbooks ({memory?.shared_playbooks?.length || 0})
               </span>
@@ -135,22 +126,22 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
             {memory?.shared_playbooks?.map((pb, idx) => (
               <div
                 key={idx}
-                className="flex flex-col gap-1.5 rounded-xl p-3 text-xs"
+                className="flex flex-col gap-1.5 rounded-xl p-3 text-xs shadow-sm"
                 style={{
-                  background: "hsla(158, 75%, 55%, 0.05)",
-                  border: "1px solid hsla(158, 75%, 55%, 0.15)",
+                  background: "#ffffff",
+                  border: "1px solid rgba(16, 185, 129, 0.25)",
                 }}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-mono font-bold" style={{ color: "hsl(158, 75%, 65%)" }}>
+                  <div className="font-mono font-bold text-emerald-700">
                     [{pb.id}]
                   </div>
                   <div className="flex items-center gap-1.5 text-[10px] font-mono">
                     <span
                       className="rounded-full px-2 py-0.5 font-semibold"
                       style={{
-                        background: "hsla(158, 75%, 55%, 0.15)",
-                        color: "hsl(158, 75%, 70%)",
+                        background: "rgba(16, 185, 129, 0.12)",
+                        color: "#065f46",
                       }}
                     >
                       Success: {pb.success_count}x
@@ -159,8 +150,8 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
                       <span
                         className="rounded-full px-2 py-0.5"
                         style={{
-                          background: "rgba(255,255,255,0.06)",
-                          color: "rgba(255,255,255,0.6)",
+                          background: "rgba(241, 245, 249, 0.9)",
+                          color: "#475569",
                         }}
                       >
                         Verified by: {pb.verified_by}
@@ -169,15 +160,15 @@ export const MemoryTab: React.FC<Props> = ({ persona }) => {
                   </div>
                 </div>
 
-                <div className="font-semibold text-white/90">
+                <div className="font-semibold text-slate-900">
                   {pb.trigger_signature}
                 </div>
 
                 <div className="mt-1 space-y-1">
-                  <div className="text-[10px] font-mono" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  <div className="text-[10px] font-mono text-slate-500">
                     Resolution Steps:
                   </div>
-                  <ol className="list-decimal list-inside space-y-0.5 text-[11px] font-mono pl-1" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  <ol className="list-decimal list-inside space-y-0.5 text-[11px] font-mono pl-1 text-slate-700">
                     {pb.resolution_steps.map((step, sIdx) => (
                       <li key={sIdx}>{step}</li>
                     ))}

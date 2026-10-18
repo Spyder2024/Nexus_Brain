@@ -176,8 +176,8 @@ export default function Home() {
         className="pointer-events-none fixed inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 50% at 50% -10%, hsl(220, 80%, 18%) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 40% at 85% 85%, hsl(262, 60%, 16%) 0%, transparent 60%)
+            radial-gradient(ellipse 70% 45% at 50% -5%, hsl(215, 88%, 94%) 0%, transparent 65%),
+            radial-gradient(ellipse 55% 45% at 85% 90%, hsl(270, 75%, 95%) 0%, transparent 60%)
           `,
           zIndex: 0,
         }}
@@ -208,24 +208,25 @@ export default function Home() {
           <div
             className="flex flex-col lg:col-span-5"
             style={{
-              background: "rgba(255,255,255,0.025)",
+              background: "rgba(255, 255, 255, 0.88)",
               backdropFilter: "blur(32px) saturate(180%)",
               WebkitBackdropFilter: "blur(32px) saturate(180%)",
-              border: "1px solid rgba(255,255,255,0.07)",
+              border: "1px solid rgba(15, 23, 42, 0.08)",
               borderRadius: "18px",
+              boxShadow: "0 10px 30px -5px rgba(15, 23, 42, 0.04), 0 4px 12px -2px rgba(15, 23, 42, 0.02)",
               overflow: "hidden",
             }}
           >
             {/* Tab Bar */}
             <div
               className="flex items-center gap-1 px-3 pt-3 pb-2.5 shrink-0"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+              style={{ borderBottom: "1px solid rgba(15, 23, 42, 0.06)" }}
             >
               {(
                 [
-                  { key: "ask" as const,    label: "Ask Brain",     icon: <MessageSquare className="h-3.5 w-3.5" />, accent: "hsl(211,95%,60%)"   },
-                  { key: "mutate" as const, label: "Live Mutator",  icon: <Zap className="h-3.5 w-3.5" />,           accent: "hsl(40,90%,60%)"    },
-                  { key: "memory" as const, label: "Tenant Memory", icon: <Brain className="h-3.5 w-3.5" />,         accent: "hsl(262,80%,72%)"   },
+                  { key: "ask" as const,    label: "Ask Brain",     icon: <MessageSquare className="h-3.5 w-3.5" />, accent: "hsl(221,83%,53%)"   },
+                  { key: "mutate" as const, label: "Live Mutator",  icon: <Zap className="h-3.5 w-3.5" />,           accent: "hsl(38,92%,48%)"    },
+                  { key: "memory" as const, label: "Tenant Memory", icon: <Brain className="h-3.5 w-3.5" />,         accent: "hsl(262,72%,56%)"   },
                 ] as const
               ).map((tab) => {
                 const isActive = activeTab === tab.key;
@@ -236,15 +237,15 @@ export default function Home() {
                     onClick={() => setActiveTab(tab.key)}
                     className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-medium transition-all duration-150"
                     style={{
-                      background: isActive ? `${tab.accent}18` : "transparent",
-                      color: isActive ? tab.accent : "rgba(255,255,255,0.4)",
+                      background: isActive ? `${tab.accent}14` : "transparent",
+                      color: isActive ? tab.accent : "#64748b",
                       border: isActive ? `1px solid ${tab.accent}30` : "1px solid transparent",
                     }}
                     onMouseEnter={(e) => {
-                      if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.75)";
+                      if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = "#0f172a";
                     }}
                     onMouseLeave={(e) => {
-                      if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.4)";
+                      if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = "#64748b";
                     }}
                   >
                     {tab.icon}
@@ -287,32 +288,33 @@ export default function Home() {
             <div
               className="flex flex-1 flex-col overflow-hidden"
               style={{
-                background: "rgba(255,255,255,0.025)",
+                background: "rgba(255, 255, 255, 0.88)",
                 backdropFilter: "blur(32px) saturate(180%)",
                 WebkitBackdropFilter: "blur(32px) saturate(180%)",
-                border: "1px solid rgba(255,255,255,0.07)",
+                border: "1px solid rgba(15, 23, 42, 0.08)",
                 borderRadius: "18px",
+                boxShadow: "0 10px 30px -5px rgba(15, 23, 42, 0.04)",
                 minHeight: "380px",
               }}
             >
               <div
                 className="flex items-center justify-between px-4 py-3 shrink-0"
-                style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
+                style={{ borderBottom: "1px solid rgba(15, 23, 42, 0.06)" }}
               >
                 <span
                   className="text-[12px] font-semibold"
-                  style={{ color: "rgba(255,255,255,0.75)", letterSpacing: "-0.01em" }}
+                  style={{ color: "#0f172a", letterSpacing: "-0.01em" }}
                 >
                   Live FalkorDB Traversal Canvas
                 </span>
-                <div className="flex items-center gap-2 font-mono text-[11px]" style={{ color: "rgba(255,255,255,0.3)" }}>
+                <div className="flex items-center gap-2 font-mono text-[11px]" style={{ color: "#64748b" }}>
                   <span className="flex items-center gap-1">
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(158,75%,55%)" }} />
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(158, 80%, 38%)" }} />
                     Active
                   </span>
                   <span>·</span>
                   <span className="flex items-center gap-1">
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(349,80%,65%)" }} />
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(349, 80%, 55%)" }} />
                     Superseded
                   </span>
                 </div>

@@ -14,18 +14,18 @@ interface Props {
   subgraph: Subgraph;
 }
 
-// Color tokens for node types
+// Color tokens for node types tuned for elegant luminous light theme
 const TYPE_COLORS: Record<string, string> = {
-  System: "#38bdf8", // Sky blue
-  Person: "#a855f7", // Purple
-  Team: "#ec4899", // Pink
-  Ticket: "#f97316", // Orange
-  PullRequest: "#6366f1", // Indigo
-  SlackThread: "#eab308", // Yellow
-  Document: "#06b6d4", // Cyan
-  Decision: "#10b981", // Emerald (Active)
-  Playbook: "#14b8a6", // Teal
-  TenantGraph: "#818cf8",
+  System: "#0284c7", // Sky 600
+  Person: "#7c3aed", // Purple 600
+  Team: "#db2777", // Pink 600
+  Ticket: "#ea580c", // Orange 600
+  PullRequest: "#4f46e5", // Indigo 600
+  SlackThread: "#d97706", // Amber 600
+  Document: "#0891b2", // Cyan 600
+  Decision: "#059669", // Emerald 600
+  Playbook: "#0d9488", // Teal 600
+  TenantGraph: "#6366f1",
 };
 
 export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
@@ -100,10 +100,10 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
     return (
       <div
         ref={containerRef}
-        className="flex h-full min-h-[380px] w-full flex-col items-center justify-center rounded-xl border border-white/5 bg-[#050811]/80 p-6 text-center"
+        className="flex h-full min-h-[380px] w-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white/70 p-6 text-center shadow-sm"
       >
         <div className="text-3xl mb-2 opacity-80">🌐</div>
-        <p className="text-sm font-medium text-slate-300">
+        <p className="text-sm font-semibold text-slate-800">
           No active traversal subgraph
         </p>
         <p className="mt-1 text-xs text-slate-500 max-w-xs leading-relaxed">
@@ -127,18 +127,18 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
   return (
     <div
       ref={containerRef}
-      className="relative h-full min-h-[380px] w-full overflow-hidden rounded-xl border border-white/5 bg-[#050811]"
+      className="relative h-full min-h-[380px] w-full overflow-hidden rounded-xl border border-slate-200 bg-[#f8fafc]"
     >
       {/* Floating HUD Controls (Top-Right) */}
-      <div className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5 rounded-lg border border-white/10 bg-black/60 p-1 backdrop-blur-md shadow-lg">
-        <span className="px-2 font-mono text-[10px] text-slate-400 border-r border-white/10 select-none">
+      <div className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5 rounded-lg border border-slate-200/90 bg-white/90 p-1 backdrop-blur-md shadow-sm">
+        <span className="px-2 font-mono text-[10px] text-slate-600 border-r border-slate-200 select-none">
           {nodes.length} nodes · {edges.length} edges
         </span>
         <button
           type="button"
           onClick={handleZoomIn}
           title="Zoom In"
-          className="flex h-6 w-6 items-center justify-center rounded text-slate-300 hover:bg-white/10 hover:text-white transition"
+          className="flex h-6 w-6 items-center justify-center rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
         >
           <ZoomIn className="h-3.5 w-3.5" />
         </button>
@@ -146,7 +146,7 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
           type="button"
           onClick={handleZoomOut}
           title="Zoom Out"
-          className="flex h-6 w-6 items-center justify-center rounded text-slate-300 hover:bg-white/10 hover:text-white transition"
+          className="flex h-6 w-6 items-center justify-center rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
         >
           <ZoomOut className="h-3.5 w-3.5" />
         </button>
@@ -154,7 +154,7 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
           type="button"
           onClick={handleRecenter}
           title="Fit & Recenter Graph"
-          className="flex h-6 w-6 items-center justify-center rounded text-slate-300 hover:bg-white/10 hover:text-white transition"
+          className="flex h-6 w-6 items-center justify-center rounded text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
         >
           <Maximize2 className="h-3.5 w-3.5" />
         </button>
@@ -186,19 +186,19 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
           const status = (node.status || "active").toLowerCase();
           const nodeColor =
             status === "superseded"
-              ? "#ef4444"
+              ? "#dc2626"
               : status === "outdated"
-              ? "#f59e0b"
-              : TYPE_COLORS[node.type] || "#94a3b8";
+              ? "#d97706"
+              : TYPE_COLORS[node.type] || "#64748b";
 
           // 1. Halo / Glow Ring for Special Statuses
           if (status === "active" && node.type === "Decision") {
             ctx.save();
-            ctx.shadowColor = "rgba(16, 185, 129, 0.7)";
-            ctx.shadowBlur = 10;
+            ctx.shadowColor = "rgba(5, 150, 105, 0.4)";
+            ctx.shadowBlur = 8;
             ctx.beginPath();
             ctx.arc(node.x, node.y, r + 3, 0, 2 * Math.PI, false);
-            ctx.strokeStyle = "#10b981";
+            ctx.strokeStyle = "#059669";
             ctx.lineWidth = 2;
             ctx.stroke();
             ctx.restore();
@@ -206,7 +206,7 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
             ctx.save();
             ctx.beginPath();
             ctx.arc(node.x, node.y, r + 2.5, 0, 2 * Math.PI, false);
-            ctx.strokeStyle = "#ef4444";
+            ctx.strokeStyle = "#dc2626";
             ctx.lineWidth = 1.6;
             ctx.setLineDash([3, 2]);
             ctx.stroke();
@@ -218,8 +218,8 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
           ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
           ctx.fillStyle = nodeColor;
           ctx.fill();
-          ctx.strokeStyle = "rgba(255, 255, 255, 0.45)";
-          ctx.lineWidth = 1.2;
+          ctx.strokeStyle = "#ffffff";
+          ctx.lineWidth = 1.6;
           ctx.stroke();
 
           // 3. Node Label Badge (Clean Pill Background to prevent text collisions)
@@ -228,18 +228,18 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
 
           // Keep font size clamped within readable bounds
           const fontSize = Math.min(Math.max(10 / globalScale, 6.5), 11);
-          ctx.font = `500 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+          ctx.font = `600 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
           const textWidth = ctx.measureText(displayLabel).width;
-          const pillPaddingX = 4.5;
+          const pillPaddingX = 5;
           const pillPaddingY = 2;
           const pillH = fontSize + pillPaddingY * 2;
           const pillW = textWidth + pillPaddingX * 2;
           const pillX = node.x - pillW / 2;
           const pillY = node.y + r + 3;
 
-          ctx.fillStyle = "rgba(9, 14, 26, 0.88)";
-          ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
-          ctx.lineWidth = 0.8;
+          ctx.fillStyle = "rgba(255, 255, 255, 0.95)";
+          ctx.strokeStyle = "rgba(15, 23, 42, 0.14)";
+          ctx.lineWidth = 0.9;
           if (ctx.roundRect) {
             ctx.beginPath();
             ctx.roundRect(pillX, pillY, pillW, pillH, 3.5);
@@ -250,13 +250,13 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
             ctx.strokeRect(pillX, pillY, pillW, pillH);
           }
 
-          ctx.fillStyle = "#f8fafc";
+          ctx.fillStyle = "#0f172a";
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
           ctx.fillText(displayLabel, node.x, pillY + pillH / 2);
         }}
         linkColor={(link: any) =>
-          link.relationship === "SUPERSEDES" ? "#f87171" : "#475569"
+          link.relationship === "SUPERSEDES" ? "#dc2626" : "#cbd5e1"
         }
         linkWidth={(link: any) =>
           link.relationship === "SUPERSEDES" ? 2.2 : 1.2
@@ -287,12 +287,12 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
               const pillX = textPos.x - pillW / 2;
               const pillY = textPos.y - pillH / 2;
 
-              ctx.fillStyle = "rgba(10, 15, 28, 0.92)";
+              ctx.fillStyle = "rgba(255, 255, 255, 0.96)";
               ctx.strokeStyle =
                 rel === "SUPERSEDES"
-                  ? "rgba(248, 113, 113, 0.5)"
-                  : "rgba(255, 255, 255, 0.1)";
-              ctx.lineWidth = 0.7;
+                  ? "rgba(220, 38, 38, 0.4)"
+                  : "rgba(15, 23, 42, 0.12)";
+              ctx.lineWidth = 0.8;
 
               if (ctx.roundRect) {
                 ctx.beginPath();
@@ -305,7 +305,7 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
               }
 
               ctx.fillStyle =
-                rel === "SUPERSEDES" ? "#f87171" : "#cbd5e1";
+                rel === "SUPERSEDES" ? "#dc2626" : "#475569";
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
               ctx.fillText(rel, textPos.x, textPos.y);
@@ -315,25 +315,25 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
       />
 
       {/* Floating Legend (Bottom-Left) */}
-      <div className="pointer-events-none absolute bottom-2.5 left-2.5 z-20 flex flex-wrap gap-2.5 rounded-lg border border-white/10 bg-black/65 px-3 py-1.5 backdrop-blur-md text-[10px] text-slate-300">
+      <div className="pointer-events-none absolute bottom-2.5 left-2.5 z-20 flex flex-wrap gap-2.5 rounded-lg border border-slate-200/90 bg-white/90 px-3 py-1.5 backdrop-blur-md text-[10px] text-slate-700 shadow-sm">
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-emerald-500/40" />
+          <span className="h-2 w-2 rounded-full bg-emerald-600 ring-2 ring-emerald-500/30" />
           Active ADR
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-rose-500 ring-2 ring-rose-500/40" />
+          <span className="h-2 w-2 rounded-full bg-rose-600 ring-2 ring-rose-500/30" />
           Superseded
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-sky-400" />
+          <span className="h-2 w-2 rounded-full bg-sky-600" />
           System
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-purple-400" />
+          <span className="h-2 w-2 rounded-full bg-purple-600" />
           Person
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-pink-400" />
+          <span className="h-2 w-2 rounded-full bg-pink-600" />
           Team
         </span>
       </div>
