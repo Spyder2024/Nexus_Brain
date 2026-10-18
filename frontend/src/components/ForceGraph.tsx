@@ -28,6 +28,94 @@ const TYPE_COLORS: Record<string, string> = {
   TenantGraph: "#6366f1",
 };
 
+/**
+ * Computes deterministic level-based layout coordinates.
+ * Eliminates spring bouncing, elastic rubber stretching, and node overlapping.
+ */
+function computeCleanLayout(nodes: any[], edges: any[]) {
+  const inDegree = new Map<string, number>();
+  const outEdges = new Map<string, string[]>();
+
+  nodes.forEach((n) => {
+    inDegree.set(n.id, 0);
+    outEdges.set(n.id, []);
+  });
+
+  edges.forEach((e) => {
+    const sId = typeof e.source === "object" ? e.source.id : e.source;
+    const tId = typeof e.target === "object" ? e.target.id : e.target;
+    if (inDegree.has(tId)) {
+      inDegree.set(tId, (inDegree.get(tId) || 0) + 1);
+    }
+    if (outEdges.has(sId)) {
+      outEdges.get(sId)!.push(tId);
+    }
+  });
+
+  // Calculate hierarchical levels via BFS from root nodes
+  const levels = new Map<string, number>();
+  const queue: string[] = [];
+
+  nodes.forEach((n) => {
+    if ((inDegree.get(n.id) || 0) === 0) {
+      levels.set(n.id, 0);
+      queue.push(n.id);
+    }
+  });
+
+  // Fallback if graph has a cycle or no root
+  if (queue.length === 0 && nodes.length > 0) {
+    levels.set(nodes[0].id, 0);
+    queue.push(nodes[0].id);
+  }
+
+  while (queue.length > 0) {
+    const curr = queue.shift()!;
+    const currLevel = levels.get(curr) || 0;
+    const neighbors = outEdges.get(curr) || [];
+    for (const next of neighbors) {
+      if (!levels.has(next) || levels.get(next)! < currLevel + 1) {
+        levels.set(next, currLevel + 1);
+        queue.push(next);
+      }
+    }
+  }
+
+  // Assign level 0 to any unreached nodes
+  nodes.forEach((n) => {
+    if (!levels.has(n.id)) {
+      levels.set(n.id, 0);
+    }
+  });
+
+  // Group nodes by level
+  const byLevel = new Map<number, any[]>();
+  nodes.forEach((n) => {
+    const lvl = levels.get(n.id) || 0;
+    if (!byLevel.has(lvl)) byLevel.set(lvl, []);
+    byLevel.get(lvl)!.push(n);
+  });
+
+  const maxLvl = Math.max(...Array.from(byLevel.keys()), 0);
+
+  // Assign fixed coordinates with generous clearance
+  byLevel.forEach((levelNodes, lvl) => {
+    const count = levelNodes.length;
+    levelNodes.forEach((node, idx) => {
+      // 210px horizontal spacing ensures long labels never collide
+      const x = (idx - (count - 1) / 2) * 210;
+      // 105px vertical spacing gives generous clearance between levels
+      const y = (lvl - maxLvl / 2) * 105;
+      node.fx = x;
+      node.fy = y;
+      node.x = x;
+      node.y = y;
+    });
+  });
+
+  return nodes;
+}
+
 export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<any>(null);
@@ -51,48 +139,51 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Configure physics forces & camera auto-fit on graph data updates
   const autoFitGraph = useCallback(() => {
     if (fgRef.current) {
-      // Repulsion force to prevent node clumping
-      fgRef.current.d3Force("charge")?.strength(-380);
-      // Link distance to ensure clear space for relationship badges
-      fgRef.current.d3Force("link")?.distance(105);
-      // Auto-fit camera with generous padding
-      fgRef.current.zoomToFit(400, 65);
+      fgRef.current.zoomToFit(250, 60);
+      setTimeout(() => {
+        if (fgRef.current) {
+          const z = fgRef.current.zoom();
+          if (z > 1.15) {
+            fgRef.current.zoom(1.0, 150);
+          }
+        }
+      }, 260);
     }
   }, []);
 
   useEffect(() => {
     if (!subgraph?.nodes || subgraph.nodes.length === 0) return;
-
-    // Trigger auto-fit after simulation starts spreading nodes
-    const timer1 = setTimeout(autoFitGraph, 250);
-    const timer2 = setTimeout(autoFitGraph, 700);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
+    const timer = setTimeout(autoFitGraph, 200);
+    return () => clearTimeout(timer);
   }, [subgraph, autoFitGraph]);
 
   const handleRecenter = () => {
     if (fgRef.current) {
-      fgRef.current.zoomToFit(400, 60);
+      fgRef.current.zoomToFit(250, 60);
+      setTimeout(() => {
+        if (fgRef.current) {
+          const z = fgRef.current.zoom();
+          if (z > 1.15) {
+            fgRef.current.zoom(1.0, 150);
+          }
+        }
+      }, 260);
     }
   };
 
   const handleZoomIn = () => {
     if (fgRef.current) {
       const curr = fgRef.current.zoom();
-      fgRef.current.zoom(Math.min(curr * 1.35, 3.2), 250);
+      fgRef.current.zoom(Math.min(curr * 1.3, 1.4), 200);
     }
   };
 
   const handleZoomOut = () => {
     if (fgRef.current) {
       const curr = fgRef.current.zoom();
-      fgRef.current.zoom(Math.max(curr / 1.35, 0.45), 250);
+      fgRef.current.zoom(Math.max(curr / 1.3, 0.4), 200);
     }
   };
 
@@ -114,14 +205,28 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
     );
   }
 
-  // Pre-process nodes & edges
-  const nodes = subgraph.nodes.map((n) => ({ ...n }));
+  // Pre-process nodes & edges with deterministic coordinates
+  const rawNodes = subgraph.nodes.map((n) => {
+    const rawLabel = String(n.label || n.id || "").trim();
+    const displayLabel = rawLabel.length > 24 ? rawLabel.slice(0, 22) + "…" : rawLabel;
+    const estimatedWidth = Math.max(displayLabel.length * 7.0 + 34, 90);
+
+    return {
+      ...n,
+      __displayLabel: displayLabel,
+      __width: estimatedWidth,
+      __height: 26,
+    };
+  });
+
   const edges = subgraph.edges.map((e) => ({
     source: typeof e.source === "object" ? (e.source as SubgraphNode).id : e.source,
     target: typeof e.target === "object" ? (e.target as SubgraphNode).id : e.target,
     relationship: e.relationship,
   }));
 
+  // Apply clean deterministic coordinates to eliminate all overlap and rubber-band motion
+  const nodes = computeCleanLayout(rawNodes, edges);
   const graphData = { nodes, links: edges };
 
   return (
@@ -130,7 +235,7 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
       className="relative h-full min-h-[380px] w-full overflow-hidden rounded-xl border border-slate-200 bg-[#f8fafc]"
     >
       {/* Floating HUD Controls (Top-Right) */}
-      <div className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5 rounded-lg border border-slate-200/90 bg-white/90 p-1 backdrop-blur-md shadow-sm">
+      <div className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1.5 rounded-lg border border-slate-200/90 bg-white/95 p-1 backdrop-blur-md shadow-sm">
         <span className="px-2 font-mono text-[10px] text-slate-600 border-r border-slate-200 select-none">
           {nodes.length} nodes · {edges.length} edges
         </span>
@@ -166,23 +271,34 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
         width={dimensions.width}
         height={dimensions.height}
         graphData={graphData}
-        minZoom={0.45}
-        maxZoom={3.2}
-        d3VelocityDecay={0.28}
-        cooldownTicks={120}
-        onEngineStop={autoFitGraph}
+        minZoom={0.4}
+        maxZoom={1.25}
+        enableNodeDrag={true}
+        onNodeDrag={(node: any) => {
+          node.fx = node.x;
+          node.fy = node.y;
+        }}
         nodeLabel={(node: any) =>
           `${node.type}: ${node.label || node.id} (${node.status || "active"})`
         }
         nodePointerAreaPaint={(node: any, color: string, ctx: CanvasRenderingContext2D) => {
+          const w = node.__width || 100;
+          const h = node.__height || 26;
           ctx.fillStyle = color;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, 11, 0, 2 * Math.PI, false);
+          if (ctx.roundRect) {
+            ctx.roundRect(node.x - w / 2, node.y - h / 2, w, h, 13);
+          } else {
+            ctx.rect(node.x - w / 2, node.y - h / 2, w, h);
+          }
           ctx.fill();
         }}
         nodeCanvasObjectMode={() => "replace"}
-        nodeCanvasObject={(node: any, ctx: CanvasRenderingContext2D, globalScale: number) => {
-          const r = node.type === "Decision" ? 9 : 8;
+        nodeCanvasObject={(node: any, ctx: CanvasRenderingContext2D, _globalScale: number) => {
+          const w = node.__width || 100;
+          const h = node.__height || 26;
+          const x = node.x - w / 2;
+          const y = node.y - h / 2;
           const status = (node.status || "active").toLowerCase();
           const nodeColor =
             status === "superseded"
@@ -191,80 +307,81 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
               ? "#d97706"
               : TYPE_COLORS[node.type] || "#64748b";
 
-          // 1. Halo / Glow Ring for Special Statuses
+          // 1. Unified Capsule Card Body (Both status dot and text inside one card)
+          ctx.save();
+          ctx.shadowColor = "rgba(15, 23, 42, 0.08)";
+          ctx.shadowBlur = 5;
+          ctx.shadowOffsetY = 2;
+
+          ctx.beginPath();
+          if (ctx.roundRect) {
+            ctx.roundRect(x, y, w, h, 13);
+          } else {
+            ctx.rect(x, y, w, h);
+          }
+          ctx.fillStyle = "#ffffff";
+          ctx.fill();
+          ctx.restore();
+
+          // 2. Card Border
+          ctx.save();
           if (status === "active" && node.type === "Decision") {
-            ctx.save();
-            ctx.shadowColor = "rgba(5, 150, 105, 0.4)";
-            ctx.shadowBlur = 8;
-            ctx.beginPath();
-            ctx.arc(node.x, node.y, r + 3, 0, 2 * Math.PI, false);
             ctx.strokeStyle = "#059669";
-            ctx.lineWidth = 2;
-            ctx.stroke();
-            ctx.restore();
+            ctx.lineWidth = 1.6;
           } else if (status === "superseded") {
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(node.x, node.y, r + 2.5, 0, 2 * Math.PI, false);
             ctx.strokeStyle = "#dc2626";
             ctx.lineWidth = 1.6;
             ctx.setLineDash([3, 2]);
-            ctx.stroke();
-            ctx.restore();
+          } else {
+            ctx.strokeStyle = "rgba(15, 23, 42, 0.14)";
+            ctx.lineWidth = 1.1;
           }
 
-          // 2. Main Node Body
           ctx.beginPath();
-          ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
+          if (ctx.roundRect) {
+            ctx.roundRect(x, y, w, h, 13);
+          } else {
+            ctx.rect(x, y, w, h);
+          }
+          ctx.stroke();
+          ctx.restore();
+
+          // 3. Status / Type Dot Indicator on the Left
+          const dotRadius = 4;
+          const dotX = x + 11;
+          const dotY = node.y;
+
+          if (status === "active" && node.type === "Decision") {
+            ctx.beginPath();
+            ctx.arc(dotX, dotY, dotRadius + 2.5, 0, 2 * Math.PI);
+            ctx.strokeStyle = "rgba(5, 150, 105, 0.4)";
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+          }
+
+          ctx.beginPath();
+          ctx.arc(dotX, dotY, dotRadius, 0, 2 * Math.PI);
           ctx.fillStyle = nodeColor;
           ctx.fill();
-          ctx.strokeStyle = "#ffffff";
-          ctx.lineWidth = 1.6;
-          ctx.stroke();
 
-          // 3. Node Label Badge (Clean Pill Background to prevent text collisions)
-          const rawLabel = String(node.label || node.id || "").trim();
-          const displayLabel = rawLabel.length > 22 ? rawLabel.slice(0, 20) + "…" : rawLabel;
-
-          // Keep font size clamped within readable bounds
-          const fontSize = Math.min(Math.max(10 / globalScale, 6.5), 11);
-          ctx.font = `600 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
-          const textWidth = ctx.measureText(displayLabel).width;
-          const pillPaddingX = 5;
-          const pillPaddingY = 2;
-          const pillH = fontSize + pillPaddingY * 2;
-          const pillW = textWidth + pillPaddingX * 2;
-          const pillX = node.x - pillW / 2;
-          const pillY = node.y + r + 3;
-
-          ctx.fillStyle = "rgba(255, 255, 255, 0.95)";
-          ctx.strokeStyle = "rgba(15, 23, 42, 0.14)";
-          ctx.lineWidth = 0.9;
-          if (ctx.roundRect) {
-            ctx.beginPath();
-            ctx.roundRect(pillX, pillY, pillW, pillH, 3.5);
-            ctx.fill();
-            ctx.stroke();
-          } else {
-            ctx.fillRect(pillX, pillY, pillW, pillH);
-            ctx.strokeRect(pillX, pillY, pillW, pillH);
-          }
-
-          ctx.fillStyle = "#0f172a";
-          ctx.textAlign = "center";
+          // 4. Text Label inside the capsule (vertically centered, guaranteed zero overlap)
+          const textX = dotX + 7;
+          ctx.font = `600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+          ctx.fillStyle = status === "superseded" ? "#991b1b" : "#0f172a";
+          ctx.textAlign = "left";
           ctx.textBaseline = "middle";
-          ctx.fillText(displayLabel, node.x, pillY + pillH / 2);
+          ctx.fillText(node.__displayLabel || node.id, textX, node.y);
         }}
         linkColor={(link: any) =>
-          link.relationship === "SUPERSEDES" ? "#dc2626" : "#cbd5e1"
+          link.relationship === "SUPERSEDES" ? "#dc2626" : "#94a3b8"
         }
         linkWidth={(link: any) =>
-          link.relationship === "SUPERSEDES" ? 2.2 : 1.2
+          link.relationship === "SUPERSEDES" ? 2.0 : 1.2
         }
-        linkDirectionalArrowLength={4.5}
-        linkDirectionalArrowRelPos={0.88}
+        linkDirectionalArrowLength={5.5}
+        linkDirectionalArrowRelPos={0.86}
         linkCanvasObjectMode={() => "after"}
-        linkCanvasObject={(link: any, ctx: CanvasRenderingContext2D, globalScale: number) => {
+        linkCanvasObject={(link: any, ctx: CanvasRenderingContext2D, _globalScale: number) => {
           if (link.relationship) {
             const start = link.source;
             const end = link.target;
@@ -279,24 +396,24 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
                 y: start.y + (end.y - start.y) / 2,
               };
               const rel = String(link.relationship);
-              const fontSize = Math.min(Math.max(7.5 / globalScale, 5.5), 8.5);
-              ctx.font = `600 ${fontSize}px "JetBrains Mono", Menlo, monospace`;
+              const fontSize = 8;
+              ctx.font = `700 ${fontSize}px "JetBrains Mono", Menlo, monospace`;
               const textWidth = ctx.measureText(rel).width;
-              const pillW = textWidth + 6;
-              const pillH = fontSize + 4;
+              const pillW = textWidth + 8;
+              const pillH = fontSize + 6;
               const pillX = textPos.x - pillW / 2;
               const pillY = textPos.y - pillH / 2;
 
-              ctx.fillStyle = "rgba(255, 255, 255, 0.96)";
+              ctx.fillStyle = "#ffffff";
               ctx.strokeStyle =
                 rel === "SUPERSEDES"
-                  ? "rgba(220, 38, 38, 0.4)"
-                  : "rgba(15, 23, 42, 0.12)";
+                  ? "rgba(220, 38, 38, 0.45)"
+                  : "rgba(15, 23, 42, 0.14)";
               ctx.lineWidth = 0.8;
 
               if (ctx.roundRect) {
                 ctx.beginPath();
-                ctx.roundRect(pillX, pillY, pillW, pillH, 3);
+                ctx.roundRect(pillX, pillY, pillW, pillH, 4);
                 ctx.fill();
                 ctx.stroke();
               } else {
@@ -315,7 +432,7 @@ export const ForceGraph: React.FC<Props> = ({ subgraph }) => {
       />
 
       {/* Floating Legend (Bottom-Left) */}
-      <div className="pointer-events-none absolute bottom-2.5 left-2.5 z-20 flex flex-wrap gap-2.5 rounded-lg border border-slate-200/90 bg-white/90 px-3 py-1.5 backdrop-blur-md text-[10px] text-slate-700 shadow-sm">
+      <div className="pointer-events-none absolute bottom-2.5 left-2.5 z-20 flex flex-wrap gap-2.5 rounded-lg border border-slate-200/90 bg-white/95 px-3 py-1.5 backdrop-blur-md text-[10px] text-slate-700 shadow-sm">
         <span className="flex items-center gap-1.5">
           <span className="h-2 w-2 rounded-full bg-emerald-600 ring-2 ring-emerald-500/30" />
           Active ADR
