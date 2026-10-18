@@ -22,18 +22,18 @@
 - [x] **3.2:** Ensure `AgentCoordinator.handle_query(user_id, query)` returns the exact JSON contract defined in `TRD.md` Section 6 (with deterministic fallback if LLM API key is rate-limited).
 
 ## Phase 4: FastAPI Backend & Mock Contract Bridge (Dev B)
-- [ ] **4.1:** Build `src/api/server.py` with endpoints:
+- [x] **4.1:** Build `src/api/server.py` with endpoints:
   - `POST /api/v1/query` (calls `AgentCoordinator.handle_query`)
   - `POST /api/v1/mutate` (calls `GraphTools.mutate_knowledge_state`)
   - `GET /api/v1/stats` (returns live FalkorDB node/edge counts and tenant graphs)
   - `POST /api/v1/reset` (re-seeds Golden Scenarios for clean demo takes)
 
 ## Phase 5: Split-Screen Visual Command Center UI (Dev B)
-- [ ] **5.1:** Build `src/ui/app.py` implementing the 3-zone layout defined in `APP_FLOW.md`.
-- [ ] **5.2:** Wire the 5 One-Click Golden Scenario Preset Buttons and Citation Badges (`active` vs `superseded`).
-- [ ] **5.3:** Integrate interactive graph visualization (`streamlit-agraph` / PyVis) color-coded by node type and status.
-- [ ] **5.4:** Build Tab 2 (Live Knowledge Mutator) and Tab 3 (Multi-Tenant Memory Inspector).
+- [x] **5.1:** Build `src/ui/app.py` implementing the 3-zone layout defined in `APP_FLOW.md`.
+- [x] **5.2:** Wire the 5 One-Click Golden Scenario Preset Buttons and Citation Badges (`active` vs `superseded`).
+- [x] **5.3:** Integrate interactive graph visualization (`streamlit-agraph` / PyVis) color-coded by node type and status.
+- [x] **5.4:** Build Tab 2 (Live Knowledge Mutator) and Tab 3 (Multi-Tenant Memory Inspector).
 
 ## Phase 6: Verification, README & Submission Polish (Dev A + Dev B)
 - [ ] **6.1:** Run full test suite in `.agent/TESTING.md`.
-- [ ] **6.2:** Finalize `README.md` with architecture diagram, Cypher query showcase, and 1-command local setup guide.
+- [x] **6.2:** Finalize `README.md` with architecture diagram, Cypher query showcase, and 1-command local setup guide.

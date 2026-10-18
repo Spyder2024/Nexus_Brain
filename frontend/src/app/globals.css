@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Apple HIG–Inspired Design System ───────────────────────────── */
+
+:root {
+  /* Surface palette — deep space navy */
+  --bg-base:        #06070d;
+  --bg-surface-1:   #0c0f1d;
+  --bg-surface-2:   #111628;
+  --bg-surface-3:   #18203a;
+
+  /* Glass materials */
+  --glass-fill:         rgba(255, 255, 255, 0.04);
+  --glass-fill-hover:   rgba(255, 255, 255, 0.07);
+  --glass-stroke:       rgba(255, 255, 255, 0.08);
+
+  /* Accent — cobalt-electric */
+  --accent-primary:   hsl(211, 95%, 60%);
+  --accent-glow:      hsla(211, 95%, 60%, 0.25);
+  --accent-emerald:   hsl(158, 75%, 55%);
+  --accent-amber:     hsl(40,  90%, 60%);
+  --accent-violet:    hsl(262, 80%, 72%);
+
+  /* Typography */
+  --text-primary:   rgba(255,255,255,0.93);
+  --text-secondary: rgba(255,255,255,0.55);
+  --text-tertiary:  rgba(255,255,255,0.32);
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   18px;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { height: 100%; }
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+/* Ambient background — deep space gradient */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, hsl(220, 80%, 18%) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, hsl(260, 60%, 15%) 0%, transparent 60%),
+    var(--bg-base);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
+
+/* ─── Selection ─────────────────────────────────────────────────────── */
+
+::selection {
+  background: hsla(211, 95%, 60%, 0.3);
+  color: white;
+}
+
+/* ─── Glass Utilities ───────────────────────────────────────────────── */
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .glass-panel {
+    background: var(--glass-fill);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--glass-stroke);
+    border-radius: var(--radius-xl);
+  }
+
+  .glass-panel-dark {
+    background: rgba(6, 8, 18, 0.75);
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    border: 1px solid var(--glass-stroke);
+    border-radius: var(--radius-xl);
+  }
+
+  .glass-inset {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-md);
+  }
+
+  .lift {
+    transition: transform 150ms var(--ease-out), box-shadow 150ms var(--ease-out);
+  }
+  .lift:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+}
+
+/* ─── Focus Ring ─────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Prose (ReactMarkdown) ─────────────────────────────────────────── */
+
+.prose-brain {
+  color: var(--text-primary);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.prose-brain h1, .prose-brain h2, .prose-brain h3 {
+  color: white;
+  font-weight: 600;
+  margin: 0.75em 0 0.35em;
+  letter-spacing: -0.02em;
+}
+.prose-brain p  { margin: 0.4em 0; }
+.prose-brain ul { padding-left: 1.2em; margin: 0.4em 0; }
+.prose-brain li { margin: 0.2em 0; }
+.prose-brain code {
+  background: rgba(99,179,237,0.12);
+  color: hsl(211, 95%, 72%);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 11px;
+  font-family: var(--font-geist-mono), monospace;
+}
+.prose-brain strong { color: white; font-weight: 600; }
+
+/* ─── Cypher Code Block ─────────────────────────────────────────────── */
+
+.cypher-block {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  line-height: 1.65;
+  color: hsl(211, 90%, 75%);
+  background: rgba(0,0,0,0.45);
+  border-left: 2px solid var(--accent-primary);
+  padding: 10px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  user-select: all;
+}
+
+/* ─── Shimmer Skeleton ──────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 25%,
+    rgba(255,255,255,0.09) 50%,
+    rgba(255,255,255,0.04) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.8s infinite linear;
+  border-radius: var(--radius-sm);
+}

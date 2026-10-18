@@ -15,6 +15,7 @@ ENV/
 
 # Environment variables (keep .env.example tracked)
 .env
+env
 !.env.example
 
 # FalkorDB / Database runtime persistence
