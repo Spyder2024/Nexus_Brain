@@ -39,6 +39,11 @@ def graph_tools(falkordb_client):
     return GraphTools(company_graph=g, client=falkordb_client)
 
 
+# Network roundtrip budget: <50ms for local Docker, <500ms for remote cloud internet roundtrips
+IS_REMOTE_CLOUD = settings.FALKORDB_HOST not in ("localhost", "127.0.0.1")
+MAX_LATENCY_MS = 500.0 if IS_REMOTE_CLOUD else 50.0
+
+
 # -----------------------------------------------------------------------------
 # Test 1: Connection & Scale in FalkorDB
 # -----------------------------------------------------------------------------
@@ -109,7 +114,7 @@ def test_tool_find_shadow_expert(graph_tools: GraphTools):
     Liam Chen as official maintainer and Elena Rostova as top actual contributor."""
     res = graph_tools.find_shadow_expert("auth-service")
 
-    assert res["latency_ms"] < 50.0, f"Query exceeded 50ms: {res['latency_ms']}ms"
+    assert res["latency_ms"] < MAX_LATENCY_MS, f"Query exceeded {MAX_LATENCY_MS}ms: {res['latency_ms']}ms"
     assert res["official_owner"]["id"] == "person-04", "Official maintainer must be person-04"
     assert "Liam Chen" in res["official_owner"]["name"]
 
@@ -134,7 +139,7 @@ def test_tool_trace_decision_lineage(graph_tools: GraphTools):
     superseding ADR-018, triggered by INC-204 & SLACK-088, contradicted by DOC-082."""
     res = graph_tools.trace_decision_lineage("auth-service")
 
-    assert res["latency_ms"] < 50.0, f"Query exceeded 50ms: {res['latency_ms']}ms"
+    assert res["latency_ms"] < MAX_LATENCY_MS, f"Query exceeded {MAX_LATENCY_MS}ms: {res['latency_ms']}ms"
     active_d = res["active_decision"]
     assert active_d is not None, "Active decision must be found"
     assert active_d["id"] == "ADR-051", f"Expected active decision ADR-051, got {active_d['id']}"
@@ -161,7 +166,7 @@ def test_tool_calculate_blast_radius(graph_tools: GraphTools):
     cascading failure path affecting at least 3 downstream systems across multiple teams."""
     res = graph_tools.calculate_blast_radius("redis-session-store")
 
-    assert res["latency_ms"] < 50.0, f"Query exceeded 50ms: {res['latency_ms']}ms"
+    assert res["latency_ms"] < MAX_LATENCY_MS, f"Query exceeded {MAX_LATENCY_MS}ms: {res['latency_ms']}ms"
     assert res["root_system"]["id"] == "redis-session-store"
 
     downstream_ids = [d["id"] for d in res["downstream_systems"]]
@@ -191,7 +196,7 @@ def test_tool_mutate_knowledge_state_roundtrip(graph_tools: GraphTools, falkordb
         "author_id": "person-19",
     })
 
-    assert mut_res["latency_ms"] < 50.0, f"Mutation exceeded 50ms: {mut_res['latency_ms']}ms"
+    assert mut_res["latency_ms"] < MAX_LATENCY_MS, f"Mutation exceeded {MAX_LATENCY_MS}ms: {mut_res['latency_ms']}ms"
     assert mut_res["status"] == "success"
     assert mut_res["new_decision_id"] == "ADR-099"
     assert mut_res["superseded_decision_id"] == "ADR-051"
@@ -234,7 +239,7 @@ def test_tool_sync_agent_memory(graph_tools: GraphTools, falkordb_client):
 
     res = graph_tools.sync_agent_memory(user_id=user_id, turn_data=turn_payload)
 
-    assert res["latency_ms"] < 50.0, f"Memory sync exceeded 50ms: {res['latency_ms']}ms"
+    assert res["latency_ms"] < MAX_LATENCY_MS, f"Memory sync exceeded {MAX_LATENCY_MS}ms: {res['latency_ms']}ms"
     assert res["tenant_graph"] == "memory_tenant_meera_sre"
     assert res["turns_count"] >= 1
     assert len(res["playbooks"]) >= 1

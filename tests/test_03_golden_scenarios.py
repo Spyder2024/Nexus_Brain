@@ -197,6 +197,13 @@ def test_scenario_5_memory_isolation_and_playbook_promotion(coordinator, falkor_
     user_meera = "meera_sre"
     user_riya = "riya_dev"
 
+    # Ensure clean test state by deleting existing test tenant graphs if present
+    for u in [user_meera, user_riya]:
+        try:
+            falkor_client.select_graph(f"{settings.TENANT_GRAPH_PREFIX}{u}").delete()
+        except Exception:
+            pass
+
     # Meera investigates a CUDA OOM crash on ml-inference-worker
     q_meera = "We had a CUDA out-of-memory crash on ml-inference-worker like INC-249. What is the fix?"
     res_meera = coordinator.handle_query(user_id=user_meera, query=q_meera)

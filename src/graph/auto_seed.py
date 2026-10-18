@@ -99,7 +99,10 @@ class CloudBootstrapSeeder:
         stats = self.loader.load_all_from_raw()
 
         elapsed_ms = round((time.perf_counter() - t0) * 1000.0, 2)
-        logger.info(f"FalkorDB graph successfully seeded in {elapsed_ms}ms! Stats: {stats['node_counts']}")
+        logger.info(
+            f"FalkorDB graph successfully seeded in {elapsed_ms}ms! "
+            f"Total Nodes: {stats.get('total_nodes', 'unknown')}, Total Edges: {stats.get('total_edges', 'unknown')}"
+        )
 
         return {
             "status": "seeded",
