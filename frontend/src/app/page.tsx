@@ -317,7 +317,7 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="flex-1 w-full" style={{ minHeight: 0 }}>
+              <div className="flex-1 w-full h-full flex flex-col" style={{ minHeight: 0 }}>
                 <ForceGraph subgraph={subgraph} />
               </div>
             </div>
